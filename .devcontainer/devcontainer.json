@@ -1,0 +1,19 @@
+{
+  "name": "4colors examples",
+  "image": "mcr.microsoft.com/devcontainers/python:1-3.12-bookworm",
+  "postCreateCommand": "pip install --user -r requirements-dev.txt jupyter",
+  "customizations": {
+    "vscode": {
+      "extensions": ["ms-python.python", "ms-toolsai.jupyter"]
+    },
+    "codespaces": {
+      "openFiles": ["README.md", "quickstart/qubo_hello.py"]
+    }
+  },
+  "secrets": {
+    "FOURCOLORS_API_KEY": {
+      "description": "Your 4colors API key (optional: every example also runs offline with FOURCOLORS_OFFLINE=1).",
+      "documentationUrl": "https://account.4colors-research.com/?utm_source=github&utm_medium=examples&utm_campaign=codespaces"
+    }
+  }
+}

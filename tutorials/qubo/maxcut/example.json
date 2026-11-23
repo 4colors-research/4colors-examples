@@ -1,0 +1,12 @@
+{
+  "kind": "tutorial",
+  "slug": "qubo-maxcut",
+  "title": "Max-Cut on a large graph",
+  "summary": "Write a problem as a QUBO, stream better solutions, stop early, check the answer yourself.",
+  "product": "qubo",
+  "domains": ["graphs"],
+  "level": "beginner",
+  "post_url": null,
+  "docs_url": "https://docs.4colors-research.com/start/tutorials/qubo-maxcut/",
+  "requires": "fourcolors[optimizer]>=1.0.0"
+}

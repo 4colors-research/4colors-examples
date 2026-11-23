@@ -1,0 +1,8 @@
+# Repository tooling only; the examples are plain folders, not a package.
+[tool.pytest.ini_options]
+testpaths = ["tools/tests"]          # each example's tests run in their own process: python tools/test_all.py
+addopts = "-p no:cacheprovider"
+
+[tool.ruff]
+line-length = 120
+target-version = "py310"

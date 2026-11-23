@@ -1,0 +1,34 @@
+name: Something does not run
+description: An example fails, gives a wrong answer, or the docs and the code disagree.
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: "Please never paste an API key. If you exposed one, revoke it at account.4colors-research.com."
+  - type: input
+    id: example
+    attributes:
+      label: Example
+      description: Folder or file, e.g. posts/2026-11-qubo-puzzles/solve_puzzles.py
+    validations:
+      required: true
+  - type: dropdown
+    id: mode
+    attributes:
+      label: Mode
+      options: ["offline (FOURCOLORS_OFFLINE=1 or tests)", "with a key (live service)"]
+    validations:
+      required: true
+  - type: input
+    id: versions
+    attributes:
+      label: Versions
+      description: "Output of: python -c \"import fourcolors, sys; print(fourcolors.__version__, sys.version)\""
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: The command, the full error or the wrong output, and what you expected.
+      render: text
+    validations:
+      required: true

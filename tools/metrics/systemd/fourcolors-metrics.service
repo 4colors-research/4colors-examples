@@ -1,0 +1,19 @@
+# Template: NOT installed. See tools/metrics/README.md ("Install as a systemd user timer").
+# Replace @CHECKOUT@ with the absolute path of a checkout of this repository.
+[Unit]
+Description=Collect 4colors examples traction metrics (GitHub traffic, stars, downloads, PyPI, Binder)
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+Environment=FOURCOLORS_METRICS_TOKEN_FILE=%h/.config/fourcolors-metrics/github-token
+Environment=FOURCOLORS_METRICS_DIR=%h/.local/state/fourcolors-metrics
+ExecStart=/usr/bin/python3 -I @CHECKOUT@/tools/metrics/collect.py --config %h/.config/fourcolors-metrics/config.json
+StandardOutput=append:%h/.local/state/fourcolors-metrics/collect.log
+StandardError=append:%h/.local/state/fourcolors-metrics/collect.log
+TimeoutStartSec=15min
+Nice=10
+NoNewPrivileges=true
+# Mount sandboxing (ProtectSystem=, ReadWritePaths=) is left out: in user units it needs unprivileged user
+# namespaces, which not every host allows.

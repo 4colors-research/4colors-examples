@@ -1,0 +1,6 @@
+{
+  "repos": ["4colors-research/4colors-examples"],
+  "pypi": ["fourcolors"],
+  "binder_specs": ["4colors-research/4colors-examples"],
+  "star_salt_file": "~/.config/fourcolors-metrics/star-salt"
+}

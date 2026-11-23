@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+.ipynb_checkpoints/
+.venv/
+runs/
+figures/
+results.jsonl
+*.key
+.env
+.export-*/

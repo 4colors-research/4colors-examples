@@ -1,0 +1,13 @@
+# Template: NOT installed or enabled. See tools/metrics/README.md.
+[Unit]
+Description=Daily 4colors examples metrics collection (GitHub keeps traffic for 14 days only)
+
+[Timer]
+OnCalendar=*-*-* 06:20:00 UTC
+RandomizedDelaySec=15min
+# Catch up after the machine was off or suspended at the scheduled time.
+Persistent=true
+Unit=fourcolors-metrics.service
+
+[Install]
+WantedBy=timers.target

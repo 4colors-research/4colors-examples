@@ -1,0 +1,10 @@
+OWNER DECISION PENDING: license for the code in this repository.
+
+Proposed: Apache License 2.0 (permissive, with an explicit patent grant; the common choice for vendor example
+repositories). On approval, replace this whole file with the verbatim text of
+https://www.apache.org/licenses/LICENSE-2.0.txt and add "Copyright 2026 4colors Ltd." in the NOTICE file.
+
+Until this file holds a license, no license is granted.
+
+Use of the 4colors service and the `fourcolors` package is governed by the 4colors Terms of Service:
+https://4colors-research.com/terms

@@ -1,0 +1,24 @@
+name: Example request
+description: Ask for an example, or propose one you would like to write.
+labels: [example-request]
+body:
+  - type: dropdown
+    id: product
+    attributes:
+      label: Product
+      options: ["4colors Optimizer for QUBO", "4colors Quantum Compiler", "HTTP API / other language"]
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: The problem or use case
+      description: What should the example show? Which domain (finance, logistics, chemistry, scheduling, ...)?
+    validations:
+      required: true
+  - type: checkboxes
+    id: write
+    attributes:
+      label: Contribution
+      options:
+        - label: I would like to write this example myself

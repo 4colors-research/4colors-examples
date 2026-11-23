@@ -1,0 +1,30 @@
+# OWNER DECISION: CI is off until approved. This workflow only runs when started by hand (workflow_dispatch).
+# To turn it on for pull requests, add:
+#   pull_request:
+#   push:
+#     branches: [main]
+# It never needs a key: every test is offline. A separate, scheduled live-API check would need a repository
+# secret holding a low-limit key; it is not included.
+name: offline-tests
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.10", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: pip install -r requirements-dev.txt
+      - run: python tools/test_all.py
+      - run: python tools/leak_check.py .
+      - run: python tools/gallery.py --check

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="640" viewBox="0 0 1280 640">
+  <!-- Source for the repository's social preview image. Export to PNG (1280x640) and upload it in Settings. -->
+  <rect width="1280" height="640" fill="#fcfcfb"/>
+  <g transform="translate(96,150)">
+    <rect x="0" y="0" width="56" height="56" rx="8" fill="#2a78d6"/>
+    <rect x="64" y="0" width="56" height="56" rx="8" fill="#eb6834"/>
+    <rect x="0" y="64" width="56" height="56" rx="8" fill="#1baf7a"/>
+    <rect x="64" y="64" width="56" height="56" rx="8" fill="#eda100"/>
+  </g>
+  <text x="96" y="360" font-family="Inter, Helvetica, Arial, sans-serif" font-size="72" font-weight="700" fill="#0b0b0b">4colors examples</text>
+  <text x="96" y="430" font-family="Inter, Helvetica, Arial, sans-serif" font-size="36" fill="#52514e">QUBO optimization and quantum circuit compilation in Python</text>
+  <text x="96" y="520" font-family="ui-monospace, Menlo, monospace" font-size="30" fill="#2a78d6">pip install fourcolors</text>
+</svg>

@@ -1,0 +1,8 @@
+[
+  {"name": "good first issue", "color": "7057ff", "description": "Small, well-scoped, good for a first contribution"},
+  {"name": "example-request", "color": "1baf7a", "description": "A request or proposal for a new example"},
+  {"name": "bug", "color": "e34948", "description": "An example does not run or gives a wrong answer"},
+  {"name": "qubo", "color": "2a78d6", "description": "4colors Optimizer for QUBO"},
+  {"name": "compiler", "color": "6250d6", "description": "4colors Quantum Compiler"},
+  {"name": "docs", "color": "eda100", "description": "README, tutorial or comment text"}
+]

@@ -1,0 +1,11 @@
+{
+  "kind": "quickstart",
+  "slug": "quickstart",
+  "title": "Quickstart: hello QUBO, hello compiler, hello HTTP",
+  "summary": "The smallest working call for each product and for raw HTTP.",
+  "product": "both",
+  "domains": ["getting-started"],
+  "level": "beginner",
+  "post_url": null,
+  "requires": "fourcolors[optimizer]>=1.0.0"
+}
