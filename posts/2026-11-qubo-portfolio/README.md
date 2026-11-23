@@ -58,7 +58,7 @@ python frontier.py --out runs/n30 --n 30 --k 6 --time-limit 5 --seeds 1 2 3
 ```
 
 C(30, 6) = 593,775 portfolios is small enough to enumerate, so every answer has an exact reference. Lines read like
-`q=4     seed=1 picked=6 return=[N] risk=[N] objective=[N] (reference [N], enumeration (exact))`.
+`q=4     seed=1 picked=6 return=... risk=... objective=... (reference ..., enumeration (exact))`.
 
 ## Step 2: a size the demos skip (200 assets, pick 20)
 
@@ -78,8 +78,9 @@ python plot.py runs/n30 runs/n200 --out figures
 `figures/frontier_n30_k6.png` and `figures/frontier_n200_k20.png`: risk against return, the reference line and the
 solver's answers.
 
-What to expect: at n = 30 the solver's answers match the exact optimum on [N] of [N] (q, seed) pairs; at n = 200
-they are within [N] of the heuristic reference, and every answer picks exactly k assets.
+What to check: at n = 30, compare each answer with the exact optimum (`gap_abs` in results.jsonl, 0 means it
+found the optimum); at n = 200, a negative gap means better than the heuristic. Every answer should pick exactly
+k assets. The numbers we got are in the post.
 
 ## Run the tests (no API key needed)
 

@@ -43,6 +43,8 @@ All examples, quickstarts first. Browse by area in [domains/](domains/).
 | [Quickstart: hello QUBO, hello compiler, hello HTTP](quickstart/) | quickstart | both | beginner | getting-started |  |
 | [Notebook: Max-Cut on a large graph](notebooks/) | tutorial | Optimizer for QUBO | beginner | graphs, notebooks |  |
 | [Max-Cut on a large graph](tutorials/qubo/maxcut/) | tutorial | Optimizer for QUBO | beginner | graphs |  |
+| [Portfolio selection with a cardinality constraint](posts/2026-11-qubo-portfolio/) | post | Optimizer for QUBO | intermediate | finance |  |
+| [Sudoku, N-queens and map coloring as constrained QUBOs](posts/2026-11-qubo-puzzles/) | post | Optimizer for QUBO | beginner | puzzles, graph-coloring |  |
 <!-- gallery:all:end -->
 
 ## What is where

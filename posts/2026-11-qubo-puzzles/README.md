@@ -61,14 +61,15 @@ Each answer is decoded and checked in plain Python (`puzzles.sudoku_valid`, `puz
 (`r.constraints`). Lines read like:
 
 ```
-sudoku eliminated seed=1 valid=[True/False]
-32-queens seed=1 valid=[True/False]
-US map k=3 conflicts_in_objective seed=1 conflicts=[N] reason=None
+sudoku eliminated seed=1 valid=...
+32-queens seed=1 valid=...
+US map k=3 conflicts_in_objective seed=1 conflicts=... reason=None
 US map k=3 all_exact              seed=1 conflicts=None reason=no_feasible_found
 ```
 
 The script also writes reference rows: the Sudoku solved by plain backtracking, and the fewest conflicts possible on
-the US map with k colors, found by an exact branch and bound in plain Python ([N] with 3 colors, 0 with 4).
+the US map with k colors, found by an exact branch and bound in plain Python (0 with 4 colors; with 3, at least one per odd wheel).
+The numbers we got are in the post.
 
 ## Step 3: pictures
 
@@ -82,7 +83,7 @@ python plot.py runs/puzzles --out figures
 ## A modeling note: fewer variables first
 
 `puzzles.sudoku_model(grid, eliminate=True)` drops every digit a clue already rules out, the first step of any
-Sudoku solver: [N] variables instead of 729, and the clues need no rows. The script solves both versions.
+Sudoku solver: 153 variables instead of 729, and the clues need no rows. The script solves both versions.
 
 ## Run the tests (no API key needed)
 
