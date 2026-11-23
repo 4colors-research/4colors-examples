@@ -1,0 +1,17 @@
+{
+  "kind": "post",
+  "slug": "qubo-puzzles",
+  "month": "2026-11",
+  "title": "Sudoku, N-queens and map coloring as constrained QUBOs",
+  "summary": "One-hot models with exact rows: decode the 0/1 answer into a grid, a board or a map and verify it in plain Python.",
+  "product": "qubo",
+  "domains": [
+    "puzzles",
+    "graph-coloring"
+  ],
+  "level": "beginner",
+  "post_url": null,
+  "requires": "fourcolors[optimizer]>=1.0.0",
+  "offline_tests": true,
+  "exported_utc": "2026-11-23T03:46:58Z"
+}
