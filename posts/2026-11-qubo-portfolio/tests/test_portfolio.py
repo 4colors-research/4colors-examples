@@ -4,6 +4,7 @@ import numpy as np
 import pytest
 
 import examplekit
+from canned import canned_result
 import frontier
 import plot
 import portfolio as pf
@@ -55,23 +56,33 @@ def test_prices_csv(tmp_path):
     assert names == ["AAA", "BBB", "CCC"] and mu.shape == (3,) and s.shape == (3, 3)
 
 
-def test_frontier_script_end_to_end(fake, tmp_path):
+def test_frontier_script_judges_and_records_each_answer(canned, tmp_path):
+    # Two fixed answers written by hand: three picks (feasible), then four picks (breaks "exactly k").
+    three = [1, 1, 1, 0, 0, 0, 0, 0, 0, 0]
+    four = [1, 1, 1, 1, 0, 0, 0, 0, 0, 0]
+    cons = {"m": 1, "feasible": True, "rows_checked": 1, "rows_violated": 0}
+    canned(canned_result(three, -0.25, constraints=cons, job_id="canned-1"),
+           canned_result(four, 1.5, constraints={**cons, "feasible": False, "rows_violated": 1}, job_id="canned-2"))
     frontier.main(["--out", str(tmp_path / "f"), "--n", "10", "--k", "3", "--q", "0", "4", "--seeds", "1",
                    "--time-limit", "1"])
     rows = examplekit.Results(tmp_path / "f" / "results.jsonl").rows()
-    sol = [r for r in rows if r["kind"] == "solve"]
-    assert len(sol) == 2 and all(r["n_rows"] == 1 for r in sol)
-    for r in sol:
-        # the stand-in enumerates, so it returns the exact optimum; every check agrees
-        assert r["feasible"] and r["model_feasible"] and r["n_picked"] == 3
-        assert r["gap_abs"] == pytest.approx(0, abs=1e-12)
-        assert r["energy_python"] == pytest.approx(r["solver_objective"]) == pytest.approx(r["objective"])
-        assert r["service_constraints"]["feasible"]
+    refs = {r["q"]: r for r in rows if r["kind"] == "reference"}
+    ok, bad = [r for r in rows if r["kind"] == "solve"]
+    assert all(r["n_rows"] == 1 for r in (ok, bad)) and refs[0]["method"] == "enumeration (exact)"
+    # the script's own checks, recomputed from the 0/1 answer
+    assert ok["feasible"] and ok["model_feasible"] and ok["n_picked"] == 3 and ok["picks"] == [0, 1, 2]
+    assert ok["energy_python"] == pytest.approx(ok["objective"])
+    assert ok["gap_abs"] == pytest.approx(ok["objective"] - refs[0]["objective"]) and ok["gap_abs"] >= -1e-12
+    assert not bad["feasible"] and not bad["model_feasible"] and bad["n_picked"] == 4
+    # what the service said is recorded as it said it, beside the script's numbers
+    assert (ok["solver_objective"], ok["job_id"], ok["engine_version"]) == (-0.25, "canned-1", "canned-test")
+    assert ok["service_constraints"]["feasible"] and not bad["service_constraints"]["feasible"]
     plot.main([str(tmp_path / "f"), "--out", str(tmp_path / "fig")])
     assert (tmp_path / "fig" / "frontier_n10_k3.png").exists()
 
 
-def test_frontier_script_uses_a_heuristic_reference_when_enumeration_is_too_big(fake, tmp_path):
+def test_frontier_script_uses_a_heuristic_reference_when_enumeration_is_too_big(canned, tmp_path):
+    canned(canned_result([1, 1, 1, 1] + [0] * 8, 0.0))
     frontier.main(["--out", str(tmp_path / "h"), "--n", "12", "--k", "4", "--q", "1", "--seeds", "1",
                    "--brute-force-max", "10"])
     ref = [r for r in examplekit.Results(tmp_path / "h" / "results.jsonl").rows() if r["kind"] == "reference"][0]

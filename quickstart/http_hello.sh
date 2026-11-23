@@ -2,7 +2,7 @@
 # Hello, HTTP: a tiny QUBO job with curl and jq, no Python. Needs FOURCOLORS_API_KEY.
 #   bash quickstart/http_hello.sh
 set -euo pipefail
-: "${FOURCOLORS_API_KEY:?set FOURCOLORS_API_KEY (get a key at account.4colors-research.com)}"
+: "${FOURCOLORS_API_KEY:?set FOURCOLORS_API_KEY (no key yet? start a free trial at [TRIAL SIGNUP URL])}"
 B=${FOURCOLORS_BASE_URL:-https://api.4colors-research.com}
 A="Authorization: Bearer $FOURCOLORS_API_KEY"
 

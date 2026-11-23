@@ -15,9 +15,12 @@ New here? Look for issues labelled `good first issue`.
 ## What makes a good example
 
 - **Small and focused**: one idea, one folder, readable in five minutes.
-- **Runs in one command**, and **runs offline**: `FOURCOLORS_OFFLINE=1` (or the test suite) must work with no key.
+- **Runs in one command** with a key (readers get one from the free trial). Never add a local solver, compiler or
+  simulator that answers in place of the 4colors service, not even as a fallback or a demo.
 - **Checks its own answer** in plain Python: decode the 0/1 solution or the compiled circuit and verify it.
-- **Has tests** in `tests/` that need no key and no network.
+- **Has tests** in `tests/` that need no key and no network: they test the code on the reader's side (models,
+  decoders, validators). An end-to-end test feeds the script a fixed, hand-written answer from `tests/canned.py`;
+  a canned answer never searches or optimizes, and it never lives in `shared/`.
 - **Names versions**: rows record the `fourcolors` client version and the engine version the service reports.
 - **US spelling**, plain sentences, no marketing claims.
 - **No secrets**: keys come from `FOURCOLORS_API_KEY` or a file named by `FOURCOLORS_KEY_FILE`, never from code.
@@ -29,7 +32,7 @@ New here? Look for issues labelled `good first issue`.
 | a minimal call | `quickstart/` |
 | a step-by-step walk-through | `tutorials/<qubo|compiler|http>/<name>/` |
 | code for a published post | `posts/<yyyy-mm>-<slug>/` (maintainers, see below) |
-| a notebook | `notebooks/` (runs offline top to bottom) |
+| a notebook | `notebooks/` (first cell: get a trial key) |
 | a starter for an ecosystem | `templates/` |
 
 Each example folder has an `example.json` (see `tools/gallery.py` for the fields); run `python tools/gallery.py` to

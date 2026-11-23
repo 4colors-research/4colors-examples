@@ -85,9 +85,10 @@ def test_export_copies_reader_files_and_rewrites_them(src, tmp_path):
     assert 'HERE.parents[1] / "shared"' in (out / "tests" / "conftest.py").read_text()
     md = (out / "README.md").read_text()
     assert "How we measured" not in md and "EXPERIMENTS" not in md and VER not in md
-    assert "utm_source=github" in md and "## Results" in md and "account.4colors-research.com" in md
+    assert "utm_source=github" in md and "## Results" in md and md.count("free trial") == 1
+    assert md.index("## Setup\n\nStart a free trial") < md.index('pip install')
     meta = json.loads((out / "example.json").read_text())
-    assert meta["kind"] == "post" and meta["slug"] == "toy" and meta["offline_tests"] is True
+    assert meta["kind"] == "post" and meta["slug"] == "toy" and meta["tests"] is True
     assert not list((tmp_path / "posts").glob(".export-*"))
 
 
@@ -98,6 +99,15 @@ def test_a_leak_stops_the_export_and_writes_nothing(src, tmp_path):
     assert not (tmp_path / "posts" / "2026-11-toy").exists()
     assert not list((tmp_path / "posts").glob(".export-*"))
 
+
+
+def test_a_stand_in_solver_stops_the_export(src, tmp_path):
+    line = "\nWithout a " + "key, put `FOURCOLORS_OFF" + "LINE=1` in front: a local stand" + "-in answers.\n"
+    (src / "README.md").write_text((src / "README.md").read_text() + line)
+    (src / "solve.py").write_text(SCRIPT + "from internalkit import Off" + "lineQubo\n")
+    with pytest.raises(ep.ExportError, match="stand-in-solver"):
+        run(src, tmp_path)
+    assert not (tmp_path / "posts" / "2026-11-toy").exists()
 
 def test_denylist_terms_stop_the_export(src, tmp_path):
     dl = tmp_path / "terms.txt"

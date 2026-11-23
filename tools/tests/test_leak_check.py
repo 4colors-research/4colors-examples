@@ -27,6 +27,19 @@ def test_generic_rules_fire():
     assert "placeholder" in rules("matches on [" + "N] of them")
 
 
+
+def test_stand_in_solvers_are_refused():
+    for text in ("from examplekit import Off" + "lineQubo",
+                 "FOURCOLORS_OFF" + "LINE=1 python solve.py",
+                 "if examplekit.offline_en" + "abled():",
+                 "A small local stand" + "-in answers instead of the service",
+                 "run it against the offline stand" + "-in",
+                 "every example runs without an API " + "key",
+                 "Without a " + "key: put it in front"):
+        assert "stand-in-solver" in rules(text), text
+    assert "stand-in-solver" not in rules("Start a free trial at [TRIAL SIGNUP URL] and copy your key.")
+    assert "stand-in-solver" not in rules("canned_result([1, 0], -1.0)  # a fixed answer for a test")
+
 def test_clean_text_and_allowed_shapes():
     ok = ("pip install fourcolors; colors #2a78d6; 0x9E3779B97F4A7C15; date 2025-01-05, month 2026-11-qubo; "
           "bot 1+bot" + "@" + "users.noreply.github.com; license, color, optimize, modeling; threading" + ".local()")

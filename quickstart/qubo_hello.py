@@ -1,7 +1,8 @@
 """Hello, QUBO: the maximum cut of a 5-node ring.
 
-    FOURCOLORS_OFFLINE=1 python quickstart/qubo_hello.py      # no key: a local stand-in answers
-    python quickstart/qubo_hello.py                           # with FOURCOLORS_API_KEY or FOURCOLORS_KEY_FILE
+    python quickstart/qubo_hello.py           # needs FOURCOLORS_API_KEY or FOURCOLORS_KEY_FILE
+
+No key yet? Start a free trial at [TRIAL SIGNUP URL] and copy your key.
 
 Edge (i, j) is cut when x_i != x_j. Minimizing sum over edges of (2 x_i x_j - x_i - x_j) maximizes the cut,
 and the cut size is minus that objective.

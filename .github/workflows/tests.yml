@@ -3,9 +3,9 @@
 #   pull_request:
 #   push:
 #     branches: [main]
-# It never needs a key: every test is offline. A separate, scheduled live-API check would need a repository
+# The tests use no key and no network. A separate, scheduled live-API check would need a repository
 # secret holding a low-limit key; it is not included.
-name: offline-tests
+name: tests
 
 on:
   workflow_dispatch:

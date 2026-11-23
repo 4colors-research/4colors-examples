@@ -14,5 +14,5 @@ the same rules:
 6. **Only solvers whose license allows published comparisons**, run as their documentation recommends.
 
 Planned harnesses: QUBO (open-source samplers you can `pip install`), and compiler (Qiskit's own `transpile` at
-the same wall time). Each will ship with offline tests and a `--dry-run` that prints the plan and the job budget
+the same wall time). Each will ship with tests and a `--dry-run` that prints the plan and the job budget
 before anything is billed.

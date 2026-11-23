@@ -46,9 +46,11 @@ A symmetric matrix is read as `x'Qx`, so each pair counts twice, as written.
 
 ## Setup
 
+Start a free trial at [TRIAL SIGNUP URL] and copy your key, then:
+
 ```bash
 pip install "fourcolors[optimizer]" numpy matplotlib
-export FOURCOLORS_API_KEY=...        # or FOURCOLORS_KEY_FILE=/path/to/key
+export FOURCOLORS_API_KEY=...        # the trial key, or FOURCOLORS_KEY_FILE=/path/to/key
 ```
 
 ## Step 1: a frontier you can check exactly (30 assets, pick 6)
@@ -82,14 +84,15 @@ What to check: at n = 30, compare each answer with the exact optimum (`gap_abs` 
 found the optimum); at n = 200, a negative gap means better than the heuristic. Every answer should pick exactly
 k assets. The numbers we got are in the post.
 
-## Run the tests (no API key needed)
+## Run the tests
 
 ```bash
 python -m pytest -q tests
 ```
 
 The tests check the matrix against the plain-Python objective on every assignment of a small case, the brute force
-and the swap search against plain enumeration, the CSV reader, and both script paths with an offline stand-in.
+and the swap search against plain enumeration, the CSV reader, and both script paths on fixed, hand-written answers
+(`tests/canned.py`). The enumeration is the post's labeled reference optimum, not a stand-in for the service.
 
 ## Results
 
@@ -97,5 +100,5 @@ The numbers and charts are in the post (link added on publication). Every number
 
 ## Run it yourself
 
-- Without a key: put `FOURCOLORS_OFFLINE=1` in front of any command above. A small local stand-in answers instead of the service, so the scripts run end to end; its answers are not 4colors results.
-- With a key: get one at [account.4colors-research.com](https://account.4colors-research.com/?utm_source=github&utm_medium=examples&utm_campaign=qubo-portfolio&utm_content=readme-key), then `export FOURCOLORS_API_KEY=...` or `FOURCOLORS_KEY_FILE=/path/to/file`.
+Set `FOURCOLORS_API_KEY` (or `FOURCOLORS_KEY_FILE=/path/to/file`, which keeps the key out of your shell history) and
+run the commands above. Every answer comes from the 4colors service.

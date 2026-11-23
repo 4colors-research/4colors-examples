@@ -6,10 +6,13 @@ Max-Cut splits the nodes of a graph into two groups so that as many edges as pos
 is a natural QUBO: one binary variable per node says which group the node is in. The whole script is
 [`maxcut.py`](maxcut.py).
 
+1. Start a free trial at [TRIAL SIGNUP URL] and copy your key.
+2. Run the tutorial:
+
 ```bash
 pip install "fourcolors[optimizer]"
-python maxcut.py                                                    # 2,000 nodes, 6,000 edges, 30 s
-FOURCOLORS_OFFLINE=1 python maxcut.py --n 14 --m 30 --time-limit 1  # no key: a tiny graph and a local stand-in
+export FOURCOLORS_API_KEY=...                 # the key from step 1, or FOURCOLORS_KEY_FILE=/path/to/file
+python maxcut.py                              # 2,000 nodes, 6,000 edges, 30 s
 ```
 
 ## Write the problem as a QUBO
@@ -86,14 +89,15 @@ for step in result.trajectory[-5:]:
 If the last improvement came early in the time limit, a shorter limit would likely give the same answer; if
 improvements kept coming until the end, try a longer one.
 
-## Tests (no key needed)
+## Tests
 
 ```bash
 python -m pytest -q tests
 ```
 
-They check that the QUBO energy is minus the cut on every assignment of a small graph, and run the script end to
-end against the offline stand-in.
+They check that the QUBO energy is minus the cut on every assignment of a small graph, and that the script
+prints, checks and returns an answer correctly. For that they feed it fixed, hand-written answers
+(`tests/canned.py`); nothing in the tests solves the model, so the tests say nothing about answer quality.
 
 ## Next
 

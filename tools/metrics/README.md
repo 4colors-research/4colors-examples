@@ -3,6 +3,20 @@
 How many people find, read, clone, star and run these examples, and how many install `fourcolors`.
 Nothing here runs on its own: the collector is a script, and the systemd units are templates to install by hand.
 
+## The metric that matters: trial sign-ups
+
+The goal of this repository is that readers start a free trial. Everything below (views, clones, stars,
+installs) is a leading signal; the number we judge the repository by is **trial sign-ups that came from it**.
+
+- Every trial link in the repository carries UTM tags (`utm_source=github&utm_medium=examples&utm_campaign=<example>
+  &utm_content=<spot>`), built with `tools/links.py`. Until the sign-up URL is confirmed the link is the literal
+  placeholder `[TRIAL SIGNUP URL]`, which carries no tags; when it is filled in, tag every occurrence.
+- Attribution happens on the site, not here: a sign-up counts for the repository only if the site's analytics and
+  back office keep the campaign from the first visit through to the trial sign-up. Whether that works, and for how
+  long the first-visit campaign is kept, depends on the site's analytics setup; this collector cannot see it.
+- Report it weekly beside the GitHub numbers: trial sign-ups with `utm_source=github&utm_medium=examples`, by
+  campaign (example) and spot.
+
 ## What is measured, and where it comes from
 
 | Signal | Source | Kept by the source | Collected as |
@@ -16,6 +30,7 @@ Nothing here runs on its own: the collector is a script, and the systemd units a
 | `fourcolors` installs | pypistats.org `recent` and `overall` | 180 days | `pypi.jsonl` |
 | Binder launches | mybinder.org public launch archive | permanent | `binder.jsonl` |
 | Clicks to the site and docs | UTM tags on every link to 4colors sites (`tools/links.py`) | the site's own analytics | not collected here |
+| **Trial sign-ups from the repository** | UTM-tagged trial links, attributed by the site's analytics and back office | the site | not collected here |
 | Colab opens | not reported by Google; see "Colab" below | | |
 
 GitHub's traffic numbers exist for 14 days only, so a run must happen at least every few days. Run it daily:

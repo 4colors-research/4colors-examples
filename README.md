@@ -7,30 +7,28 @@ Runnable examples, tutorials and blog-post companion code for the
 <!-- Badges: owner to confirm each target before publishing. The Codespaces and CI badges work once the repo exists. -->
 [![PyPI](https://img.shields.io/pypi/v/fourcolors?label=fourcolors)](https://pypi.org/project/fourcolors/)
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/4colors-research/4colors-examples)
-[![Offline tests](https://github.com/4colors-research/4colors-examples/actions/workflows/offline-tests.yml/badge.svg)](https://github.com/4colors-research/4colors-examples/actions/workflows/offline-tests.yml)
+[![Tests](https://github.com/4colors-research/4colors-examples/actions/workflows/tests.yml/badge.svg)](https://github.com/4colors-research/4colors-examples/actions/workflows/tests.yml)
 [![Docs](https://img.shields.io/badge/docs-docs.4colors--research.com-2a78d6)](https://docs.4colors-research.com/?utm_source=github&utm_medium=examples&utm_campaign=readme&utm_content=badge)
 
-Every example is a small folder you can read in five minutes and run in one command. Every example also runs
-**without an API key** in offline mode, so you can try the code, the models and the tests before signing up.
+Every example is a small folder you can read in five minutes and run in one command. Every example sends its
+model to the 4colors service, so it needs an API key.
 
 ## Quickstart
+
+1. Start a free trial at [TRIAL SIGNUP URL] and copy your key.
+2. Run the examples:
 
 ```bash
 git clone https://github.com/4colors-research/4colors-examples
 cd 4colors-examples
 pip install -r requirements.txt
 
-# no key needed: a small local stand-in answers instead of the service
-FOURCOLORS_OFFLINE=1 python quickstart/qubo_hello.py
-
-# with a key from account.4colors-research.com
-export FOURCOLORS_API_KEY=...            # or FOURCOLORS_KEY_FILE=/path/to/file
+export FOURCOLORS_API_KEY=...            # the key from step 1, or FOURCOLORS_KEY_FILE=/path/to/file
 python quickstart/qubo_hello.py
 python quickstart/compiler_hello.py
 bash quickstart/http_hello.sh            # the same API with curl, no Python
 ```
 
-Get an API key at [account.4colors-research.com](https://account.4colors-research.com/?utm_source=github&utm_medium=examples&utm_campaign=readme&utm_content=quickstart).
 Docs: [docs.4colors-research.com](https://docs.4colors-research.com/?utm_source=github&utm_medium=examples&utm_campaign=readme&utm_content=quickstart).
 
 ## Gallery
@@ -60,21 +58,20 @@ All examples, quickstarts first. Browse by area in [domains/](domains/).
 | [`migrate/`](migrate/) | Moving existing code over: from Qiskit's `transpile`, from dimod samplers. |
 | [`benchmarks/`](benchmarks/) | How to compare solvers fairly, and harnesses you can rerun yourself. |
 | [`datasets/`](datasets/) | Loaders for public instance sets, with each set's license. No data is stored here. |
-| [`shared/`](shared/) | `examplekit.py`: key handling, results files, offline mode, chart style. |
+| [`shared/`](shared/) | `examplekit.py`: key handling, results files, chart style. |
 | [`tools/`](tools/) | Repository tooling: tests runner, gallery builder, leak check, post export, metrics. |
 
 ## Run the tests
 
 ```bash
 pip install -r requirements-dev.txt
-python tools/test_all.py        # every example's tests, offline: no key, no network
+python tools/test_all.py        # every example's tests
 ```
 
-## Offline mode
-
-`FOURCOLORS_OFFLINE=1` makes `fourcolors.qubo.solve` and `fourcolors.qubo.submit` answer locally (exact enumeration
-for tiny models, a short simulated annealing above that). It exists so you can run the code and the tests anywhere.
-Its answers and times are made up: they are not 4colors results and say nothing about the service.
+The tests check the code that runs on your side: model builders, decoders, validators and the repository tools.
+Where a script is tested end to end, it is fed fixed, hand-written answers (each example's `tests/canned.py`), so
+the tests need no key and no network. Nothing in this repository solves or compiles anything in place of the
+service: every real answer comes from the 4colors service.
 
 ## Contributing
 

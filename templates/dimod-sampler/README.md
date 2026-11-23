@@ -1,9 +1,12 @@
 # dimod sampler template
 
+1. Start a free trial at [TRIAL SIGNUP URL] and copy your key.
+2. Run the template:
+
 ```bash
 pip install "fourcolors[ocean]"
-FOURCOLORS_OFFLINE=1 python sample_bqm.py     # no key: prints the model and exits
-python sample_bqm.py                          # with FOURCOLORS_API_KEY
+export FOURCOLORS_API_KEY=...                 # the key from step 1
+python sample_bqm.py
 ```
 
 `fourcolors.FourColorsSampler()` is a dimod sampler: `sample(bqm, time_limit_s=...)` for a

@@ -1,7 +1,9 @@
 """Max-Cut on a large random graph: write it as a QUBO, stream better cuts, check the answer yourself.
 
-    python maxcut.py                                  # 2,000 nodes, 6,000 edges, 30 s (needs a key)
-    FOURCOLORS_OFFLINE=1 python maxcut.py --n 14 --m 30 --time-limit 1     # no key: tiny graph, local stand-in
+    python maxcut.py                                  # 2,000 nodes, 6,000 edges, 30 s
+    python maxcut.py --n 200 --m 600 --time-limit 2   # a smaller graph
+
+Needs a key (FOURCOLORS_API_KEY or FOURCOLORS_KEY_FILE): start a free trial at [TRIAL SIGNUP URL] and copy it.
 
 Press Ctrl-C while it runs: the job stops on the service and you keep the best cut found so far.
 """

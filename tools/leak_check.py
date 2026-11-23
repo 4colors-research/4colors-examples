@@ -8,7 +8,8 @@ Two kinds of rules:
 
 1. Generic rules, kept here: home-directory paths, private IP ranges, local host names, key and token shapes,
    key-file names, dated run identifiers, bare commit hashes, e-mail addresses, links the product rules forbid,
-   internal record files, British spellings (the repository uses US spelling) and unfilled draft placeholders.
+   internal record files, stand-in solvers for the service, British spellings (the repository uses US spelling)
+   and unfilled draft placeholders.
 2. Organization terms, kept OUTSIDE the repository in one or more denylist files (internal host names, internal
    tool and team names, excluded data sets, excluded products, held-out instance names). Name them with
    --denylist or the FOURCOLORS_LEAK_DENYLIST variable (paths separated by the OS path separator). A line is a
@@ -48,6 +49,9 @@ GENERIC = [
     ("email", re.compile(r"\b[\w.+-]+@[A-Za-z0-9-]+(?:\.[A-Za-z0-9-]+)+\b")),
     ("forbidden-link", re.compile(r"api\.4colors-research\.com/(?:account|developers|docs)\b")),
     ("internal-record", re.compile(r"\b(?:RUN\.yaml|ledger\.jsonl|EXPERIMENTS\.md|FAIRNESS\.md)\b")),
+    # Examples need a key: nothing in the repository may answer in place of the service.
+    ("stand-in-solver", re.compile(r"Offline[Q]ubo|FOURCOLORS_OFF[L]INE|offline_en[a]bled|(?:offline|local) stand[- ]in"
+                                   r"|without an? (?:API )?[k]ey", re.I)),
     ("british-spelling", re.compile(r"\b(?:licen[c]e[sd]?|col[o]urs?|col[o]ured|col[o]uring|optimi[s](?:e|ed|es|ing|ation)"
                                     r"|behavio[u]r|normali[s](?:e|ed|ation)|catalog[u]e|cent[r]e|model[l]ing|analy[s](?:e|ed|ing))\b",
                                     re.I)),

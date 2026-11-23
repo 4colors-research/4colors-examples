@@ -6,9 +6,8 @@
 
 Rules for notebooks in this repository:
 
-- Each notebook runs top to bottom **offline** (no key) and with a key. Offline answers come from a small local
-  stand-in and are labelled as such.
+- Each notebook needs a key; its first cell says how to get one.
 - Keys come from the environment or Colab secrets, never from a cell.
 - Outputs are committed only from a real run with a key, against a named `fourcolors` and engine version, so a
   reader sees real results on GitHub without running anything. Until then cells are committed without outputs.
-- `tests/test_notebooks.py` checks every notebook compiles and runs offline.
+- `tests/test_notebooks.py` checks every notebook is valid JSON and its code cells compile. It runs nothing.

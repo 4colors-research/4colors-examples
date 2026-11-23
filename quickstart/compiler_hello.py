@@ -1,6 +1,8 @@
 """Hello, compiler: a 5-qubit GHZ circuit compiled onto the default hosted device target.
 
-    python quickstart/compiler_hello.py                       # needs FOURCOLORS_API_KEY or FOURCOLORS_KEY_FILE
+    python quickstart/compiler_hello.py       # needs FOURCOLORS_API_KEY or FOURCOLORS_KEY_FILE
+
+No key yet? Start a free trial at [TRIAL SIGNUP URL] and copy your key.
 
 `time_budget_s` is the seconds the compiler spends looking for a better circuit; the answer is the best it found
 in that time. The service checks the answer is equivalent to your circuit (the verification label).
@@ -24,9 +26,6 @@ cx q[2], q[3];
 cx q[3], q[4];
 c = measure q;
 """
-
-if examplekit.offline_enabled():
-    sys.exit("compiler_hello needs the service (there is no offline compiler); unset FOURCOLORS_OFFLINE")
 
 client = examplekit.client()
 res = fourcolors.quantum.compiler.compile(GHZ5, time_budget_s=10, client=client)

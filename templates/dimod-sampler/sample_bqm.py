@@ -1,13 +1,11 @@
-"""Template: solve a dimod BinaryQuadraticModel with the 4colors Optimizer for QUBO."""
-import os
-import sys
+"""Template: solve a dimod BinaryQuadraticModel with the 4colors Optimizer for QUBO.
 
+Needs a key (FOURCOLORS_API_KEY): start a free trial at [TRIAL SIGNUP URL] and copy your key.
+"""
 import dimod
 
 bqm = dimod.BinaryQuadraticModel({"a": -1, "b": -1, "c": -1}, {("a", "b"): 2, ("b", "c"): 2}, 0.0, "BINARY")
 print(bqm)
-if os.environ.get("FOURCOLORS_OFFLINE"):
-    sys.exit(0)
 
 import fourcolors  # noqa: E402
 

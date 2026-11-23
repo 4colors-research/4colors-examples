@@ -8,7 +8,7 @@ import fourcolors
 
 
 def get_backend():
-    from qiskit.providers.fake_provider import GenericBackendV2   # a stand-in device; use your provider's backend
+    from qiskit.providers.fake_provider import GenericBackendV2   # a generic Qiskit device description; use your provider's backend
     return GenericBackendV2(num_qubits=27)
 
 

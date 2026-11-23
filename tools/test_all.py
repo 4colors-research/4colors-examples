@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Run every example's offline tests, each example in its own pytest process.
+"""Run every example's tests, each example in its own pytest process.
 
     python tools/test_all.py            # tools/tests, then every example directory with a tests/ folder
     python tools/test_all.py posts/     # only the examples under posts/

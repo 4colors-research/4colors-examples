@@ -1,6 +1,6 @@
 # Tutorials
 
-Step-by-step walk-throughs, each a complete script with offline tests. They follow the
+Step-by-step walk-throughs, each a complete script with tests. They follow the
 [docs tutorials](https://docs.4colors-research.com/start/tutorials/?utm_source=github&utm_medium=examples&utm_campaign=tutorials&utm_content=readme)
 and go from small to large.
 
@@ -10,5 +10,5 @@ and go from small to large.
 | [`compiler/`](compiler/) | Planned: time budgets; compile for your own device. |
 | [`http/`](http/) | Planned: the API without Python (curl + jq). Until then: [`quickstart/http_hello.sh`](../quickstart/http_hello.sh). |
 
-A tutorial folder holds `README.md` (the walk-through), one script, `tests/` (offline) and `example.json`
+A tutorial folder holds `README.md` (the walk-through), one script, `tests/` and `example.json`
 (gallery metadata).

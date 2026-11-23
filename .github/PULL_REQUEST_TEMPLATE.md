@@ -4,7 +4,7 @@
 
 ## Checklist
 
-- [ ] `python tools/test_all.py` passes (offline: no key, no network)
+- [ ] `python tools/test_all.py` passes (no key, no network)
 - [ ] `python tools/leak_check.py .` reports nothing
 - [ ] New or changed examples have `example.json`, and `python tools/gallery.py` was run
 - [ ] The example checks its own answer in plain Python

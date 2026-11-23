@@ -12,7 +12,7 @@
   },
   "secrets": {
     "FOURCOLORS_API_KEY": {
-      "description": "Your 4colors API key (optional: every example also runs offline with FOURCOLORS_OFFLINE=1).",
+      "description": "Your 4colors API key: every example needs one. Start a free trial at [TRIAL SIGNUP URL] and copy your key.",
       "documentationUrl": "https://account.4colors-research.com/?utm_source=github&utm_medium=examples&utm_campaign=codespaces"
     }
   }

@@ -1,27 +1,16 @@
-"""The quickstarts run offline (QUBO) or refuse clearly without the service (compiler)."""
-import os
+"""The quickstarts need a key and the service, so their tests check only that each file is valid."""
+import py_compile
 import subprocess
-import sys
 from pathlib import Path
 
+import pytest
+
 HERE = Path(__file__).resolve().parents[1]
-ENV = {k: v for k, v in os.environ.items() if not k.startswith("FOURCOLORS_")}
 
 
-def run(script, **env):
-    return subprocess.run([sys.executable, str(HERE / script)], env={**ENV, **env}, capture_output=True, text=True,
-                          timeout=120)
-
-
-def test_qubo_hello_offline():
-    r = run("qubo_hello.py", FOURCOLORS_OFFLINE="1")
-    assert r.returncode == 0, r.stderr
-    assert "cut 4 of 5 edges" in r.stdout and "engine offline" in r.stdout
-
-
-def test_compiler_hello_refuses_offline():
-    r = run("compiler_hello.py", FOURCOLORS_OFFLINE="1")
-    assert r.returncode != 0 and "needs the service" in r.stderr
+@pytest.mark.parametrize("script", ["qubo_hello.py", "compiler_hello.py"])
+def test_python_quickstarts_compile(script, tmp_path):
+    py_compile.compile(str(HERE / script), cfile=str(tmp_path / "out.pyc"), doraise=True)
 
 
 def test_http_hello_is_valid_bash():

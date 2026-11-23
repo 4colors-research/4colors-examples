@@ -28,9 +28,11 @@ when its time limit ends with no answer meeting every row (it does not prove inf
 
 ## Setup
 
+Start a free trial at [TRIAL SIGNUP URL] and copy your key, then:
+
 ```bash
 pip install "fourcolors[optimizer]" matplotlib
-export FOURCOLORS_API_KEY=...        # or FOURCOLORS_KEY_FILE=/path/to/key
+export FOURCOLORS_API_KEY=...        # the trial key, or FOURCOLORS_KEY_FILE=/path/to/key
 ```
 
 ## Step 1: N-queens in a dozen lines
@@ -85,15 +87,16 @@ python plot.py runs/puzzles --out figures
 `puzzles.sudoku_model(grid, eliminate=True)` drops every digit a clue already rules out, the first step of any
 Sudoku solver: 153 variables instead of 729, and the clues need no rows. The script solves both versions.
 
-## Run the tests (no API key needed)
+## Run the tests
 
 ```bash
 python -m pytest -q tests
 ```
 
 The tests check that the rows admit exactly the known solutions on small cases (4-queens has 2, 5-queens has 10; a
-small 4x4 Sudoku has one), that the coloring objective counts conflicts on every assignment of a small graph, and run
-the script end to end with an offline stand-in for the service.
+small 4x4 Sudoku has one), that the coloring objective counts conflicts on every assignment of a small graph, and
+that the script decodes, verifies and records answers correctly. For that they feed it fixed, hand-written answers
+(`tests/canned.py`), right and wrong; nothing in the tests solves a puzzle in place of the service.
 
 ## Results
 
@@ -101,5 +104,5 @@ The numbers and charts are in the post (link added on publication). Every number
 
 ## Run it yourself
 
-- Without a key: put `FOURCOLORS_OFFLINE=1` in front of any command above. A small local stand-in answers instead of the service, so the scripts run end to end; its answers are not 4colors results.
-- With a key: get one at [account.4colors-research.com](https://account.4colors-research.com/?utm_source=github&utm_medium=examples&utm_campaign=qubo-puzzles&utm_content=readme-key), then `export FOURCOLORS_API_KEY=...` or `FOURCOLORS_KEY_FILE=/path/to/file`.
+Set `FOURCOLORS_API_KEY` (or `FOURCOLORS_KEY_FILE=/path/to/file`, which keeps the key out of your shell history) and
+run the commands above. Every answer comes from the 4colors service.

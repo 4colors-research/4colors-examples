@@ -11,6 +11,6 @@
   "level": "intermediate",
   "post_url": null,
   "requires": "fourcolors[optimizer]>=1.0.0",
-  "offline_tests": true,
+  "tests": true,
   "exported_utc": "2026-11-23T03:46:58Z"
 }
