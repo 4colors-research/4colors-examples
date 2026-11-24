@@ -127,10 +127,6 @@ and the X mixer does not, that the binary code gives color 2 half the time and e
 that the Brooks certificate matches enumeration and refuses K4, that the selection rule shows only cells ahead on
 gates and not behind on noise, and check the plumbing of `run.py` and `plot.py` on fixed circuits.
 
-## Results
-
-The numbers and charts are in the post (link added on publication). Every number there names the 4colors release and the `fourcolors` client version it was measured with; each row this code writes records both (`engine_version`, `client_version`).
-
 ## Run it yourself
 
 Start a free trial at [account.4colors-research.com](https://account.4colors-research.com/account/?utm_source=github&utm_medium=examples&utm_campaign=qaoa-encodings&utm_content=readme-trial) for a key. Set `FOURCOLORS_API_KEY` (or `FOURCOLORS_KEY_FILE=/path/to/file`, which keeps the key out of your shell history) and run the commands above. Every answer comes from the 4colors service.

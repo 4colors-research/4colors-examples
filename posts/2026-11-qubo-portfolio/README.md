@@ -9,7 +9,6 @@
 - How to pass that QUBO as one numpy matrix, and add "exactly k assets" as one exact row instead of a penalty.
 - How to trace the efficient frontier by sweeping the risk aversion q, and check each answer against the exact
   optimum (by enumeration) where that is possible.
-- Optionally, how a second kind of row ("at most C per sector") goes in the same way.
 
 ## The model
 
@@ -22,6 +21,17 @@ minimize  q * risk(x)^2 - return(x)      subject to   sum x = k
 
 `q = 0` picks the k highest expected returns; a large `q` picks the least risky mix. Equal weighting is a modeling
 simplification: it turns "how much of each" into "which ones", which is what a binary model can express. In code:
+
+```python
+import numpy as np
+import fourcolors.qubo
+
+Q = (q / k**2) * Sigma - np.diag(mu / k)       # E(x) = x'Qx, the objective above
+m = fourcolors.qubo.to_model(Q)
+m.add_constraint({i: 1 for i in range(n)}, lo=k, hi=k)     # exactly k assets
+r = fourcolors.qubo.solve(m, time_limit_s=1, seed=1)
+# 1 s is enough to try it. Each search runs to its time limit and is billed for it.
+```
 
 Two details make the matrix right. On binaries x_i^2 = x_i, so the diagonal `-mu/k` is the linear return term. And a
 symmetric matrix is read as `x'Qx`, so each off-diagonal pair counts twice, exactly as the variance needs.
@@ -84,10 +94,6 @@ python -m pytest -q tests      # unit tests of the model code; they do not call 
 The tests check the matrix against the plain-Python objective on every assignment of a small case, the brute force
 and the swap search against plain enumeration (with and without a sector cap), that the sector rows admit exactly the
 capped portfolios, the CSV reader, and every script path on fixed hand-made answers.
-
-## Results
-
-The numbers and charts are in the post (link added on publication). Every number there names the 4colors release and the `fourcolors` client version it was measured with; each row this code writes records both (`engine_version`, `client_version`).
 
 ## Run it yourself
 

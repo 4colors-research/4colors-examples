@@ -58,7 +58,6 @@ python solve.py --out runs/small --kind binary --sizes 12 16 20 --time-limit 1 -
 ```
 
 For each instance, `solve.py` sends the model, recounts the color changes from the returned 0/1 answer (never
-trusting the service's number alone), and prints it beside the greedy heuristic and the exact optimum:
 
 The exact optimum comes from `ps.brute_force`, which enumerates every coloring with car 0 white (flipping every
 car gives the same count); it is fine up to about 22 cars.
@@ -121,10 +120,6 @@ color-change count, that each car's two bodies always get different colors, that
 optimum and greedy never beats it, that the QAOA circuit has one rzz per coupling per layer and couplings of degree
 at most four, that the multi-car model's rows accept exactly the colorings that meet the quotas, that the selection
 rules show only strict wins, and the plumbing of `solve.py`, `compile.py` and `plot.py` with canned answers.
-
-## Results
-
-The numbers and charts are in the post (link added on publication). Every number there names the 4colors release and the `fourcolors` client version it was measured with; each row this code writes records both (`engine_version`, `client_version`).
 
 ## Run it yourself
 

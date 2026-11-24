@@ -78,10 +78,6 @@ The tests check the lattice and its couplings, that slab size does not change th
 file is byte-identical to the client's own writer, the scorer against a direct energy, the size report, and the
 script's rows and the plot on a fixed canned answer.
 
-## Results
-
-The numbers and charts are in the post (link added on publication). Every number there names the 4colors release and the `fourcolors` client version it was measured with; each row this code writes records both (`engine_version`, `client_version`).
-
 ## Run it yourself
 
 Set `FOURCOLORS_API_KEY` (or `FOURCOLORS_KEY_FILE=/path/to/file`, which keeps the key out of your shell history) and run the commands above. Every answer comes from the 4colors service.

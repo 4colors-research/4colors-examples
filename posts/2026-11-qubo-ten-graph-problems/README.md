@@ -142,8 +142,6 @@ pending the owner's decision.]
 python run.py --out runs/ten --time-limit 1 --seeds 1
 ```
 
-Each line reports the plain-Python verdict and the score:
-
 `results.jsonl` has one row per problem and seed: the instance size (`n_nodes`, `n_edges`, `n_vars`, `n_rows`), the
 decoded `answer`, `valid` and `score` from plain Python, the client's exact row check (`model_feasible`), the
 service's (`service_feasible`), and the service's fields (`engine_version`, `billed_s`, the trajectory).
@@ -159,10 +157,6 @@ answer, decoded and checked in plain Python, equals an independent brute force o
 `networkx.max_weight_matching` for matching). They also check that the validators reject broken answers, that the
 penalty form of the independent set has the same optimum, and that `run.py` writes and checks its rows on fixed
 answers. They need networkx; without it the tests are skipped.
-
-## Results
-
-The numbers and charts are in the post (link added on publication). Every number there names the 4colors release and the `fourcolors` client version it was measured with; each row this code writes records both (`engine_version`, `client_version`).
 
 ## Run it yourself
 

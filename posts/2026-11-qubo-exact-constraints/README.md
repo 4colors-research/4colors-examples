@@ -144,10 +144,6 @@ The tests check every builder against the plain-Python objective on all assignme
 references against brute force, the model sizes the post states (slack bits, quadratic terms, rows), that a dimod
 CQM becomes the same exact rows, and every script's plumbing on fixed canned answers.
 
-## Results
-
-The numbers and charts are in the post (link added on publication). Every number there names the 4colors release and the `fourcolors` client version it was measured with; each row this code writes records both (`engine_version`, `client_version`).
-
 ## Run it yourself
 
 Set `FOURCOLORS_API_KEY` (or `FOURCOLORS_KEY_FILE=/path/to/file`, which keeps the key out of your shell history) and run the commands above. Every answer comes from the 4colors service.

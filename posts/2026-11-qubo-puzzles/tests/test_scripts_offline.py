@@ -64,8 +64,8 @@ def test_refused_job_is_recorded(canned, tmp_path, monkeypatch):
 
 
 def test_smoke_arms_check_on_us_map_variants(canned, tmp_path):
-    """The EXPERIMENTS smoke check: the two US-map variants at k = 3 must differ (rows, and what the service says)."""
-    arms_differ = pytest.importorskip("arms_differ")   # the internal arms check; not published
+    """Smoke check: the two US-map variants at k = 3 must differ (rows, and what the service says)."""
+    arms_differ = pytest.importorskip("arms_differ")   # optional helper, skipped when absent
 
     solve_puzzles.main(["--out", str(tmp_path / "s"), "--puzzles", "usmap", "--colors", "3", "--seeds", "1",
                         "--time-limit", "1"])

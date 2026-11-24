@@ -45,8 +45,6 @@ export FOURCOLORS_KEY_FILE=/path/to/key-file   # or FOURCOLORS_API_KEY=<your tri
 
 ## Step 1: one model, one second
 
-Start with a small model so the first call returns at once:
-
 `families.score` re-evaluates the returned spins on your machine. It does not trust the service's objective, and
 the harness checks that the two agree (`agrees` in every row).
 
@@ -123,10 +121,6 @@ references and gap signs, that the API model's energy equals the evaluator on sa
 simulated bifurcation reaches the exact ground state of a 9-spin glass, the selection rule and the time-to-target
 bracket on hand-made rows, that a rival error is recorded and not dropped, and the API plumbing and the plots on a
 fixed canned answer.
-
-## Results
-
-The numbers and charts are in the post (link added on publication). Every number there names the 4colors release and the `fourcolors` client version it was measured with; each row this code writes records both (`engine_version`, `client_version`).
 
 ## Run it yourself
 

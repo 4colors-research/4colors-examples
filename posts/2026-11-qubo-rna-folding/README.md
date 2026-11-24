@@ -27,7 +27,6 @@ otherwise, and c_B = 1, c_L = 10, c_P = 0.5, the paper's values. The c_L term pu
 longest possible length; the quadratic term rewards stems that can coexist, crossing ones at half weight.
 
 The paper forbids two stems that share a base with an infinite penalty. A penalty has to be finite in practice, and
-choosing it is the usual QUBO headache. Here the rule is a set of exact rows instead:
 
 "Two stems overlap" means exactly "they share a base", so one row per base, Σ q_m ≤ 1 over the stems that use it,
 admits exactly the same structures as one "not both" row q_m + q_n ≤ 1 per overlapping pair, with far fewer rows.
@@ -65,7 +64,6 @@ python run.py --out runs/example --example --time-limit 1 --seeds 1
 ```
 
 The script lists the candidate stems, computes the exact optimum, solves once through the API, and re-scores the
-answer from its 0/1 values with Eq 13. A line reads like:
 
 ## Step 2: the hardware-study sizes, refereed
 
@@ -94,10 +92,6 @@ The tests check the stem enumerator on hand-worked hairpins (loop length and G-U
 crossing tests, the model's energy against Eq 13 on every feasible assignment of a small case, that both row forms
 admit exactly the non-overlapping stem sets, the exact branch and bound against brute force, the dot-bracket
 writer with a pseudoknot, the FASTA reader, and the run and plot scripts on fixed hand-made answers.
-
-## Results
-
-The numbers and charts are in the post (link added on publication). Every number there names the 4colors release and the `fourcolors` client version it was measured with; each row this code writes records both (`engine_version`, `client_version`).
 
 ## Run it yourself
 

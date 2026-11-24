@@ -24,6 +24,22 @@ export FOURCOLORS_KEY_FILE=/path/to/key-file   # or FOURCOLORS_API_KEY=<your tri
 
 ## Step 1: N-queens in a dozen lines
 
+```python
+import fourcolors.qubo
+
+n = 8
+m = fourcolors.qubo.to_model({}, [0] * (n * n), n=n * n)       # no objective
+for r in range(n):
+    m.add_constraint({r * n + c: 1 for c in range(n)}, lo=1, hi=1)      # one queen per row
+for c in range(n):
+    m.add_constraint({r * n + c: 1 for r in range(n)}, lo=1, hi=1)      # one per column
+# ... and at most one per diagonal: m.add_constraint({...: 1}, hi=1)   (see puzzles.nqueens_model)
+
+r = fourcolors.qubo.solve(m, time_limit_s=1, seed=1)
+# 1 s is enough to try it. Each search runs to its time limit and is billed for it.
+queens = [(i, j) for i in range(n) for j in range(n) if r.solution[i * n + j]]
+```
+
 An objective of all zeros is allowed: the model is pure rows, and any answer that meets them all is a solution.
 
 ## Step 2: solve all three
@@ -36,6 +52,13 @@ Each answer is decoded and checked in plain Python (`puzzles.sudoku_valid`, `puz
 `puzzles.coloring_conflicts`), and beside that the script stores the client's check (`m.feasible`) and the service's
 (`r.constraints`). Every constrained answer is checked by the service against its rows; the script checks it a second
 and third time. Lines read like:
+
+```
+sudoku eliminated seed=1 valid=True
+32-queens seed=1 valid=True
+US map k=3 conflicts_in_objective seed=1 conflicts=2 reason=None
+US map k=3 all_exact              seed=1 conflicts=None reason=no_feasible_found
+```
 
 The script also writes reference rows: the Sudoku solved by plain backtracking, and the fewest conflicts possible on
 the US map with k colors, found by an exact branch and bound in plain Python (2 with 3 colors, 0 with 4).
@@ -58,10 +81,6 @@ python -m pytest -q tests      # unit tests of the model code; they do not call 
 The tests check that the rows admit exactly the known solutions on small cases (4-queens has 2, 5-queens has 10; a
 small 4x4 Sudoku has one), that the coloring objective counts conflicts on every assignment of a small graph, and run
 the script's plumbing (rows, checks, plots) on fixed hand-made answers, and the smoke-check command.
-
-## Results
-
-The numbers and charts are in the post (link added on publication). Every number there names the 4colors release and the `fourcolors` client version it was measured with; each row this code writes records both (`engine_version`, `client_version`).
 
 ## Run it yourself
 

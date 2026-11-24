@@ -95,10 +95,6 @@ the checker catches each rule, that the HiGHS reference equals the brute-force o
 two-qubit gate per interacting pair per layer, the selection rules, and the plumbing of `run.py` and `plot.py` on
 fixed canned results.
 
-## Results
-
-The numbers and charts are in the post (link added on publication). Every number there names the 4colors release and the `fourcolors` client version it was measured with; each row this code writes records both (`engine_version`, `client_version`).
-
 ## Run it yourself
 
 Start a free trial at [account.4colors-research.com](https://account.4colors-research.com/account/?utm_source=github&utm_medium=examples&utm_campaign=aircraft-loading&utm_content=readme-trial) for a key. Set `FOURCOLORS_API_KEY` (or `FOURCOLORS_KEY_FILE=/path/to/file`, which keeps the key out of your shell history) and run the commands above. Every answer comes from the 4colors service.

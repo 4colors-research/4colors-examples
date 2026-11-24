@@ -88,10 +88,6 @@ The tests drive the stop rule with a fake clock and a job that holds one fixed a
 seconds after the last gain, returns a job that ended by itself as it is, and keeps the best on Ctrl-C. They also check the
 cadence summary.
 
-## Results
-
-The numbers and charts are in the post (link added on publication). Every number there names the 4colors release and the `fourcolors` client version it was measured with; each row this code writes records both (`engine_version`, `client_version`).
-
 ## Run it yourself
 
 Set `FOURCOLORS_API_KEY` (or `FOURCOLORS_KEY_FILE=/path/to/file`, which keeps the key out of your shell history) and run the commands above. Every answer comes from the 4colors service.

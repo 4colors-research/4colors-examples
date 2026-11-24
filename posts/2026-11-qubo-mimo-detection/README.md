@@ -28,7 +28,6 @@ E(s) = sum_{i<j} 2 G_ij s_i s_j  -  2 sum_i b_i s_i          (plus a constant: |
 ```
 
 That is the whole model: N_t log2(M) spins (64 for 32 users with QPSK, 128 for 32 users with 16-QAM), dense
-couplings, and no constraints or penalty weights. In code:
 
 The solver returns spins in natural binary order (+3 is (+1, +1)); constellations are Gray-labeled, so neighboring
 points differ in one bit. `spins_to_gray_bits` is the fixed transform between the two, which QuAMax calls the
@@ -63,7 +62,6 @@ python run.py --out runs/try --nt 8 --mod qpsk --snr 8 --frames 2 --time-limit 1
 For each channel use the script runs MMSE and zero-forcing (local, a few microseconds of linear algebra), a
 Schnorr-Euchner sphere decoder (local, exact ML when it finishes, with a count of the tree nodes it visited), and
 one 4colors job. Each answer goes through the same scorer, `mimo.score`: bit errors on the Gray bits, symbol errors,
-and the residual ||y - Hx||^2. A line of `results.jsonl` reads like:
 
 `is_ml` says whether the answer has the sphere decoder's residual. `t_to_ml_s` is the search time at which the
 service's best answer first reached it, read from the job's trajectory: that is the quality-per-millisecond number.
@@ -106,10 +104,6 @@ The tests check, on every spin assignment of small cases, that the Ising energy 
 recover the symbols on a noiseless orthogonal channel; that bits, spins and amplitudes round-trip and the 16-QAM
 labels are Gray; that a packed model is block-diagonal; the script's rows on fixed hand-made answers; and the
 charts' selection rule on hand-made rows.
-
-## Results
-
-The numbers and charts are in the post (link added on publication). Every number there names the 4colors release and the `fourcolors` client version it was measured with; each row this code writes records both (`engine_version`, `client_version`).
 
 ## Run it yourself
 

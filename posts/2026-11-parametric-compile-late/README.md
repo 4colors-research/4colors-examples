@@ -80,10 +80,6 @@ toy Hamiltonian conserves the number, that the start point and the initial simpl
 selection rule keeps only ansatze where ours is lower and both are exact (ties, an approximate Qiskit circuit and
 unmeasured rows are left out), and run the scripts' plumbing on fixed canned results.
 
-## Results
-
-The numbers and charts are in the post (link added on publication). Every number there names the 4colors release and the `fourcolors` client version it was measured with; each row this code writes records both (`engine_version`, `client_version`).
-
 ## Run it yourself
 
 Start a free trial at [account.4colors-research.com](https://account.4colors-research.com/account/?utm_source=github&utm_medium=examples&utm_campaign=parametric-compile-late&utm_content=readme-trial) for a key. Set `FOURCOLORS_API_KEY` (or `FOURCOLORS_KEY_FILE=/path/to/file`, which keeps the key out of your shell history) and run the commands above. Every answer comes from the 4colors service.

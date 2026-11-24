@@ -94,10 +94,6 @@ equals the cut and the rows equal the balance on every assignment (two-way) and 
 that the MILP reference finds the single tie branch, that the annealer's penalty model equals cut plus penalty, and
 they run the scripts' plumbing on fixed hand-made answers.
 
-## Results
-
-The numbers and charts are in the post (link added on publication). Every number there names the 4colors release and the `fourcolors` client version it was measured with; each row this code writes records both (`engine_version`, `client_version`).
-
 ## Run it yourself
 
 Set `FOURCOLORS_API_KEY` (or `FOURCOLORS_KEY_FILE=/path/to/file`, which keeps the key out of your shell history) and run the commands above. Every answer comes from the 4colors service.

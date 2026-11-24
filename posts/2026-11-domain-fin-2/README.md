@@ -103,10 +103,6 @@ a small case, that the enumeration matches brute force, that the rolling estimat
 covariance, and they run the script's plumbing on fixed hand-made answers (warm jobs send yesterday's holdings, cold
 jobs none; an infeasible answer is never held).
 
-## Results
-
-The numbers and charts are in the post (link added on publication). Every number there names the 4colors release and the `fourcolors` client version it was measured with; each row this code writes records both (`engine_version`, `client_version`).
-
 ## Run it yourself
 
 Set `FOURCOLORS_API_KEY` (or `FOURCOLORS_KEY_FILE=/path/to/file`, which keeps the key out of your shell history) and run the commands above. Every answer comes from the 4colors service.

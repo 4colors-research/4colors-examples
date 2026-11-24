@@ -11,7 +11,7 @@ Data: `synthetic(n, seed)` is a seeded three-factor model with realistic scales 
 15% to 40%). `from_prices_csv(path)` reads a CSV of daily closing prices (a date column, then one column per asset)
 from any public source and estimates mu and Sigma from daily log returns.
 
-Optional (owner decision OD-5 pending, off by default): a sector cap, "at most C assets from any one sector", as one
+Optional (off by default): a sector cap, "at most C assets from any one sector", as one
 more exact row per sector. `sectors(n, n_sectors, seed)` gives each asset a seeded sector label; `model(...,
 sectors=..., sector_cap=C)` adds the rows; `brute_force` and `swap_search` take the same arguments, so the references
 respect the cap too.
@@ -95,7 +95,7 @@ def sector_ok(x, sector_of, cap) -> bool:
 def model(mu, sigma, k: int, q: float, *, sector_of=None, sector_cap=None):
     """The QUBO as one symmetric numpy matrix (E = x'Qx; to_model folds the lower triangle onto the upper one, so
     each pair counts twice, as written) plus the exact row sum x = k. With `sector_cap`, one more exact row per
-    sector: sum of x over the sector <= sector_cap (optional; OD-5)."""
+    sector: sum of x over the sector <= sector_cap (optional)."""
     Q = (q / k ** 2) * np.asarray(sigma, dtype=float) - np.diag(np.asarray(mu, dtype=float) / k)
     m = fourcolors.qubo.to_model(Q)
     m.add_constraint({i: 1 for i in range(len(mu))}, lo=k, hi=k)

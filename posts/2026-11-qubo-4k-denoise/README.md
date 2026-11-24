@@ -110,10 +110,6 @@ writer, the min cut against brute force on small images (and that it refuses the
 raises the energy, the crop model, the exact pilot's rows, the triptych layout, and the script's rows and plot on
 fixed canned answers.
 
-## Results
-
-The numbers and charts are in the post (link added on publication). Every number there names the 4colors release and the `fourcolors` client version it was measured with; each row this code writes records both (`engine_version`, `client_version`).
-
 ## Run it yourself
 
 Set `FOURCOLORS_API_KEY` (or `FOURCOLORS_KEY_FILE=/path/to/file`, which keeps the key out of your shell history) and run the commands above. Every answer comes from the 4colors service.

@@ -79,7 +79,7 @@ def test_frontier_script_uses_a_heuristic_reference_when_enumeration_is_too_big(
     assert "heuristic" in ref["method"]
 
 
-# ---- optional sector cap (OD-5, off by default) ------------------------------------------------------
+# ---- optional sector cap (off by default) ------------------------------------------------------
 
 def test_sectors_are_seeded_and_cover_every_label():
     a, b = pf.sectors(12, 4, seed=1), pf.sectors(12, 4, seed=1)
@@ -138,7 +138,7 @@ def test_frontier_script_with_sector_cap(canned, tmp_path):
 
 def test_smoke_arms_check_capped_vs_uncapped(canned, tmp_path):
     """The smoke check for the optional sector row: capped and uncapped runs must differ."""
-    arms_differ = pytest.importorskip("arms_differ")   # the internal arms check; not published
+    arms_differ = pytest.importorskip("arms_differ")   # optional helper, skipped when absent
 
     base = ["--n", "10", "--k", "4", "--q", "0", "--seeds", "1", "--time-limit", "1", "--sectors", "4"]
     frontier.main(["--out", str(tmp_path / "u")] + base)
@@ -158,7 +158,7 @@ def test_brute_force_refuses_an_impossible_cap():
 def test_smoke_arms_check_q_sweep(canned, tmp_path):
     """The smoke check command runs on these rows (q is a float in the rows). The canned answer is the
     same for q = 0 and q = 32, so the check must flag the arms as identical (the harness-bug case)."""
-    arms_differ = pytest.importorskip("arms_differ")   # the internal arms check; not published
+    arms_differ = pytest.importorskip("arms_differ")   # optional helper, skipped when absent
 
     frontier.main(["--out", str(tmp_path / "s"), "--n", "12", "--k", "4", "--q", "0", "32", "--seeds", "1", "2",
                    "--time-limit", "1"])

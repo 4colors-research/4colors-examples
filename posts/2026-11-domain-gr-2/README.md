@@ -58,8 +58,6 @@ python run.py --out runs/gr2 --atoms 289 1000 10000 100000 1000000 --time-limit 
 python plot.py runs/gr2 --out figures
 ```
 
-Lines read like:
-
 ## Run the unit tests
 
 ```bash
@@ -70,10 +68,6 @@ The tests check the King's graph on a full 3 x 3 lattice (20 edges, MIS 4), that
 generators give the same instance, that the HiGHS reference and the block bound agree with brute force on small
 lattices, that the rows admit exactly the independent sets and the penalty form has the same optimum, and run the
 scripts' plumbing (rows, checks, repair, the chart's selection rule, plots) on fixed hand-made answers.
-
-## Results
-
-The numbers and charts are in the post (link added on publication). Every number there names the 4colors release and the `fourcolors` client version it was measured with; each row this code writes records both (`engine_version`, `client_version`).
 
 ## Run it yourself
 

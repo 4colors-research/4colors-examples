@@ -70,8 +70,6 @@ python run.py --out results/depth          # 3 circuits, seeds 1-5, 30 s, both o
 python plot.py results/depth --figs figs
 ```
 
-`run.py` prints one line per compile:
-
 `plot.py` prints the table of medians, draws the figures, and writes `figs/selection.md`: which pairs the chart
 shows, which it leaves out and why, and the line that goes under the chart.
 
@@ -85,10 +83,6 @@ The tests check the circuit builders, that the gate and depth counter agrees wit
 is read from the published map's seeds with over-budget cells flagged, that each Qiskit pick is paired with our
 matching objective, that the selection rule shows strict wins only, and the plumbing of `run.py` and `plot.py` on
 fixed canned circuits.
-
-## Results
-
-The numbers and charts are in the post (link added on publication). Every number there names the 4colors release and the `fourcolors` client version it was measured with; each row this code writes records both (`engine_version`, `client_version`).
 
 ## Run it yourself
 

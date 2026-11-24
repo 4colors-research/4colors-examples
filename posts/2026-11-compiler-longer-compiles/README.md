@@ -7,7 +7,6 @@
 ### Setup
 
 1. Get an API key (a free trial key works: https://account.4colors-research.com/account/?utm_source=github&utm_medium=examples&utm_campaign=compiler-longer-compiles&utm_content=readme-text).
-2. Install the client and the Qiskit versions the post used:
 
 `run.py` and `plot.py` import `../../shared/examplekit.py` and `../../shared/circuitkit.py`; run them from this directory.
 
@@ -103,10 +102,6 @@ couplers, that effort changes the passes, that the scheduler never starts a tria
 scorer and the driver agree on FakeFez, that the operator check is zero for an exact compile and sees a wrong one,
 the plateau reader, the selection rule (tie band, best single member, over-budget, plan floor, verification,
 strict wins), and the plumbing of `run.py` and `plot.py` on canned results.
-
-## Results
-
-The numbers and charts are in the post (link added on publication). Every number there names the 4colors release and the `fourcolors` client version it was measured with; each row this code writes records both (`engine_version`, `client_version`).
 
 ## Run it yourself
 

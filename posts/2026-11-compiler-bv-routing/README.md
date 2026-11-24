@@ -75,8 +75,6 @@ python run.py --out results/bv                  # n = 50..150, budgets 10 and 60
 python plot.py results/bv --figs figs
 ```
 
-`run.py` prints one line per 4colors compile, for example:
-
 `plot.py` prints the table of medians over seeds, writes the figures, and writes `figs/selection.md`: which cells
 the charts show, the line that goes under each chart, and the block table.
 
@@ -91,10 +89,6 @@ counter agrees with Qiskit's counts, that the 4colors target is the device with 
 Clifford check passes correct outputs (both methods) and fails a wrong secret or a non-Clifford circuit, that the
 block classes are right on a CNOT, a SWAP and a CNOT-then-SWAP, that the selection rule shows only strict wins, and
 check the plumbing of `run.py` and `plot.py` on fixed circuits.
-
-## Results
-
-The numbers and charts are in the post (link added on publication). Every number there names the 4colors release and the `fourcolors` client version it was measured with; each row this code writes records both (`engine_version`, `client_version`).
 
 ## Run it yourself
 

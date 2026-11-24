@@ -94,8 +94,6 @@ python run.py --out runs/large                  # 5 ansatze, budgets 10 and 60 s
 python plot.py runs/large --figs figs           # gates.png, bind.png, table.md, selection.md
 ```
 
-`run.py` prints one line per compile:
-
 (ansatz, budget, seed, arm, two-qubit gates, refusal code, parameters kept, full-size check). `results.jsonl` has
 one `compile` row per ansatz, budget, seed and arm: two-qubit gates, two-qubit depth, depth, the parameter checks,
 the Clifford check (`clifford_ok`, `clifford_method`, `clifford_mismatches`), binding times (local, untimed), job id,
@@ -112,10 +110,6 @@ The tests check that every default ansatz binds to a Clifford circuit at full si
 re-synthesized blocks pass through the block merge, that a non-Clifford circuit gets no claim, that the selection
 rule shows only strict wins where both arms passed the check (ties, losses, refusals and unchecked cells left out),
 and check the plumbing of `run.py` and `plot.py` on fixed circuits.
-
-## Results
-
-The numbers and charts are in the post (link added on publication). Every number there names the 4colors release and the `fourcolors` client version it was measured with; each row this code writes records both (`engine_version`, `client_version`).
 
 ## Run it yourself
 

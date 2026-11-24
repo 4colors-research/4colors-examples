@@ -308,6 +308,13 @@ def code_only(text: str) -> Tuple[str, List[str]]:
             block = [ln] + [_strip_comment_placeholder(x) for x in lines[k + 1:j]] + lines[j:j + 1]
             if keep and not any(PLACEHOLDER_ANY.search(x) for x in block):
                 out.extend(block)
+            elif keep:
+                # The block goes; so does the sentence that introduced it ("In code:"), never left dangling.
+                while out and not out[-1].strip():
+                    out.pop()
+                if out and out[-1].rstrip().endswith(":") and not out[-1].startswith("#"):
+                    out.pop()
+                out.append("\n")
             k = j + 1
             continue
         elif keep:
@@ -356,11 +363,11 @@ def transform_readme(text: str, meta: dict, *, kit_map: Optional[Dict[str, str]]
     else:
         lines.insert(0, banner + "\n")
     text = "".join(lines).rstrip() + "\n"
+    # Without a published post there is nothing to point to yet: the Results section comes with --post-url.
     results = ("\n## Results\n\n"
-               + (f"The numbers and charts are in [the post]({utm(post, campaign, 'readme-results')}). "
-                  if post else "The numbers and charts are in the post (link added on publication). ")
-               + "Every number there names the 4colors release and the `fourcolors` client version it was measured "
-               "with; each row this code writes records both (`engine_version`, `client_version`).\n")
+               f"The numbers and charts are in [the post]({utm(post, campaign, 'readme-results')}). "
+               "Every number there names the 4colors release and the `fourcolors` client version it was measured "
+               "with; each row this code writes records both (`engine_version`, `client_version`).\n") if post else ""
     footer = ("\n## Run it yourself\n\n"
               + ("" if has_setup else f"Start a free trial at {trial_link(campaign, 'readme-trial')} for a key. ")
               + "Set `FOURCOLORS_API_KEY` (or `FOURCOLORS_KEY_FILE=/path/to/file`, which keeps the key out of your "

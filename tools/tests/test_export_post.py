@@ -228,3 +228,14 @@ def test_products_and_title_are_detected(tmp_path):
     assert ep.detect_products(blog / "q") == ["qubo"] and ep.readme_title(blog / "q") == "Q title"
     assert ep.detect_products(blog / "c") == ["compiler"]
     assert ep.detect_products(blog / "b") == ["qubo", "compiler"]
+
+
+def test_code_only_drops_the_intro_of_a_dropped_block_and_no_post_line_without_url(tmp_path):
+    N = "[" + "N]"
+    text = ("# T\n\n## Step by step\n\nGood step.\n\nIn code:\n\n```python\nx = {N}\n```\n\nNext step.\n").replace("{N}", N)
+    out, _ = ep.code_only(text)
+    assert "In code:" not in out and "Good step." in out and "Next step." in out
+    readme = ep.transform_readme("# T\n\n## Setup\n\nInstall.\n", dict(META, post_url=""))
+    assert "## Results" not in readme and "publication" not in readme
+    with_post = ep.transform_readme("# T\n\n## Setup\n\nInstall.\n", META)
+    assert "## Results" in with_post and "4colors-research.com/blog/toy/" in with_post

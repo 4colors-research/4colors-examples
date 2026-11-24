@@ -3,7 +3,7 @@
     python frontier.py --out runs/n30 --n 30 --k 6 --time-limit 5 --seeds 1 2 3
     python frontier.py --out runs/n200 --n 200 --k 20 --time-limit 5 --seeds 1 2 3
     python frontier.py --out runs/csv --prices prices.csv --k 10        # your own daily closing prices
-    python frontier.py --out runs/n30cap --n 30 --k 6 --sectors 5 --sector-cap 2   # optional sector cap (OD-5)
+    python frontier.py --out runs/n30cap --n 30 --k 6 --sectors 5 --sector-cap 2   # optional sector cap
 
 For each q the answer is judged here: the picks, their count, the portfolio's return and risk, and the objective,
 all recomputed from the 0/1 solution. The reference is the exact optimum by enumeration when C(n, k) is at most
