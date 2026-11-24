@@ -1,0 +1,17 @@
+{
+  "kind": "post",
+  "slug": "qubo-ev-charging",
+  "month": "2026-11",
+  "title": "EV smart charging as a maximum independent set, from 100 to 100,000 tasks",
+  "summary": "",
+  "products": [
+    "qubo"
+  ],
+  "domains": [],
+  "level": "intermediate",
+  "post_url": null,
+  "requires": "fourcolors[optimizer]>=1.0.0",
+  "tests": true,
+  "code_only": true,
+  "exported_utc": "2026-11-24T16:30:35Z"
+}

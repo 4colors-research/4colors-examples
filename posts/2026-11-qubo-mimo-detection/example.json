@@ -1,0 +1,17 @@
+{
+  "kind": "post",
+  "slug": "qubo-mimo-detection",
+  "month": "2026-11",
+  "title": "MIMO detection as a QUBO: from QuAMax to a classical solver, measured in milliseconds",
+  "summary": "",
+  "products": [
+    "qubo"
+  ],
+  "domains": [],
+  "level": "intermediate",
+  "post_url": null,
+  "requires": "fourcolors[optimizer]>=1.0.0",
+  "tests": true,
+  "code_only": true,
+  "exported_utc": "2026-11-24T16:30:35Z"
+}

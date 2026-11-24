@@ -47,8 +47,35 @@ products is listed under each. Browse by area in [domains/](domains/).
 | [The API without Python](tutorials/platform/http-without-python/) | tutorial | API (HTTP), Optimizer for QUBO, Quantum Compiler | beginner | getting-started | [docs](https://docs.4colors-research.com/start/tutorials/http-without-python/?utm_source=github&utm_medium=examples&utm_campaign=http-without-python&utm_content=gallery) |
 | [Large QUBO models: upload once, reuse](tutorials/qubo/large-models/) | tutorial | Optimizer for QUBO | intermediate | graphs | [docs](https://docs.4colors-research.com/start/tutorials/qubo-large-models/?utm_source=github&utm_medium=examples&utm_campaign=qubo-large-models&utm_content=gallery) |
 | [Max-Cut on a large graph](tutorials/qubo/maxcut/) | tutorial | Optimizer for QUBO | beginner | graphs | [docs](https://docs.4colors-research.com/start/tutorials/qubo-maxcut/?utm_source=github&utm_medium=examples&utm_campaign=qubo-maxcut&utm_content=gallery) · [notebook](tutorials/qubo/maxcut/maxcut.ipynb) |
+| [Aircraft loading, quantum and classical](posts/2026-11-aircraft-loading/) | post | Optimizer for QUBO | intermediate |  |  |
+| [Approximate QFT, measured like for like](posts/2026-11-compiler-approximate-qft/) | post | Optimizer for QUBO | intermediate |  |  |
+| [The arithmetic inside Shor's algorithm, compiled: 100-qubit adders on a heavy-hex chip](posts/2026-11-compiler-shor-arithmetic/) | post | Optimizer for QUBO | intermediate |  |  |
+| [Verified, approximate, unverified: reading a compiler's receipt](posts/2026-11-compiler-verification/) | post | Optimizer for QUBO | intermediate |  |  |
+| [Split a power grid for parallel simulation: balanced partitioning with exact rows](posts/2026-11-domain-ene-2/) | post | Optimizer for QUBO | intermediate |  |  |
+| [Rebalance every morning: warm-start today's portfolio from yesterday's](posts/2026-11-domain-fin-2/) | post | Optimizer for QUBO | intermediate |  |  |
+| [The neutral-atom problem at a million atoms: maximum independent set on unit-disk graphs](posts/2026-11-domain-gr-2/) | post | Optimizer for QUBO | intermediate |  |  |
+| [Traffic flow, eight years on: route assignment for 10,000 cars from OpenStreetMap](posts/2026-11-domain-log-3/) | post | Optimizer for QUBO | intermediate |  |  |
+| [Pick the k best features: feature selection as a QUBO, with credit scoring as the example](posts/2026-11-domain-ml-1/) | post | Optimizer for QUBO | intermediate |  |  |
+| [What "hardware-native" costs you](posts/2026-11-hardware-native-cost/) | post | Optimizer for QUBO | intermediate |  |  |
+| [The paint shop problem: one car line, solved as a QUBO and compiled as QAOA](posts/2026-11-paint-shop-problem/) | post | Optimizer for QUBO, Quantum Compiler | intermediate |  |  |
+| [Measure fewer times: Pauli grouping as graph coloring, priced in compiled gates](posts/2026-11-pauli-grouping-coloring/) | post | Optimizer for QUBO | intermediate |  |  |
+| [One problem, three encodings: what a constraint costs in gates](posts/2026-11-qaoa-encodings/) | post | Optimizer for QUBO, Quantum Compiler | intermediate |  |  |
+| [Solve it, then compile it: an honest reference for QAOA](posts/2026-11-qaoa-solve-then-compile/) | post | Optimizer for QUBO, Quantum Compiler | intermediate |  |  |
+| [A qLDPC code end to end: bound its distance, compile its syndrome round onto its own chip](posts/2026-11-qldpc-end-to-end/) | post | Optimizer for QUBO, Quantum Compiler | intermediate |  |  |
+| [Denoise a 1440p image with one QUBO](posts/2026-11-qubo-4k-denoise/) | post | Optimizer for QUBO | intermediate |  |  |
+| [EV smart charging as a maximum independent set, from 100 to 100,000 tasks](posts/2026-11-qubo-ev-charging/) | post | Optimizer for QUBO | intermediate |  |  |
+| [Stop tuning penalty weights: exact constraints for QUBO and CQM](posts/2026-11-qubo-exact-constraints/) | post | Optimizer for QUBO | intermediate |  |  |
+| [Six million spins, one upload: a 3D spin glass on the standard plan](posts/2026-11-qubo-huge-spin-glass/) | post | Optimizer for QUBO | intermediate |  |  |
+| [MIMO detection as a QUBO: from QuAMax to a classical solver, measured in milliseconds](posts/2026-11-qubo-mimo-detection/) | post | Optimizer for QUBO | intermediate |  |  |
 | [Portfolio selection with a cardinality constraint](posts/2026-11-qubo-portfolio/) | post | Optimizer for QUBO | intermediate | finance |  |
 | [Sudoku, N-queens and map coloring as constrained QUBOs](posts/2026-11-qubo-puzzles/) | post | Optimizer for QUBO | beginner | puzzles, graph-coloring |  |
+| [RNA folding QUBOs, refereed: the model the papers posed, solved and checked exactly](posts/2026-11-qubo-rna-folding/) | post | Optimizer for QUBO | intermediate |  |  |
+| [Stop paying for idle seconds: stop, stream and incumbents](posts/2026-11-qubo-stop-and-stream/) | post | Optimizer for QUBO | intermediate |  |  |
+| [Ten graph problems as QUBOs, ten lines each](posts/2026-11-qubo-ten-graph-problems/) | post | Optimizer for QUBO | intermediate |  |  |
+| [QUBO is the wrong encoding for TSP; here is the right tool](posts/2026-11-qubo-tsp-honestly/) | post | Optimizer for QUBO, Quantum Compiler | intermediate |  |  |
+| [Warm starts: re-solving tomorrow's problem from today's answer](posts/2026-11-qubo-warm-start/) | post | Optimizer for QUBO | intermediate |  |  |
+| [The referee: re-scoring a published QPU benchmark with a real optimum](posts/2026-11-referee-qpu-benchmark/) | post | Optimizer for QUBO | intermediate |  |  |
+| [Is this instance worth QPU time? A two-call pre-flight check](posts/2026-11-worth-qpu-time/) | post | Optimizer for QUBO, Quantum Compiler | intermediate |  |  |
 
 ### 4colors Quantum Compiler
 
@@ -60,6 +87,28 @@ products is listed under each. Browse by area in [domains/](domains/).
 | [Compile for your own device](tutorials/compiler/custom-target/) | tutorial | Quantum Compiler | intermediate | quantum-circuits, qaoa | [docs](https://docs.4colors-research.com/start/tutorials/compiler-custom-target/?utm_source=github&utm_medium=examples&utm_campaign=compiler-custom-target&utm_content=gallery) |
 | [Time budgets for the compiler](tutorials/compiler/time-budgets/) | tutorial | Quantum Compiler | beginner | quantum-circuits | [docs](https://docs.4colors-research.com/start/tutorials/compiler-time-budgets/?utm_source=github&utm_medium=examples&utm_campaign=compiler-time-budgets&utm_content=gallery) |
 | [The API without Python](tutorials/platform/http-without-python/) | tutorial | API (HTTP), Optimizer for QUBO, Quantum Compiler | beginner | getting-started | [docs](https://docs.4colors-research.com/start/tutorials/http-without-python/?utm_source=github&utm_medium=examples&utm_campaign=http-without-python&utm_content=gallery) |
+| [The biggest circuits: where the service says no, and why](posts/2026-11-compiler-biggest-circuits/) | post | Quantum Compiler | intermediate |  |  |
+| [The coupler that wasn't there: what happens when your compiler isn't told](posts/2026-11-compiler-broken-couplers/) | post | Quantum Compiler | intermediate |  |  |
+| [Trivial on paper, a routing nightmare on heavy-hex: Bernstein-Vazirani at 150 qubits](posts/2026-11-compiler-bv-routing/) | post | Quantum Compiler | intermediate |  |  |
+| [Which chip shape suits chemistry, QAOA or adders? Custom targets and the topology tax](posts/2026-11-compiler-custom-chips/) | post | Quantum Compiler | intermediate |  |  |
+| [Depth or gates? Choosing what the compiler minimizes](posts/2026-11-compiler-depth-or-gates/) | post | Quantum Compiler | intermediate |  |  |
+| [The edge of the possible: where a compiled circuit stops working on a real chip](posts/2026-11-compiler-edge-of-possible/) | post | Quantum Compiler | intermediate |  |  |
+| [Give it N seconds: a compiler you can watch improve](posts/2026-11-compiler-give-it-seconds/) | post | Quantum Compiler | intermediate |  |  |
+| [Give it a second, and when longer pays: what more compile time buys, for 4colors and for Qiskit](posts/2026-11-compiler-longer-compiles/) | post | Quantum Compiler | intermediate |  |  |
+| [Fewer gates, better answers? Chemistry, finance and materials observables under a stated noise model](posts/2026-11-compiler-noisy-observables/) | post | Quantum Compiler | intermediate |  |  |
+| [Which circuits gain most: a compiler report card by family](posts/2026-11-compiler-report-card/) | post | Quantum Compiler | intermediate |  |  |
+| [Look inside the output: three compilers, one circuit, gate by gate](posts/2026-11-compiler-side-by-side/) | post | Quantum Compiler | intermediate |  |  |
+| [The paint shop problem: one car line, solved as a QUBO and compiled as QAOA](posts/2026-11-paint-shop-problem/) | post | Optimizer for QUBO, Quantum Compiler | intermediate |  |  |
+| [Compile early or compile late?](posts/2026-11-parametric-compile-late/) | post | Quantum Compiler | intermediate |  |  |
+| [Compile once, bind a thousand times](posts/2026-11-parametric-compile-once/) | post | Quantum Compiler | intermediate |  |  |
+| [The QAOA landscape, before and after noise](posts/2026-11-parametric-landscape/) | post | Quantum Compiler | intermediate |  |  |
+| [Parametric circuits at 150 qubits: compile once, and check it at full size](posts/2026-11-parametric-large/) | post | Quantum Compiler | intermediate |  |  |
+| [One problem, three encodings: what a constraint costs in gates](posts/2026-11-qaoa-encodings/) | post | Optimizer for QUBO, Quantum Compiler | intermediate |  |  |
+| [Solve it, then compile it: an honest reference for QAOA](posts/2026-11-qaoa-solve-then-compile/) | post | Optimizer for QUBO, Quantum Compiler | intermediate |  |  |
+| [The QAOA zoo, priced: what each variant costs in two-qubit gates](posts/2026-11-qaoa-zoo/) | post | Quantum Compiler | intermediate |  |  |
+| [A qLDPC code end to end: bound its distance, compile its syndrome round onto its own chip](posts/2026-11-qldpc-end-to-end/) | post | Optimizer for QUBO, Quantum Compiler | intermediate |  |  |
+| [QUBO is the wrong encoding for TSP; here is the right tool](posts/2026-11-qubo-tsp-honestly/) | post | Optimizer for QUBO, Quantum Compiler | intermediate |  |  |
+| [Is this instance worth QPU time? A two-call pre-flight check](posts/2026-11-worth-qpu-time/) | post | Optimizer for QUBO, Quantum Compiler | intermediate |  |  |
 
 ### 4colors API
 

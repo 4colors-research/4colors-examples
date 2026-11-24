@@ -1,0 +1,17 @@
+{
+  "kind": "post",
+  "slug": "qaoa-zoo",
+  "month": "2026-11",
+  "title": "The QAOA zoo, priced: what each variant costs in two-qubit gates",
+  "summary": "",
+  "products": [
+    "compiler"
+  ],
+  "domains": [],
+  "level": "intermediate",
+  "post_url": null,
+  "requires": "fourcolors>=1.0.2",
+  "tests": true,
+  "code_only": true,
+  "exported_utc": "2026-11-24T16:30:34Z"
+}

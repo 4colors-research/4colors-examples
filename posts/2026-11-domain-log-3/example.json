@@ -1,0 +1,17 @@
+{
+  "kind": "post",
+  "slug": "domain-log-3",
+  "month": "2026-11",
+  "title": "Traffic flow, eight years on: route assignment for 10,000 cars from OpenStreetMap",
+  "summary": "",
+  "products": [
+    "qubo"
+  ],
+  "domains": [],
+  "level": "intermediate",
+  "post_url": null,
+  "requires": "fourcolors[optimizer]>=1.0.0",
+  "tests": true,
+  "code_only": true,
+  "exported_utc": "2026-11-24T16:30:33Z"
+}

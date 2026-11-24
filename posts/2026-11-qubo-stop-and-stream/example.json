@@ -1,0 +1,17 @@
+{
+  "kind": "post",
+  "slug": "qubo-stop-and-stream",
+  "month": "2026-11",
+  "title": "Stop paying for idle seconds: stop, stream and incumbents",
+  "summary": "",
+  "products": [
+    "qubo"
+  ],
+  "domains": [],
+  "level": "intermediate",
+  "post_url": null,
+  "requires": "fourcolors[optimizer]>=1.0.0",
+  "tests": true,
+  "code_only": true,
+  "exported_utc": "2026-11-24T16:30:35Z"
+}

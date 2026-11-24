@@ -1,0 +1,17 @@
+{
+  "kind": "post",
+  "slug": "compiler-report-card",
+  "month": "2026-11",
+  "title": "Which circuits gain most: a compiler report card by family",
+  "summary": "",
+  "products": [
+    "compiler"
+  ],
+  "domains": [],
+  "level": "intermediate",
+  "post_url": null,
+  "requires": "fourcolors>=1.0.2",
+  "tests": true,
+  "code_only": true,
+  "exported_utc": "2026-11-24T16:30:32Z"
+}

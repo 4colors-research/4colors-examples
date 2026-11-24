@@ -1,0 +1,17 @@
+{
+  "kind": "post",
+  "slug": "compiler-verification",
+  "month": "2026-11",
+  "title": "Verified, approximate, unverified: reading a compiler's receipt",
+  "summary": "",
+  "products": [
+    "qubo"
+  ],
+  "domains": [],
+  "level": "intermediate",
+  "post_url": null,
+  "requires": "fourcolors[optimizer]>=1.0.0",
+  "tests": true,
+  "code_only": true,
+  "exported_utc": "2026-11-24T16:30:33Z"
+}

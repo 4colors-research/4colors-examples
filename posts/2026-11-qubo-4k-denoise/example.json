@@ -1,0 +1,17 @@
+{
+  "kind": "post",
+  "slug": "qubo-4k-denoise",
+  "month": "2026-11",
+  "title": "Denoise a 1440p image with one QUBO",
+  "summary": "",
+  "products": [
+    "qubo"
+  ],
+  "domains": [],
+  "level": "intermediate",
+  "post_url": null,
+  "requires": "fourcolors[optimizer]>=1.0.0",
+  "tests": true,
+  "code_only": true,
+  "exported_utc": "2026-11-24T16:30:35Z"
+}

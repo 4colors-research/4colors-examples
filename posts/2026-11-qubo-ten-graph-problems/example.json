@@ -1,0 +1,17 @@
+{
+  "kind": "post",
+  "slug": "qubo-ten-graph-problems",
+  "month": "2026-11",
+  "title": "Ten graph problems as QUBOs, ten lines each",
+  "summary": "",
+  "products": [
+    "qubo"
+  ],
+  "domains": [],
+  "level": "intermediate",
+  "post_url": null,
+  "requires": "fourcolors[optimizer]>=1.0.0",
+  "tests": true,
+  "code_only": true,
+  "exported_utc": "2026-11-24T16:30:35Z"
+}

@@ -1,0 +1,18 @@
+{
+  "kind": "post",
+  "slug": "worth-qpu-time",
+  "month": "2026-11",
+  "title": "Is this instance worth QPU time? A two-call pre-flight check",
+  "summary": "",
+  "products": [
+    "qubo",
+    "compiler"
+  ],
+  "domains": [],
+  "level": "intermediate",
+  "post_url": null,
+  "requires": "fourcolors[optimizer]>=1.0.2",
+  "tests": true,
+  "code_only": true,
+  "exported_utc": "2026-11-24T16:30:36Z"
+}

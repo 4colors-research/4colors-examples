@@ -1,0 +1,17 @@
+{
+  "kind": "post",
+  "slug": "domain-ml-1",
+  "month": "2026-11",
+  "title": "Pick the k best features: feature selection as a QUBO, with credit scoring as the example",
+  "summary": "",
+  "products": [
+    "qubo"
+  ],
+  "domains": [],
+  "level": "intermediate",
+  "post_url": null,
+  "requires": "fourcolors[optimizer]>=1.0.0",
+  "tests": true,
+  "code_only": true,
+  "exported_utc": "2026-11-24T16:30:33Z"
+}

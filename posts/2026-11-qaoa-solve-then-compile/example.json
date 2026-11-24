@@ -1,0 +1,18 @@
+{
+  "kind": "post",
+  "slug": "qaoa-solve-then-compile",
+  "month": "2026-11",
+  "title": "Solve it, then compile it: an honest reference for QAOA",
+  "summary": "",
+  "products": [
+    "qubo",
+    "compiler"
+  ],
+  "domains": [],
+  "level": "intermediate",
+  "post_url": null,
+  "requires": "fourcolors[optimizer]>=1.0.2",
+  "tests": true,
+  "code_only": true,
+  "exported_utc": "2026-11-24T16:30:34Z"
+}

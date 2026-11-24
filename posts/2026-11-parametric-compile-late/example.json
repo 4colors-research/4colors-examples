@@ -1,0 +1,17 @@
+{
+  "kind": "post",
+  "slug": "parametric-compile-late",
+  "month": "2026-11",
+  "title": "Compile early or compile late?",
+  "summary": "",
+  "products": [
+    "compiler"
+  ],
+  "domains": [],
+  "level": "intermediate",
+  "post_url": null,
+  "requires": "fourcolors>=1.0.2",
+  "tests": true,
+  "code_only": true,
+  "exported_utc": "2026-11-24T16:30:33Z"
+}

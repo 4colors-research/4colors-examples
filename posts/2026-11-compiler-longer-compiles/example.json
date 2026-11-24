@@ -1,0 +1,17 @@
+{
+  "kind": "post",
+  "slug": "compiler-longer-compiles",
+  "month": "2026-11",
+  "title": "Give it a second, and when longer pays: what more compile time buys, for 4colors and for Qiskit",
+  "summary": "",
+  "products": [
+    "compiler"
+  ],
+  "domains": [],
+  "level": "intermediate",
+  "post_url": null,
+  "requires": "fourcolors>=1.0.2",
+  "tests": true,
+  "code_only": true,
+  "exported_utc": "2026-11-24T16:30:32Z"
+}

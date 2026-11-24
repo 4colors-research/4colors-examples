@@ -1,0 +1,17 @@
+{
+  "kind": "post",
+  "slug": "compiler-edge-of-possible",
+  "month": "2026-11",
+  "title": "The edge of the possible: where a compiled circuit stops working on a real chip",
+  "summary": "",
+  "products": [
+    "compiler"
+  ],
+  "domains": [],
+  "level": "intermediate",
+  "post_url": null,
+  "requires": "fourcolors>=1.0.2",
+  "tests": true,
+  "code_only": true,
+  "exported_utc": "2026-11-24T16:30:32Z"
+}

@@ -1,0 +1,18 @@
+{
+  "kind": "post",
+  "slug": "qldpc-end-to-end",
+  "month": "2026-11",
+  "title": "A qLDPC code end to end: bound its distance, compile its syndrome round onto its own chip",
+  "summary": "",
+  "products": [
+    "qubo",
+    "compiler"
+  ],
+  "domains": [],
+  "level": "intermediate",
+  "post_url": null,
+  "requires": "fourcolors[optimizer]>=1.0.2",
+  "tests": true,
+  "code_only": true,
+  "exported_utc": "2026-11-24T16:30:34Z"
+}

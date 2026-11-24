@@ -1,0 +1,18 @@
+{
+  "kind": "post",
+  "slug": "paint-shop-problem",
+  "month": "2026-11",
+  "title": "The paint shop problem: one car line, solved as a QUBO and compiled as QAOA",
+  "summary": "",
+  "products": [
+    "qubo",
+    "compiler"
+  ],
+  "domains": [],
+  "level": "intermediate",
+  "post_url": null,
+  "requires": "fourcolors[optimizer]>=1.0.2",
+  "tests": true,
+  "code_only": true,
+  "exported_utc": "2026-11-24T16:30:33Z"
+}

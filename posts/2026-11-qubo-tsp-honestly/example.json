@@ -1,0 +1,18 @@
+{
+  "kind": "post",
+  "slug": "qubo-tsp-honestly",
+  "month": "2026-11",
+  "title": "QUBO is the wrong encoding for TSP; here is the right tool",
+  "summary": "",
+  "products": [
+    "qubo",
+    "compiler"
+  ],
+  "domains": [],
+  "level": "intermediate",
+  "post_url": null,
+  "requires": "fourcolors[optimizer]>=1.0.2",
+  "tests": true,
+  "code_only": true,
+  "exported_utc": "2026-11-24T16:30:36Z"
+}
