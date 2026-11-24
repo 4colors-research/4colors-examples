@@ -7,8 +7,9 @@ Each product ships on its own schedule, so each product's examples are checked a
 For product `<slug>` at version `<version>`:
 
 1. Update the scripts for any changed calls. Change the code here, never in the docs.
-2. Run every example of that product live, with a key, against the release
-   (`products` in `example.json` says which examples those are).
+2. Run every example of that product live, with a key, against the release:
+   `python tools/live_check.py --products <slug> --dry-run` lists them and the most execution time they can bill
+   (`billed_s_max` in each `example.json`); then run it with `--out <dir>`. Every example must exit 0.
 3. Raise the pin in `requirements.txt` (and the product's `requires` in `products.json`) to the client release the
    examples were run with.
 4. Copy the changed regions into the docs: `python tools/docs_sync.py write --docs <docs source>`, then

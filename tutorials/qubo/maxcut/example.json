@@ -13,5 +13,7 @@
   "docs_url": "https://docs.4colors-research.com/start/tutorials/qubo-maxcut/",
   "requires": "fourcolors[optimizer]>=1.0.0",
   "notebook": "maxcut.ipynb",
-  "post_url": null
+  "post_url": null,
+  "run": "python maxcut.py",
+  "billed_s_max": 30
 }

@@ -16,6 +16,8 @@ Rules:
     post        posts/<yyyy-mm>-<slug>/               "month" is <yyyy-mm>
 - A tutorial or quickstart names its docs page (docs_url on the docs site); a tutorial's page is
   start/tutorials/<slug>/. A post with a post_url links to the 4colors site.
+- A quickstart or tutorial says how to run it ("run": "python script.py", a file in its folder) and the most
+  execution time one run can bill ("billed_s_max", seconds), for tools/live_check.py.
 - Every example folder has a README.md and a tests/ folder with at least one test file.
 """
 from __future__ import annotations
@@ -124,6 +126,13 @@ def check_example(m: dict, known: set, repo: Path) -> List[str]:
         errs.append(f"{path}/: no tests/test_*.py")
     if m.get("notebook") and not (folder / m["notebook"]).is_file():
         errs.append(f"{where}: notebook {m['notebook']!r} is not in the folder")
+    if kind in ("quickstart", "tutorial"):
+        run = str(m.get("run") or "").split()
+        if len(run) < 2 or not (folder / run[1]).is_file():
+            errs.append(f"{where}: run must be the command that runs it, e.g. \"python script.py\" (a file here)")
+        cap = m.get("billed_s_max")
+        if not isinstance(cap, (int, float)) or isinstance(cap, bool) or cap <= 0:
+            errs.append(f"{where}: billed_s_max must be the most execution time a run can bill, in seconds")
     return errs
 
 

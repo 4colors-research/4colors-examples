@@ -13,5 +13,7 @@
   "level": "beginner",
   "docs_url": "https://docs.4colors-research.com/start/quickstart-compiler/",
   "requires": "fourcolors>=1.0.2",
-  "post_url": null
+  "post_url": null,
+  "run": "python quickstart.py",
+  "billed_s_max": 70
 }

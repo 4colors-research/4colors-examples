@@ -12,5 +12,7 @@
   "level": "beginner",
   "docs_url": "https://docs.4colors-research.com/start/tutorials/compiler-time-budgets/",
   "requires": "fourcolors>=1.0.2",
-  "post_url": null
+  "post_url": null,
+  "run": "python time_budgets.py",
+  "billed_s_max": 30
 }

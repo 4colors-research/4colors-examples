@@ -12,9 +12,11 @@ DOCS = "https://docs.4colors-research.com/start/"
 
 
 def example(repo, path, **meta):
-    base = {"title": "T", "summary": "S", "domains": [], "level": "beginner", "requires": "x"}
+    base = {"title": "T", "summary": "S", "domains": [], "level": "beginner", "requires": "x",
+            "run": "python s.py", "billed_s_max": 5}
     d = repo / path
     (d / "tests").mkdir(parents=True)
+    (d / "s.py").write_text("print(1)\n")
     (d / "tests" / "test_x.py").write_text("def test_x():\n    pass\n")
     (d / "README.md").write_text("# T\n")
     (d / "example.json").write_text(json.dumps({**base, **meta}))
@@ -97,3 +99,9 @@ def test_bad_products_file(tmp_path):
     errs = validate.validate(tmp_path)
     assert any("lowercase" in e for e in errs) and any("status" in e for e in errs)
     assert any("docs_url" in e for e in errs)
+
+
+def test_run_and_billed_ceiling_are_required(tmp_path):
+    errs = problems(tmp_path, "quickstart/qubo", kind="quickstart", slug="quickstart-qubo", products=["qubo"],
+                    docs_url=DOCS + "quickstart-qubo/", run="python missing.py", billed_s_max=0)
+    assert any("run must be" in e for e in errs) and any("billed_s_max" in e for e in errs)
