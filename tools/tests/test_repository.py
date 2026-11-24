@@ -23,3 +23,8 @@ def test_notebooks_match_their_regions():
 def test_every_product_has_a_quickstart():
     have = {m["path"] for m in products.examples() if m["kind"] == "quickstart"}
     assert have == {f"quickstart/{p['slug']}" for p in products.load()}
+
+
+def test_examples_index_is_up_to_date():
+    import index
+    assert index.main(["--check"]) == 0, "run python tools/index.py"

@@ -1,0 +1,900 @@
+{
+ "repository": "https://github.com/4colors-research/4colors-examples",
+ "branch": "main",
+ "examples": [
+  {
+   "slug": "aircraft-loading",
+   "kind": "post",
+   "title": "Aircraft loading, quantum and classical",
+   "products": [
+    "qubo"
+   ],
+   "path": "posts/2026-11-aircraft-loading",
+   "github_url": "https://github.com/4colors-research/4colors-examples/tree/main/posts/2026-11-aircraft-loading",
+   "clone": "git clone https://github.com/4colors-research/4colors-examples\ncd 4colors-examples/posts/2026-11-aircraft-loading",
+   "docs_url": null,
+   "post_url": null,
+   "docs_path": null,
+   "post_path": null
+  },
+  {
+   "slug": "compiler-2d-magnet",
+   "kind": "post",
+   "title": "A 2D magnet on a heavy-hex chip: fewer two-qubit gates per Trotter step",
+   "products": [
+    "compiler"
+   ],
+   "path": "posts/2026-11-compiler-2d-magnet",
+   "github_url": "https://github.com/4colors-research/4colors-examples/tree/main/posts/2026-11-compiler-2d-magnet",
+   "clone": "git clone https://github.com/4colors-research/4colors-examples\ncd 4colors-examples/posts/2026-11-compiler-2d-magnet",
+   "docs_url": null,
+   "post_url": null,
+   "docs_path": null,
+   "post_path": null
+  },
+  {
+   "slug": "compiler-approximate-qft",
+   "kind": "post",
+   "title": "Approximate QFT, measured like for like",
+   "products": [
+    "qubo"
+   ],
+   "path": "posts/2026-11-compiler-approximate-qft",
+   "github_url": "https://github.com/4colors-research/4colors-examples/tree/main/posts/2026-11-compiler-approximate-qft",
+   "clone": "git clone https://github.com/4colors-research/4colors-examples\ncd 4colors-examples/posts/2026-11-compiler-approximate-qft",
+   "docs_url": null,
+   "post_url": null,
+   "docs_path": null,
+   "post_path": null
+  },
+  {
+   "slug": "compiler-biggest-circuits",
+   "kind": "post",
+   "title": "The biggest circuits: where the service says no, and why",
+   "products": [
+    "compiler"
+   ],
+   "path": "posts/2026-11-compiler-biggest-circuits",
+   "github_url": "https://github.com/4colors-research/4colors-examples/tree/main/posts/2026-11-compiler-biggest-circuits",
+   "clone": "git clone https://github.com/4colors-research/4colors-examples\ncd 4colors-examples/posts/2026-11-compiler-biggest-circuits",
+   "docs_url": null,
+   "post_url": null,
+   "docs_path": null,
+   "post_path": null
+  },
+  {
+   "slug": "compiler-broken-couplers",
+   "kind": "post",
+   "title": "The coupler that wasn't there: what happens when your compiler isn't told",
+   "products": [
+    "compiler"
+   ],
+   "path": "posts/2026-11-compiler-broken-couplers",
+   "github_url": "https://github.com/4colors-research/4colors-examples/tree/main/posts/2026-11-compiler-broken-couplers",
+   "clone": "git clone https://github.com/4colors-research/4colors-examples\ncd 4colors-examples/posts/2026-11-compiler-broken-couplers",
+   "docs_url": null,
+   "post_url": null,
+   "docs_path": null,
+   "post_path": null
+  },
+  {
+   "slug": "compiler-bv-routing",
+   "kind": "post",
+   "title": "Trivial on paper, a routing nightmare on heavy-hex: Bernstein-Vazirani at 150 qubits",
+   "products": [
+    "compiler"
+   ],
+   "path": "posts/2026-11-compiler-bv-routing",
+   "github_url": "https://github.com/4colors-research/4colors-examples/tree/main/posts/2026-11-compiler-bv-routing",
+   "clone": "git clone https://github.com/4colors-research/4colors-examples\ncd 4colors-examples/posts/2026-11-compiler-bv-routing",
+   "docs_url": null,
+   "post_url": null,
+   "docs_path": null,
+   "post_path": null
+  },
+  {
+   "slug": "compiler-custom-chips",
+   "kind": "post",
+   "title": "Which chip shape suits chemistry, QAOA or adders? Custom targets and the topology tax",
+   "products": [
+    "compiler"
+   ],
+   "path": "posts/2026-11-compiler-custom-chips",
+   "github_url": "https://github.com/4colors-research/4colors-examples/tree/main/posts/2026-11-compiler-custom-chips",
+   "clone": "git clone https://github.com/4colors-research/4colors-examples\ncd 4colors-examples/posts/2026-11-compiler-custom-chips",
+   "docs_url": null,
+   "post_url": null,
+   "docs_path": null,
+   "post_path": null
+  },
+  {
+   "slug": "compiler-depth-or-gates",
+   "kind": "post",
+   "title": "Depth or gates? Choosing what the compiler minimizes",
+   "products": [
+    "compiler"
+   ],
+   "path": "posts/2026-11-compiler-depth-or-gates",
+   "github_url": "https://github.com/4colors-research/4colors-examples/tree/main/posts/2026-11-compiler-depth-or-gates",
+   "clone": "git clone https://github.com/4colors-research/4colors-examples\ncd 4colors-examples/posts/2026-11-compiler-depth-or-gates",
+   "docs_url": null,
+   "post_url": null,
+   "docs_path": null,
+   "post_path": null
+  },
+  {
+   "slug": "compiler-edge-of-possible",
+   "kind": "post",
+   "title": "The edge of the possible: where a compiled circuit stops working on a real chip",
+   "products": [
+    "compiler"
+   ],
+   "path": "posts/2026-11-compiler-edge-of-possible",
+   "github_url": "https://github.com/4colors-research/4colors-examples/tree/main/posts/2026-11-compiler-edge-of-possible",
+   "clone": "git clone https://github.com/4colors-research/4colors-examples\ncd 4colors-examples/posts/2026-11-compiler-edge-of-possible",
+   "docs_url": null,
+   "post_url": null,
+   "docs_path": null,
+   "post_path": null
+  },
+  {
+   "slug": "compiler-give-it-seconds",
+   "kind": "post",
+   "title": "Give it N seconds: a compiler you can watch improve",
+   "products": [
+    "compiler"
+   ],
+   "path": "posts/2026-11-compiler-give-it-seconds",
+   "github_url": "https://github.com/4colors-research/4colors-examples/tree/main/posts/2026-11-compiler-give-it-seconds",
+   "clone": "git clone https://github.com/4colors-research/4colors-examples\ncd 4colors-examples/posts/2026-11-compiler-give-it-seconds",
+   "docs_url": null,
+   "post_url": null,
+   "docs_path": null,
+   "post_path": null
+  },
+  {
+   "slug": "compiler-longer-compiles",
+   "kind": "post",
+   "title": "Give it a second, and when longer pays: what more compile time buys, for 4colors and for Qiskit",
+   "products": [
+    "compiler"
+   ],
+   "path": "posts/2026-11-compiler-longer-compiles",
+   "github_url": "https://github.com/4colors-research/4colors-examples/tree/main/posts/2026-11-compiler-longer-compiles",
+   "clone": "git clone https://github.com/4colors-research/4colors-examples\ncd 4colors-examples/posts/2026-11-compiler-longer-compiles",
+   "docs_url": null,
+   "post_url": null,
+   "docs_path": null,
+   "post_path": null
+  },
+  {
+   "slug": "compiler-noisy-observables",
+   "kind": "post",
+   "title": "Fewer gates, better answers? Chemistry, finance and materials observables under a stated noise model",
+   "products": [
+    "compiler"
+   ],
+   "path": "posts/2026-11-compiler-noisy-observables",
+   "github_url": "https://github.com/4colors-research/4colors-examples/tree/main/posts/2026-11-compiler-noisy-observables",
+   "clone": "git clone https://github.com/4colors-research/4colors-examples\ncd 4colors-examples/posts/2026-11-compiler-noisy-observables",
+   "docs_url": null,
+   "post_url": null,
+   "docs_path": null,
+   "post_path": null
+  },
+  {
+   "slug": "compiler-report-card",
+   "kind": "post",
+   "title": "Which circuits gain most: a compiler report card by family",
+   "products": [
+    "compiler"
+   ],
+   "path": "posts/2026-11-compiler-report-card",
+   "github_url": "https://github.com/4colors-research/4colors-examples/tree/main/posts/2026-11-compiler-report-card",
+   "clone": "git clone https://github.com/4colors-research/4colors-examples\ncd 4colors-examples/posts/2026-11-compiler-report-card",
+   "docs_url": null,
+   "post_url": null,
+   "docs_path": null,
+   "post_path": null
+  },
+  {
+   "slug": "compiler-shor-arithmetic",
+   "kind": "post",
+   "title": "The arithmetic inside Shor's algorithm, compiled: 100-qubit adders on a heavy-hex chip",
+   "products": [
+    "qubo"
+   ],
+   "path": "posts/2026-11-compiler-shor-arithmetic",
+   "github_url": "https://github.com/4colors-research/4colors-examples/tree/main/posts/2026-11-compiler-shor-arithmetic",
+   "clone": "git clone https://github.com/4colors-research/4colors-examples\ncd 4colors-examples/posts/2026-11-compiler-shor-arithmetic",
+   "docs_url": null,
+   "post_url": null,
+   "docs_path": null,
+   "post_path": null
+  },
+  {
+   "slug": "compiler-side-by-side",
+   "kind": "post",
+   "title": "Look inside the output: three compilers, one circuit, gate by gate",
+   "products": [
+    "compiler"
+   ],
+   "path": "posts/2026-11-compiler-side-by-side",
+   "github_url": "https://github.com/4colors-research/4colors-examples/tree/main/posts/2026-11-compiler-side-by-side",
+   "clone": "git clone https://github.com/4colors-research/4colors-examples\ncd 4colors-examples/posts/2026-11-compiler-side-by-side",
+   "docs_url": null,
+   "post_url": null,
+   "docs_path": null,
+   "post_path": null
+  },
+  {
+   "slug": "compiler-verification",
+   "kind": "post",
+   "title": "Verified, approximate, unverified: reading a compiler's receipt",
+   "products": [
+    "qubo"
+   ],
+   "path": "posts/2026-11-compiler-verification",
+   "github_url": "https://github.com/4colors-research/4colors-examples/tree/main/posts/2026-11-compiler-verification",
+   "clone": "git clone https://github.com/4colors-research/4colors-examples\ncd 4colors-examples/posts/2026-11-compiler-verification",
+   "docs_url": null,
+   "post_url": null,
+   "docs_path": null,
+   "post_path": null
+  },
+  {
+   "slug": "domain-ene-2",
+   "kind": "post",
+   "title": "Split a power grid for parallel simulation: balanced partitioning with exact rows",
+   "products": [
+    "qubo"
+   ],
+   "path": "posts/2026-11-domain-ene-2",
+   "github_url": "https://github.com/4colors-research/4colors-examples/tree/main/posts/2026-11-domain-ene-2",
+   "clone": "git clone https://github.com/4colors-research/4colors-examples\ncd 4colors-examples/posts/2026-11-domain-ene-2",
+   "docs_url": null,
+   "post_url": null,
+   "docs_path": null,
+   "post_path": null
+  },
+  {
+   "slug": "domain-fin-2",
+   "kind": "post",
+   "title": "Rebalance every morning: warm-start today's portfolio from yesterday's",
+   "products": [
+    "qubo"
+   ],
+   "path": "posts/2026-11-domain-fin-2",
+   "github_url": "https://github.com/4colors-research/4colors-examples/tree/main/posts/2026-11-domain-fin-2",
+   "clone": "git clone https://github.com/4colors-research/4colors-examples\ncd 4colors-examples/posts/2026-11-domain-fin-2",
+   "docs_url": null,
+   "post_url": null,
+   "docs_path": null,
+   "post_path": null
+  },
+  {
+   "slug": "domain-gr-2",
+   "kind": "post",
+   "title": "The neutral-atom problem at a million atoms: maximum independent set on unit-disk graphs",
+   "products": [
+    "qubo"
+   ],
+   "path": "posts/2026-11-domain-gr-2",
+   "github_url": "https://github.com/4colors-research/4colors-examples/tree/main/posts/2026-11-domain-gr-2",
+   "clone": "git clone https://github.com/4colors-research/4colors-examples\ncd 4colors-examples/posts/2026-11-domain-gr-2",
+   "docs_url": null,
+   "post_url": null,
+   "docs_path": null,
+   "post_path": null
+  },
+  {
+   "slug": "domain-log-3",
+   "kind": "post",
+   "title": "Traffic flow, eight years on: route assignment for 10,000 cars from OpenStreetMap",
+   "products": [
+    "qubo"
+   ],
+   "path": "posts/2026-11-domain-log-3",
+   "github_url": "https://github.com/4colors-research/4colors-examples/tree/main/posts/2026-11-domain-log-3",
+   "clone": "git clone https://github.com/4colors-research/4colors-examples\ncd 4colors-examples/posts/2026-11-domain-log-3",
+   "docs_url": null,
+   "post_url": null,
+   "docs_path": null,
+   "post_path": null
+  },
+  {
+   "slug": "domain-ml-1",
+   "kind": "post",
+   "title": "Pick the k best features: feature selection as a QUBO, with credit scoring as the example",
+   "products": [
+    "qubo"
+   ],
+   "path": "posts/2026-11-domain-ml-1",
+   "github_url": "https://github.com/4colors-research/4colors-examples/tree/main/posts/2026-11-domain-ml-1",
+   "clone": "git clone https://github.com/4colors-research/4colors-examples\ncd 4colors-examples/posts/2026-11-domain-ml-1",
+   "docs_url": null,
+   "post_url": null,
+   "docs_path": null,
+   "post_path": null
+  },
+  {
+   "slug": "hardware-native-cost",
+   "kind": "post",
+   "title": "What \"hardware-native\" costs you",
+   "products": [
+    "qubo"
+   ],
+   "path": "posts/2026-11-hardware-native-cost",
+   "github_url": "https://github.com/4colors-research/4colors-examples/tree/main/posts/2026-11-hardware-native-cost",
+   "clone": "git clone https://github.com/4colors-research/4colors-examples\ncd 4colors-examples/posts/2026-11-hardware-native-cost",
+   "docs_url": null,
+   "post_url": null,
+   "docs_path": null,
+   "post_path": null
+  },
+  {
+   "slug": "paint-shop-problem",
+   "kind": "post",
+   "title": "The paint shop problem: one car line, solved as a QUBO and compiled as QAOA",
+   "products": [
+    "qubo",
+    "compiler"
+   ],
+   "path": "posts/2026-11-paint-shop-problem",
+   "github_url": "https://github.com/4colors-research/4colors-examples/tree/main/posts/2026-11-paint-shop-problem",
+   "clone": "git clone https://github.com/4colors-research/4colors-examples\ncd 4colors-examples/posts/2026-11-paint-shop-problem",
+   "docs_url": null,
+   "post_url": null,
+   "docs_path": null,
+   "post_path": null
+  },
+  {
+   "slug": "parametric-compile-late",
+   "kind": "post",
+   "title": "Compile early or compile late?",
+   "products": [
+    "compiler"
+   ],
+   "path": "posts/2026-11-parametric-compile-late",
+   "github_url": "https://github.com/4colors-research/4colors-examples/tree/main/posts/2026-11-parametric-compile-late",
+   "clone": "git clone https://github.com/4colors-research/4colors-examples\ncd 4colors-examples/posts/2026-11-parametric-compile-late",
+   "docs_url": null,
+   "post_url": null,
+   "docs_path": null,
+   "post_path": null
+  },
+  {
+   "slug": "parametric-compile-once",
+   "kind": "post",
+   "title": "Compile once, bind a thousand times",
+   "products": [
+    "compiler"
+   ],
+   "path": "posts/2026-11-parametric-compile-once",
+   "github_url": "https://github.com/4colors-research/4colors-examples/tree/main/posts/2026-11-parametric-compile-once",
+   "clone": "git clone https://github.com/4colors-research/4colors-examples\ncd 4colors-examples/posts/2026-11-parametric-compile-once",
+   "docs_url": null,
+   "post_url": null,
+   "docs_path": null,
+   "post_path": null
+  },
+  {
+   "slug": "parametric-landscape",
+   "kind": "post",
+   "title": "The QAOA landscape, before and after noise",
+   "products": [
+    "compiler"
+   ],
+   "path": "posts/2026-11-parametric-landscape",
+   "github_url": "https://github.com/4colors-research/4colors-examples/tree/main/posts/2026-11-parametric-landscape",
+   "clone": "git clone https://github.com/4colors-research/4colors-examples\ncd 4colors-examples/posts/2026-11-parametric-landscape",
+   "docs_url": null,
+   "post_url": null,
+   "docs_path": null,
+   "post_path": null
+  },
+  {
+   "slug": "parametric-large",
+   "kind": "post",
+   "title": "Parametric circuits at 150 qubits: compile once, and check it at full size",
+   "products": [
+    "compiler"
+   ],
+   "path": "posts/2026-11-parametric-large",
+   "github_url": "https://github.com/4colors-research/4colors-examples/tree/main/posts/2026-11-parametric-large",
+   "clone": "git clone https://github.com/4colors-research/4colors-examples\ncd 4colors-examples/posts/2026-11-parametric-large",
+   "docs_url": null,
+   "post_url": null,
+   "docs_path": null,
+   "post_path": null
+  },
+  {
+   "slug": "pauli-grouping-coloring",
+   "kind": "post",
+   "title": "Measure fewer times: Pauli grouping as graph coloring, priced in compiled gates",
+   "products": [
+    "qubo"
+   ],
+   "path": "posts/2026-11-pauli-grouping-coloring",
+   "github_url": "https://github.com/4colors-research/4colors-examples/tree/main/posts/2026-11-pauli-grouping-coloring",
+   "clone": "git clone https://github.com/4colors-research/4colors-examples\ncd 4colors-examples/posts/2026-11-pauli-grouping-coloring",
+   "docs_url": null,
+   "post_url": null,
+   "docs_path": null,
+   "post_path": null
+  },
+  {
+   "slug": "qaoa-encodings",
+   "kind": "post",
+   "title": "One problem, three encodings: what a constraint costs in gates",
+   "products": [
+    "qubo",
+    "compiler"
+   ],
+   "path": "posts/2026-11-qaoa-encodings",
+   "github_url": "https://github.com/4colors-research/4colors-examples/tree/main/posts/2026-11-qaoa-encodings",
+   "clone": "git clone https://github.com/4colors-research/4colors-examples\ncd 4colors-examples/posts/2026-11-qaoa-encodings",
+   "docs_url": null,
+   "post_url": null,
+   "docs_path": null,
+   "post_path": null
+  },
+  {
+   "slug": "qaoa-solve-then-compile",
+   "kind": "post",
+   "title": "Solve it, then compile it: an honest reference for QAOA",
+   "products": [
+    "qubo",
+    "compiler"
+   ],
+   "path": "posts/2026-11-qaoa-solve-then-compile",
+   "github_url": "https://github.com/4colors-research/4colors-examples/tree/main/posts/2026-11-qaoa-solve-then-compile",
+   "clone": "git clone https://github.com/4colors-research/4colors-examples\ncd 4colors-examples/posts/2026-11-qaoa-solve-then-compile",
+   "docs_url": null,
+   "post_url": null,
+   "docs_path": null,
+   "post_path": null
+  },
+  {
+   "slug": "qaoa-zoo",
+   "kind": "post",
+   "title": "The QAOA zoo, priced: what each variant costs in two-qubit gates",
+   "products": [
+    "compiler"
+   ],
+   "path": "posts/2026-11-qaoa-zoo",
+   "github_url": "https://github.com/4colors-research/4colors-examples/tree/main/posts/2026-11-qaoa-zoo",
+   "clone": "git clone https://github.com/4colors-research/4colors-examples\ncd 4colors-examples/posts/2026-11-qaoa-zoo",
+   "docs_url": null,
+   "post_url": null,
+   "docs_path": null,
+   "post_path": null
+  },
+  {
+   "slug": "qldpc-end-to-end",
+   "kind": "post",
+   "title": "A qLDPC code end to end: bound its distance, compile its syndrome round onto its own chip",
+   "products": [
+    "qubo",
+    "compiler"
+   ],
+   "path": "posts/2026-11-qldpc-end-to-end",
+   "github_url": "https://github.com/4colors-research/4colors-examples/tree/main/posts/2026-11-qldpc-end-to-end",
+   "clone": "git clone https://github.com/4colors-research/4colors-examples\ncd 4colors-examples/posts/2026-11-qldpc-end-to-end",
+   "docs_url": null,
+   "post_url": null,
+   "docs_path": null,
+   "post_path": null
+  },
+  {
+   "slug": "qubo-4k-denoise",
+   "kind": "post",
+   "title": "Denoise a 1440p image with one QUBO",
+   "products": [
+    "qubo"
+   ],
+   "path": "posts/2026-11-qubo-4k-denoise",
+   "github_url": "https://github.com/4colors-research/4colors-examples/tree/main/posts/2026-11-qubo-4k-denoise",
+   "clone": "git clone https://github.com/4colors-research/4colors-examples\ncd 4colors-examples/posts/2026-11-qubo-4k-denoise",
+   "docs_url": null,
+   "post_url": null,
+   "docs_path": null,
+   "post_path": null
+  },
+  {
+   "slug": "qubo-dense-100k",
+   "kind": "post",
+   "title": "Dense QUBOs at 100,000 variables: degree 4 to 256",
+   "products": [
+    "qubo"
+   ],
+   "path": "posts/2026-11-qubo-dense-100k",
+   "github_url": "https://github.com/4colors-research/4colors-examples/tree/main/posts/2026-11-qubo-dense-100k",
+   "clone": "git clone https://github.com/4colors-research/4colors-examples\ncd 4colors-examples/posts/2026-11-qubo-dense-100k",
+   "docs_url": null,
+   "post_url": null,
+   "docs_path": null,
+   "post_path": null
+  },
+  {
+   "slug": "qubo-ev-charging",
+   "kind": "post",
+   "title": "EV smart charging as a maximum independent set, from 100 to 100,000 tasks",
+   "products": [
+    "qubo"
+   ],
+   "path": "posts/2026-11-qubo-ev-charging",
+   "github_url": "https://github.com/4colors-research/4colors-examples/tree/main/posts/2026-11-qubo-ev-charging",
+   "clone": "git clone https://github.com/4colors-research/4colors-examples\ncd 4colors-examples/posts/2026-11-qubo-ev-charging",
+   "docs_url": null,
+   "post_url": null,
+   "docs_path": null,
+   "post_path": null
+  },
+  {
+   "slug": "qubo-exact-constraints",
+   "kind": "post",
+   "title": "Stop tuning penalty weights: exact constraints for QUBO and CQM",
+   "products": [
+    "qubo"
+   ],
+   "path": "posts/2026-11-qubo-exact-constraints",
+   "github_url": "https://github.com/4colors-research/4colors-examples/tree/main/posts/2026-11-qubo-exact-constraints",
+   "clone": "git clone https://github.com/4colors-research/4colors-examples\ncd 4colors-examples/posts/2026-11-qubo-exact-constraints",
+   "docs_url": null,
+   "post_url": null,
+   "docs_path": null,
+   "post_path": null
+  },
+  {
+   "slug": "qubo-huge-spin-glass",
+   "kind": "post",
+   "title": "Six million spins, one upload: a 3D spin glass on the standard plan",
+   "products": [
+    "qubo"
+   ],
+   "path": "posts/2026-11-qubo-huge-spin-glass",
+   "github_url": "https://github.com/4colors-research/4colors-examples/tree/main/posts/2026-11-qubo-huge-spin-glass",
+   "clone": "git clone https://github.com/4colors-research/4colors-examples\ncd 4colors-examples/posts/2026-11-qubo-huge-spin-glass",
+   "docs_url": null,
+   "post_url": null,
+   "docs_path": null,
+   "post_path": null
+  },
+  {
+   "slug": "qubo-million-anytime",
+   "kind": "post",
+   "title": "A good answer to a million-variable QUBO while you wait: first answer, then twice as close",
+   "products": [
+    "qubo"
+   ],
+   "path": "posts/2026-11-qubo-million-anytime",
+   "github_url": "https://github.com/4colors-research/4colors-examples/tree/main/posts/2026-11-qubo-million-anytime",
+   "clone": "git clone https://github.com/4colors-research/4colors-examples\ncd 4colors-examples/posts/2026-11-qubo-million-anytime",
+   "docs_url": null,
+   "post_url": null,
+   "docs_path": null,
+   "post_path": null
+  },
+  {
+   "slug": "qubo-mimo-detection",
+   "kind": "post",
+   "title": "MIMO detection as a QUBO: from QuAMax to a classical solver, measured in milliseconds",
+   "products": [
+    "qubo"
+   ],
+   "path": "posts/2026-11-qubo-mimo-detection",
+   "github_url": "https://github.com/4colors-research/4colors-examples/tree/main/posts/2026-11-qubo-mimo-detection",
+   "clone": "git clone https://github.com/4colors-research/4colors-examples\ncd 4colors-examples/posts/2026-11-qubo-mimo-detection",
+   "docs_url": null,
+   "post_url": null,
+   "docs_path": null,
+   "post_path": null
+  },
+  {
+   "slug": "qubo-portfolio",
+   "kind": "post",
+   "title": "Pick exactly k stocks: portfolio selection with a cardinality row",
+   "products": [
+    "qubo"
+   ],
+   "path": "posts/2026-11-qubo-portfolio",
+   "github_url": "https://github.com/4colors-research/4colors-examples/tree/main/posts/2026-11-qubo-portfolio",
+   "clone": "git clone https://github.com/4colors-research/4colors-examples\ncd 4colors-examples/posts/2026-11-qubo-portfolio",
+   "docs_url": null,
+   "post_url": null,
+   "docs_path": null,
+   "post_path": null
+  },
+  {
+   "slug": "qubo-puzzles",
+   "kind": "post",
+   "title": "Sudoku, N-queens and map coloring: puzzles as constrained QUBOs",
+   "products": [
+    "qubo"
+   ],
+   "path": "posts/2026-11-qubo-puzzles",
+   "github_url": "https://github.com/4colors-research/4colors-examples/tree/main/posts/2026-11-qubo-puzzles",
+   "clone": "git clone https://github.com/4colors-research/4colors-examples\ncd 4colors-examples/posts/2026-11-qubo-puzzles",
+   "docs_url": null,
+   "post_url": null,
+   "docs_path": null,
+   "post_path": null
+  },
+  {
+   "slug": "qubo-rna-folding",
+   "kind": "post",
+   "title": "RNA folding QUBOs, refereed: the model the papers posed, solved and checked exactly",
+   "products": [
+    "qubo"
+   ],
+   "path": "posts/2026-11-qubo-rna-folding",
+   "github_url": "https://github.com/4colors-research/4colors-examples/tree/main/posts/2026-11-qubo-rna-folding",
+   "clone": "git clone https://github.com/4colors-research/4colors-examples\ncd 4colors-examples/posts/2026-11-qubo-rna-folding",
+   "docs_url": null,
+   "post_url": null,
+   "docs_path": null,
+   "post_path": null
+  },
+  {
+   "slug": "qubo-road-network",
+   "kind": "post",
+   "title": "Cutting a road network in two",
+   "products": [
+    "qubo"
+   ],
+   "path": "posts/2026-11-qubo-road-network",
+   "github_url": "https://github.com/4colors-research/4colors-examples/tree/main/posts/2026-11-qubo-road-network",
+   "clone": "git clone https://github.com/4colors-research/4colors-examples\ncd 4colors-examples/posts/2026-11-qubo-road-network",
+   "docs_url": null,
+   "post_url": null,
+   "docs_path": null,
+   "post_path": null
+  },
+  {
+   "slug": "qubo-solver-showdown",
+   "kind": "post",
+   "title": "Run the QUBO solver comparison yourself",
+   "products": [
+    "qubo"
+   ],
+   "path": "posts/2026-11-qubo-solver-showdown",
+   "github_url": "https://github.com/4colors-research/4colors-examples/tree/main/posts/2026-11-qubo-solver-showdown",
+   "clone": "git clone https://github.com/4colors-research/4colors-examples\ncd 4colors-examples/posts/2026-11-qubo-solver-showdown",
+   "docs_url": null,
+   "post_url": null,
+   "docs_path": null,
+   "post_path": null
+  },
+  {
+   "slug": "qubo-stop-and-stream",
+   "kind": "post",
+   "title": "Stop paying for idle seconds: stop, stream and incumbents",
+   "products": [
+    "qubo"
+   ],
+   "path": "posts/2026-11-qubo-stop-and-stream",
+   "github_url": "https://github.com/4colors-research/4colors-examples/tree/main/posts/2026-11-qubo-stop-and-stream",
+   "clone": "git clone https://github.com/4colors-research/4colors-examples\ncd 4colors-examples/posts/2026-11-qubo-stop-and-stream",
+   "docs_url": null,
+   "post_url": null,
+   "docs_path": null,
+   "post_path": null
+  },
+  {
+   "slug": "qubo-structure-wins",
+   "kind": "post",
+   "title": "Structure wins: knapsack, number partitioning and constraint detection",
+   "products": [
+    "qubo"
+   ],
+   "path": "posts/2026-11-qubo-structure-wins",
+   "github_url": "https://github.com/4colors-research/4colors-examples/tree/main/posts/2026-11-qubo-structure-wins",
+   "clone": "git clone https://github.com/4colors-research/4colors-examples\ncd 4colors-examples/posts/2026-11-qubo-structure-wins",
+   "docs_url": null,
+   "post_url": null,
+   "docs_path": null,
+   "post_path": null
+  },
+  {
+   "slug": "qubo-ten-graph-problems",
+   "kind": "post",
+   "title": "Ten graph problems as QUBOs, ten lines each",
+   "products": [
+    "qubo"
+   ],
+   "path": "posts/2026-11-qubo-ten-graph-problems",
+   "github_url": "https://github.com/4colors-research/4colors-examples/tree/main/posts/2026-11-qubo-ten-graph-problems",
+   "clone": "git clone https://github.com/4colors-research/4colors-examples\ncd 4colors-examples/posts/2026-11-qubo-ten-graph-problems",
+   "docs_url": null,
+   "post_url": null,
+   "docs_path": null,
+   "post_path": null
+  },
+  {
+   "slug": "qubo-tsp-honestly",
+   "kind": "post",
+   "title": "QUBO is the wrong encoding for TSP; here is the right tool",
+   "products": [
+    "qubo",
+    "compiler"
+   ],
+   "path": "posts/2026-11-qubo-tsp-honestly",
+   "github_url": "https://github.com/4colors-research/4colors-examples/tree/main/posts/2026-11-qubo-tsp-honestly",
+   "clone": "git clone https://github.com/4colors-research/4colors-examples\ncd 4colors-examples/posts/2026-11-qubo-tsp-honestly",
+   "docs_url": null,
+   "post_url": null,
+   "docs_path": null,
+   "post_path": null
+  },
+  {
+   "slug": "qubo-warm-start",
+   "kind": "post",
+   "title": "Warm starts: re-solving tomorrow's problem from today's answer",
+   "products": [
+    "qubo"
+   ],
+   "path": "posts/2026-11-qubo-warm-start",
+   "github_url": "https://github.com/4colors-research/4colors-examples/tree/main/posts/2026-11-qubo-warm-start",
+   "clone": "git clone https://github.com/4colors-research/4colors-examples\ncd 4colors-examples/posts/2026-11-qubo-warm-start",
+   "docs_url": null,
+   "post_url": null,
+   "docs_path": null,
+   "post_path": null
+  },
+  {
+   "slug": "referee-qpu-benchmark",
+   "kind": "post",
+   "title": "The referee: re-scoring a published QPU benchmark with a real optimum",
+   "products": [
+    "qubo"
+   ],
+   "path": "posts/2026-11-referee-qpu-benchmark",
+   "github_url": "https://github.com/4colors-research/4colors-examples/tree/main/posts/2026-11-referee-qpu-benchmark",
+   "clone": "git clone https://github.com/4colors-research/4colors-examples\ncd 4colors-examples/posts/2026-11-referee-qpu-benchmark",
+   "docs_url": null,
+   "post_url": null,
+   "docs_path": null,
+   "post_path": null
+  },
+  {
+   "slug": "worth-qpu-time",
+   "kind": "post",
+   "title": "Is this instance worth QPU time? A two-call pre-flight check",
+   "products": [
+    "qubo",
+    "compiler"
+   ],
+   "path": "posts/2026-11-worth-qpu-time",
+   "github_url": "https://github.com/4colors-research/4colors-examples/tree/main/posts/2026-11-worth-qpu-time",
+   "clone": "git clone https://github.com/4colors-research/4colors-examples\ncd 4colors-examples/posts/2026-11-worth-qpu-time",
+   "docs_url": null,
+   "post_url": null,
+   "docs_path": null,
+   "post_path": null
+  },
+  {
+   "slug": "quickstart-compiler",
+   "kind": "quickstart",
+   "title": "Quickstart: compile a circuit",
+   "products": [
+    "compiler"
+   ],
+   "path": "quickstart/compiler",
+   "github_url": "https://github.com/4colors-research/4colors-examples/tree/main/quickstart/compiler",
+   "clone": "git clone https://github.com/4colors-research/4colors-examples\ncd 4colors-examples/quickstart/compiler",
+   "docs_url": "https://docs.4colors-research.com/start/quickstart-compiler/",
+   "post_url": null,
+   "docs_path": "/start/quickstart-compiler/",
+   "post_path": null
+  },
+  {
+   "slug": "quickstart-platform",
+   "kind": "quickstart",
+   "title": "Quickstart: the API with curl",
+   "products": [
+    "platform"
+   ],
+   "path": "quickstart/platform",
+   "github_url": "https://github.com/4colors-research/4colors-examples/tree/main/quickstart/platform",
+   "clone": "git clone https://github.com/4colors-research/4colors-examples\ncd 4colors-examples/quickstart/platform",
+   "docs_url": "https://docs.4colors-research.com/start/tutorials/http-without-python/",
+   "post_url": null,
+   "docs_path": null,
+   "post_path": null
+  },
+  {
+   "slug": "quickstart-qubo",
+   "kind": "quickstart",
+   "title": "Quickstart: solve a QUBO",
+   "products": [
+    "qubo"
+   ],
+   "path": "quickstart/qubo",
+   "github_url": "https://github.com/4colors-research/4colors-examples/tree/main/quickstart/qubo",
+   "clone": "git clone https://github.com/4colors-research/4colors-examples\ncd 4colors-examples/quickstart/qubo",
+   "docs_url": "https://docs.4colors-research.com/start/quickstart-qubo/",
+   "post_url": null,
+   "docs_path": "/start/quickstart-qubo/",
+   "post_path": null
+  },
+  {
+   "slug": "compiler-custom-target",
+   "kind": "tutorial",
+   "title": "Compile for your own device",
+   "products": [
+    "compiler"
+   ],
+   "path": "tutorials/compiler/custom-target",
+   "github_url": "https://github.com/4colors-research/4colors-examples/tree/main/tutorials/compiler/custom-target",
+   "clone": "git clone https://github.com/4colors-research/4colors-examples\ncd 4colors-examples/tutorials/compiler/custom-target",
+   "docs_url": "https://docs.4colors-research.com/start/tutorials/compiler-custom-target/",
+   "post_url": null,
+   "docs_path": "/start/tutorials/compiler-custom-target/",
+   "post_path": null
+  },
+  {
+   "slug": "compiler-time-budgets",
+   "kind": "tutorial",
+   "title": "Time budgets for the compiler",
+   "products": [
+    "compiler"
+   ],
+   "path": "tutorials/compiler/time-budgets",
+   "github_url": "https://github.com/4colors-research/4colors-examples/tree/main/tutorials/compiler/time-budgets",
+   "clone": "git clone https://github.com/4colors-research/4colors-examples\ncd 4colors-examples/tutorials/compiler/time-budgets",
+   "docs_url": "https://docs.4colors-research.com/start/tutorials/compiler-time-budgets/",
+   "post_url": null,
+   "docs_path": "/start/tutorials/compiler-time-budgets/",
+   "post_path": null
+  },
+  {
+   "slug": "http-without-python",
+   "kind": "tutorial",
+   "title": "The API without Python",
+   "products": [
+    "platform",
+    "qubo",
+    "compiler"
+   ],
+   "path": "tutorials/platform/http-without-python",
+   "github_url": "https://github.com/4colors-research/4colors-examples/tree/main/tutorials/platform/http-without-python",
+   "clone": "git clone https://github.com/4colors-research/4colors-examples\ncd 4colors-examples/tutorials/platform/http-without-python",
+   "docs_url": "https://docs.4colors-research.com/start/tutorials/http-without-python/",
+   "post_url": null,
+   "docs_path": "/start/tutorials/http-without-python/",
+   "post_path": null
+  },
+  {
+   "slug": "qubo-large-models",
+   "kind": "tutorial",
+   "title": "Large QUBO models: upload once, reuse",
+   "products": [
+    "qubo"
+   ],
+   "path": "tutorials/qubo/large-models",
+   "github_url": "https://github.com/4colors-research/4colors-examples/tree/main/tutorials/qubo/large-models",
+   "clone": "git clone https://github.com/4colors-research/4colors-examples\ncd 4colors-examples/tutorials/qubo/large-models",
+   "docs_url": "https://docs.4colors-research.com/start/tutorials/qubo-large-models/",
+   "post_url": null,
+   "docs_path": "/start/tutorials/qubo-large-models/",
+   "post_path": null
+  },
+  {
+   "slug": "qubo-maxcut",
+   "kind": "tutorial",
+   "title": "Max-Cut on a large graph",
+   "products": [
+    "qubo"
+   ],
+   "path": "tutorials/qubo/maxcut",
+   "github_url": "https://github.com/4colors-research/4colors-examples/tree/main/tutorials/qubo/maxcut",
+   "clone": "git clone https://github.com/4colors-research/4colors-examples\ncd 4colors-examples/tutorials/qubo/maxcut",
+   "docs_url": "https://docs.4colors-research.com/start/tutorials/qubo-maxcut/",
+   "post_url": null,
+   "docs_path": "/start/tutorials/qubo-maxcut/",
+   "post_path": null,
+   "colab_url": "https://colab.research.google.com/github/4colors-research/4colors-examples/blob/main/tutorials/qubo/maxcut/maxcut.ipynb"
+  }
+ ]
+}
