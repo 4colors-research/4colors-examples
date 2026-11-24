@@ -18,9 +18,11 @@ Blog-post folders are skipped: their scripts take arguments and run longer; chec
 from __future__ import annotations
 
 import argparse
+import calendar
 import json
 import os
 import shlex
+import signal
 import subprocess
 import sys
 import time
@@ -57,14 +59,34 @@ def client_version(python: str) -> Optional[str]:
     return r.stdout.strip() or None
 
 
+def run_one(cmd, cwd, env, so, se, limit: float):
+    """Run one example; at `limit` seconds send Ctrl-C (SIGINT), which stops its job on the service and keeps the
+    best so far, then kill it if it has not ended 30 s later. Returns the exit code, or "timeout"."""
+    proc = subprocess.Popen(cmd, cwd=cwd, env=env, stdout=so, stderr=se)
+    try:
+        return proc.wait(timeout=limit)
+    except subprocess.TimeoutExpired:
+        proc.send_signal(signal.SIGINT)
+        try:
+            proc.wait(timeout=30)
+        except subprocess.TimeoutExpired:
+            proc.kill()
+            proc.wait()
+        return "timeout"
+
+
 def main(argv=None) -> int:
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     p.add_argument("--products", required=True, help="comma-separated product slugs, e.g. qubo or qubo,compiler")
     p.add_argument("--out", help="directory for the outputs and results.jsonl (required unless --dry-run)")
     p.add_argument("--dry-run", action="store_true", help="list the examples and their billed-time ceilings")
     p.add_argument("--timeout", type=float, default=1200, help="seconds per example (default %(default)s)")
+    p.add_argument("--deadline", help="UTC time the whole check must end by (e.g. 2026-11-24T14:50:00Z): an example "
+                                      "that cannot finish by then (billed_s_max + 60 s) is skipped, and a running "
+                                      "one is stopped with Ctrl-C at the deadline (the job stops, its best is kept)")
     p.add_argument("--repo", default=str(P.REPO))
     a = p.parse_args(argv)
+    deadline = calendar.timegm(time.strptime(a.deadline, "%Y-%m-%dT%H:%M:%SZ")) if a.deadline else None
     repo = Path(a.repo)
     slugs = [s.strip() for s in a.products.split(",") if s.strip()]
     unknown = sorted(set(slugs) - set(P.by_slug(repo)))
@@ -95,12 +117,18 @@ def main(argv=None) -> int:
             cmd = [sys.executable if c == "python" else c for c in shlex.split(m["run"])]
             started = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
             t0 = time.monotonic()
+            limit = a.timeout
+            if deadline is not None:
+                left = deadline - time.time()
+                if left < (m.get("billed_s_max") or 0) + 60:
+                    rows.write(json.dumps({"slug": m["slug"], "path": m["path"], "exit": "skipped-deadline",
+                                           "started_utc": started}) + "\n")
+                    print(f"SKIP {m['path']} (would not finish by the deadline)", flush=True)
+                    failed.append(m["path"])
+                    continue
+                limit = min(limit, left)
             with (out / f"{m['slug']}.out").open("w") as so, (out / f"{m['slug']}.err").open("w") as se:
-                try:
-                    rc = subprocess.run(cmd, cwd=repo / m["path"], env=env, stdout=so, stderr=se,
-                                        timeout=a.timeout).returncode
-                except subprocess.TimeoutExpired:
-                    rc = "timeout"
+                rc = run_one(cmd, repo / m["path"], env, so, se, limit)
             wall = round(time.monotonic() - t0, 2)
             rows.write(json.dumps({"slug": m["slug"], "path": m["path"], "products": P.products_of(m),
                                    "command": m["run"], "exit": rc, "wall_s": wall, "started_utc": started,

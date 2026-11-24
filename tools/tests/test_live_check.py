@@ -54,3 +54,22 @@ def test_runs_records_and_fails_on_a_bad_example(tmp_path, monkeypatch, capsys):
     assert (out / "quickstart-qubo.out").read_text().strip() == "key seen"
     text = (out / "results.jsonl").read_text() + capsys.readouterr().out
     assert "from-file" not in text                                   # the key is never written or printed
+
+
+def test_deadline_skips_what_cannot_finish(tmp_path, monkeypatch, capsys):
+    monkeypatch.setenv("FOURCOLORS_API_KEY", "k")
+    repo, out = make(tmp_path), tmp_path / "o"
+    import time
+    soon = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime(time.time() + 30))   # < billed_s_max + 60
+    assert live_check.main(["--products", "compiler", "--out", str(out), "--repo", str(repo),
+                            "--deadline", soon]) == 1
+    assert "SKIP quickstart/compiler" in capsys.readouterr().out
+
+
+def test_a_running_example_is_interrupted_at_its_limit(tmp_path):
+    code = "import time, sys\ntry:\n    time.sleep(30)\nexcept KeyboardInterrupt:\n    print('stopped'); sys.exit(130)\n"
+    (tmp_path / "s.py").write_text(code)
+    so = (tmp_path / "o").open("w")
+    rc = live_check.run_one([sys.executable, "s.py"], tmp_path, None, so, so, 1)
+    so.close()
+    assert rc == "timeout" and "stopped" in (tmp_path / "o").read_text()
