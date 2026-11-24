@@ -10,4 +10,5 @@ print(bqm)
 import fourcolors  # noqa: E402
 
 sampleset = fourcolors.FourColorsSampler().sample(bqm, time_limit_s=1)
-print(sampleset.first.sample, sampleset.first.energy)
+best = {v: int(x) for v, x in sampleset.first.sample.items()}   # plain ints (numpy types print oddly)
+print(best, sampleset.first.energy)
