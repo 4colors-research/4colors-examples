@@ -1,0 +1,12 @@
+# What the blog-post examples in posts/ need, on top of requirements.txt.
+-r requirements.txt
+fourcolors[optimizer,ocean,qiskit]>=1.0.3
+qiskit-ibm-runtime        # Qiskit's offline copy of a 156-qubit heavy-hex device (FakeFez) and its calibration
+qiskit-aer                # simulators used to score and check compiled circuits
+networkx
+scipy
+pillow
+dimod
+dwave-samplers            # open-source simulated annealing, a comparison arm in some posts
+# Optional comparison arms (a post skips them when they are missing): pytket, mqt.qmap, qiskit-ibm-transpiler,
+# openjij, osmnx (downloads road maps), h5py (reads the HamLib files a post uses).

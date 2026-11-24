@@ -136,8 +136,21 @@ def check_example(m: dict, known: set, repo: Path) -> List[str]:
     return errs
 
 
+SIBLING = re.compile(r'\.glob\("\*-([a-z0-9-]+)"\)')
+
+
+def check_post_siblings(repo: Path) -> List[str]:
+    """A post whose code imports from a sibling post (posts/<month>-<sibling>/) needs that sibling here too."""
+    errs = []
+    for f in sorted((repo / "posts").glob("*/**/*.py")):
+        for sib in set(SIBLING.findall(f.read_text(encoding="utf-8"))):
+            if not list((repo / "posts").glob(f"*-{sib}")):
+                errs.append(f"{f.relative_to(repo)}: imports from the post '{sib}', which is not in posts/")
+    return errs
+
+
 def validate(repo: Path = P.REPO) -> List[str]:
-    errs = check_products(repo)
+    errs = check_products(repo) + (check_post_siblings(repo) if (repo / "posts").is_dir() else [])
     known = {p["slug"] for p in P.load(repo)} if not errs else set()
     seen = {}
     for m in P.examples(repo):

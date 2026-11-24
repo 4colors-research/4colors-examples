@@ -1,3 +1,2 @@
--r requirements.txt
-fourcolors[optimizer,ocean,qiskit]>=1.0.3   # the templates' tests need the dimod and Qiskit extras
+-r requirements-posts.txt
 pytest>=8

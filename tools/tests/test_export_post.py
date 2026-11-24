@@ -82,7 +82,7 @@ def test_export_copies_reader_files_and_rewrites_them(src, tmp_path):
     assert any(NOTES in x for x in res["left_out"]) and any("results.jsonl" in x for x in res["left_out"])
     py = (out / "solve.py").read_text()
     assert "internalkit" not in py and "import examplekit" in py and 'parents[2] / "shared"' in py
-    assert 'HERE.parents[1] / "shared"' in (out / "tests" / "conftest.py").read_text()
+    assert 'resolve().parents[3] / "shared"' in (out / "tests" / "conftest.py").read_text()
     md = (out / "README.md").read_text()
     assert "How we measured" not in md and "EXPERIMENTS" not in md and VER not in md
     assert "utm_source=github" in md and "## Results" in md and md.count("free trial") == 1
@@ -158,3 +158,73 @@ def test_unknown_product_is_refused(tmp_path):
     with pytest.raises(ep.ExportError, match="products.json"):
         ep.export(src, tmp_path / "posts", dict(META, products=["nope"]), denylists=[],
                   require_denylist=False)
+
+
+
+def _layout(tmp_path, files):
+    blog = tmp_path / "internal"
+    for rel, text in files.items():
+        f = blog / rel
+        f.parent.mkdir(parents=True, exist_ok=True)
+        f.write_text(text)
+    return blog
+
+
+def test_every_path_form_is_resolved_and_helpers_are_copied(tmp_path):
+    hdr = "import os, sys\nfrom pathlib import Path\nHERE = Path(__file__).resolve().parent\n"
+    blog = _layout(tmp_path, {
+        "toy/README.md": README,
+        "toy/run.py": hdr + "sys.path[:0] = [str(HERE.parent), str(HERE)]\n"
+                      "sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..'))\n"
+                      "sys.path.insert(1, str(HERE.parent / 'other'))\nimport internalkit\n",
+        "toy/tests/test_run.py": "import sys\nsys.path.insert(0, str(__import__('pathlib').Path(__file__)"
+                                 ".resolve().parents[2] / 'tests'))\nimport canned\n\ndef test_x():\n    pass\n",
+        "tests/canned.py": "# fixed answers for tests\nimport internalkit\n",
+        "other/README.md": "# other\n",
+    })
+    res = ep.export(blog / "toy", tmp_path / "posts", dict(META), denylists=[], require_denylist=False,
+                    kit_map={"internalkit": "examplekit"})
+    out = Path(res["dest"])
+    run_py = (out / "run.py").read_text()
+    assert run_py.count('parents[2] / "shared"') == 2 and "str(HERE)]" in run_py      # list form + os.path form
+    assert 'parents[1].glob("*-other")' in run_py                                    # a sibling post
+    assert 'parents[1] / "tests"' in (out / "tests" / "test_run.py").read_text()     # blog tests -> post tests
+    assert (out / "tests" / "canned.py").read_text() == "# fixed answers for tests\nimport examplekit\n"
+
+
+def test_a_path_outside_the_post_and_its_helpers_is_refused(tmp_path):
+    blog = _layout(tmp_path, {"toy/README.md": README,
+                              "toy/run.py": "import sys\nsys.path.insert(0, '/opt/somewhere')\n"})
+    with pytest.raises(ep.ExportError, match="points outside"):
+        ep.export(blog / "toy", tmp_path / "posts", dict(META), denylists=[], require_denylist=False)
+
+
+def test_code_only_keeps_the_how_to_and_drops_placeholders():
+    N, KEY = "[" + "N]", "." + "key"
+    text = ("# Title\n\nLede with {N} gates.\n\n## Why it matters\n\nStory.\n\n## Setup\n\nInstall it.\n\n"
+            "```bash\npip install x\n```\n\n## Step by step\n\nGood step.\n\nWe saw {N} here.\n\n"
+            "```python\nprint(1)   # {N}: the count\n```\n\n```python\nx = {N}\n```\n\n### Sub\n\nKept.\n\n"
+            "## Results\n\n| {N} |\n\n## Run the unit tests\n\n```bash\npytest\n```\n").replace("{N}", N)
+    out, dropped = ep.code_only(text)
+    assert dropped == ["Why it matters", "Results"]
+    assert "Lede" not in out and "Story" not in out and N not in out
+    assert "Install it." in out and "Good step." in out and "print(1)\n" in out and "Kept." in out
+    assert "x = " not in out and "pytest" in out
+
+
+def test_fix_text_renames_helpers_and_neutralizes_key_paths():
+    KEY = "." + "key"
+    t = ("They import ../internalkit.py; call `internalkit.f`.\n"
+         "export FOURCOLORS_KEY_FILE=/path/to/trial{KEY}\n").replace("{KEY}", KEY)
+    out = ep.fix_text(t, {"internalkit": "examplekit"})
+    assert "../../shared/examplekit.py" in out and "`examplekit.f`" in out and "/path/to/key-file" in out
+
+
+def test_products_and_title_are_detected(tmp_path):
+    blog = _layout(tmp_path, {"q/README.md": "# Q title\n",
+                              "q/run.py": "import fourcolors\nfourcolors.qubo.solve(1)\n",
+                              "c/README.md": "# C\n", "c/run.py": "from fourcolors.quantum import compiler\n",
+                              "b/README.md": "# B\n", "b/run.py": "import circuitkit\nfourcolors.qubo.submit(1)\n"})
+    assert ep.detect_products(blog / "q") == ["qubo"] and ep.readme_title(blog / "q") == "Q title"
+    assert ep.detect_products(blog / "c") == ["compiler"]
+    assert ep.detect_products(blog / "b") == ["qubo", "compiler"]
