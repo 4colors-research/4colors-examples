@@ -72,6 +72,7 @@ products is listed under each. Browse by area in [domains/](domains/).
 | [Pick exactly k stocks: portfolio selection with a cardinality row](posts/2026-11-qubo-portfolio/) | post | Optimizer for QUBO | intermediate |  |  |
 | [Sudoku, N-queens and map coloring: puzzles as constrained QUBOs](posts/2026-11-qubo-puzzles/) | post | Optimizer for QUBO | intermediate |  |  |
 | [RNA folding QUBOs, refereed: the model the papers posed, solved and checked exactly](posts/2026-11-qubo-rna-folding/) | post | Optimizer for QUBO | intermediate |  |  |
+| [Cutting a road network in two](posts/2026-11-qubo-road-network/) | post | Optimizer for QUBO | intermediate |  |  |
 | [Run the QUBO solver comparison yourself](posts/2026-11-qubo-solver-showdown/) | post | Optimizer for QUBO | intermediate |  |  |
 | [Stop paying for idle seconds: stop, stream and incumbents](posts/2026-11-qubo-stop-and-stream/) | post | Optimizer for QUBO | intermediate |  |  |
 | [Structure wins: knapsack, number partitioning and constraint detection](posts/2026-11-qubo-structure-wins/) | post | Optimizer for QUBO | intermediate |  |  |

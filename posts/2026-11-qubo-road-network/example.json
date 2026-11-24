@@ -1,0 +1,17 @@
+{
+  "kind": "post",
+  "slug": "qubo-road-network",
+  "month": "2026-11",
+  "title": "Cutting a road network in two",
+  "summary": "",
+  "products": [
+    "qubo"
+  ],
+  "domains": [],
+  "level": "intermediate",
+  "post_url": null,
+  "requires": "fourcolors[optimizer]>=1.0.0",
+  "tests": true,
+  "code_only": true,
+  "exported_utc": "2026-11-24T16:48:01Z"
+}
