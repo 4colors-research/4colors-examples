@@ -8,7 +8,7 @@ Needs a key (FOURCOLORS_API_KEY or FOURCOLORS_KEY_FILE): start a free trial at
 and copy it.
 
 The code between the `region docs:` lines is the docs tutorial, word for word
-(https://docs.4colors-research.com/start/tutorials/qubo-maxcut/), and the notebook next to this file runs the same
+(https://docs.4colors-research.com/tutorials/qubo-maxcut/), and the notebook next to this file runs the same
 code. Press Ctrl-C while it runs: the job stops on the service and you keep the best cut found so far.
 """
 import sys

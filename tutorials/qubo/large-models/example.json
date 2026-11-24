@@ -10,7 +10,7 @@
     "graphs"
   ],
   "level": "intermediate",
-  "docs_url": "https://docs.4colors-research.com/start/tutorials/qubo-large-models/",
+  "docs_url": "https://docs.4colors-research.com/tutorials/qubo-large-models/",
   "requires": "fourcolors[optimizer]>=1.0.0",
   "post_url": null,
   "run": "python large_models.py",

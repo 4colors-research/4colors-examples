@@ -9,7 +9,7 @@ Needs a key (FOURCOLORS_API_KEY or FOURCOLORS_KEY_FILE): start a free trial at
 and copy it.
 
 The code between the `region docs:` lines is the docs tutorial, word for word
-(https://docs.4colors-research.com/start/tutorials/compiler-custom-target/). The docs' last two snippets (your
+(https://docs.4colors-research.com/tutorials/compiler-custom-target/). The docs' last two snippets (your
 own calibration, and a target read from your provider's backend object) need your device's data, so they are
 not part of this script.
 """

@@ -8,7 +8,7 @@ PRODUCTS = {"products": [
     {"slug": "compiler", "name": "N", "short": "n", "status": "live",
      "docs_url": "https://docs.4colors-research.com/c/", "requires": "x"},
 ]}
-DOCS = "https://docs.4colors-research.com/start/"
+DOCS = "https://docs.4colors-research.com/"
 
 
 def example(repo, path, **meta):

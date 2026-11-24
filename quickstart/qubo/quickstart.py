@@ -8,7 +8,7 @@ No key yet? Start a free trial at
 and copy your key.
 
 The code between the `region docs:` lines is the docs quickstart, word for word
-(https://docs.4colors-research.com/start/quickstart-qubo/). The second part searches for up to 60 seconds; press
+(https://docs.4colors-research.com/quickstart-qubo/). The second part searches for up to 60 seconds; press
 Ctrl-C to stop it early and keep the best solution so far.
 """
 import sys

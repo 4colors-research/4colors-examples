@@ -15,7 +15,7 @@ Rules:
                 tutorials/joint/<name>/               for a tutorial that needs two or more products equally
     post        posts/<yyyy-mm>-<slug>/               "month" is <yyyy-mm>
 - A tutorial or quickstart names its docs page (docs_url on the docs site); a tutorial's page is
-  start/tutorials/<slug>/. A post with a post_url links to the 4colors site.
+  tutorials/<slug>/. A post with a post_url links to the 4colors site.
 - A quickstart or tutorial says how to run it ("run": "python script.py", a file in its folder) and the most
   execution time one run can bill ("billed_s_max", seconds), for tools/live_check.py.
 - Every example folder has a README.md and a tests/ folder with at least one test file.
@@ -107,8 +107,8 @@ def check_example(m: dict, known: set, repo: Path) -> List[str]:
                 expected = slug[len(group) + 1:] if slug.startswith(group + "-") else slug
                 if name != expected:
                     errs.append(f"{where}: the folder name must be {expected!r} (the slug without '{group}-')")
-        if m.get("docs_url") and m["docs_url"] != f"{DOCS}start/tutorials/{slug}/":
-            errs.append(f"{where}: docs_url must be {DOCS}start/tutorials/{slug}/")
+        if m.get("docs_url") and m["docs_url"] != f"{DOCS}tutorials/{slug}/":
+            errs.append(f"{where}: docs_url must be {DOCS}tutorials/{slug}/")
     elif kind == "post":
         month = m.get("month", "")
         if not re.fullmatch(r"20\d\d-[01]\d", month):

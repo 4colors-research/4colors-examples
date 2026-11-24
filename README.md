@@ -43,10 +43,10 @@ products is listed under each. Browse by area in [domains/](domains/).
 
 | Example | Kind | Products | Level | Domains | Links |
 |---|---|---|---|---|---|
-| [Quickstart: solve a QUBO](quickstart/qubo/) | quickstart | Optimizer for QUBO | beginner | getting-started | [docs](https://docs.4colors-research.com/start/quickstart-qubo/?utm_source=github&utm_medium=examples&utm_campaign=quickstart-qubo&utm_content=gallery) |
-| [The API without Python](tutorials/platform/http-without-python/) | tutorial | API (HTTP), Optimizer for QUBO, Quantum Compiler | beginner | getting-started | [docs](https://docs.4colors-research.com/start/tutorials/http-without-python/?utm_source=github&utm_medium=examples&utm_campaign=http-without-python&utm_content=gallery) |
-| [Large QUBO models: upload once, reuse](tutorials/qubo/large-models/) | tutorial | Optimizer for QUBO | intermediate | graphs | [docs](https://docs.4colors-research.com/start/tutorials/qubo-large-models/?utm_source=github&utm_medium=examples&utm_campaign=qubo-large-models&utm_content=gallery) |
-| [Max-Cut on a large graph](tutorials/qubo/maxcut/) | tutorial | Optimizer for QUBO | beginner | graphs | [docs](https://docs.4colors-research.com/start/tutorials/qubo-maxcut/?utm_source=github&utm_medium=examples&utm_campaign=qubo-maxcut&utm_content=gallery) · [notebook](tutorials/qubo/maxcut/maxcut.ipynb) |
+| [Quickstart: solve a QUBO](quickstart/qubo/) | quickstart | Optimizer for QUBO | beginner | getting-started | [docs](https://docs.4colors-research.com/quickstart-qubo/?utm_source=github&utm_medium=examples&utm_campaign=quickstart-qubo&utm_content=gallery) |
+| [The API without Python](tutorials/platform/http-without-python/) | tutorial | API (HTTP), Optimizer for QUBO, Quantum Compiler | beginner | getting-started | [docs](https://docs.4colors-research.com/tutorials/http-without-python/?utm_source=github&utm_medium=examples&utm_campaign=http-without-python&utm_content=gallery) |
+| [Large QUBO models: upload once, reuse](tutorials/qubo/large-models/) | tutorial | Optimizer for QUBO | intermediate | graphs | [docs](https://docs.4colors-research.com/tutorials/qubo-large-models/?utm_source=github&utm_medium=examples&utm_campaign=qubo-large-models&utm_content=gallery) |
+| [Max-Cut on a large graph](tutorials/qubo/maxcut/) | tutorial | Optimizer for QUBO | beginner | graphs | [docs](https://docs.4colors-research.com/tutorials/qubo-maxcut/?utm_source=github&utm_medium=examples&utm_campaign=qubo-maxcut&utm_content=gallery) · [notebook](tutorials/qubo/maxcut/maxcut.ipynb) |
 | [Aircraft loading, quantum and classical](posts/2026-11-aircraft-loading/) | post | Optimizer for QUBO | intermediate |  |  |
 | [Approximate QFT, measured like for like](posts/2026-11-compiler-approximate-qft/) | post | Optimizer for QUBO | intermediate |  |  |
 | [The arithmetic inside Shor's algorithm, compiled: 100-qubit adders on a heavy-hex chip](posts/2026-11-compiler-shor-arithmetic/) | post | Optimizer for QUBO | intermediate |  |  |
@@ -88,10 +88,10 @@ products is listed under each. Browse by area in [domains/](domains/).
 
 | Example | Kind | Products | Level | Domains | Links |
 |---|---|---|---|---|---|
-| [Quickstart: compile a circuit](quickstart/compiler/) | quickstart | Quantum Compiler | beginner | getting-started, quantum-circuits | [docs](https://docs.4colors-research.com/start/quickstart-compiler/?utm_source=github&utm_medium=examples&utm_campaign=quickstart-compiler&utm_content=gallery) |
-| [Compile for your own device](tutorials/compiler/custom-target/) | tutorial | Quantum Compiler | intermediate | quantum-circuits, qaoa | [docs](https://docs.4colors-research.com/start/tutorials/compiler-custom-target/?utm_source=github&utm_medium=examples&utm_campaign=compiler-custom-target&utm_content=gallery) |
-| [Time budgets for the compiler](tutorials/compiler/time-budgets/) | tutorial | Quantum Compiler | beginner | quantum-circuits | [docs](https://docs.4colors-research.com/start/tutorials/compiler-time-budgets/?utm_source=github&utm_medium=examples&utm_campaign=compiler-time-budgets&utm_content=gallery) |
-| [The API without Python](tutorials/platform/http-without-python/) | tutorial | API (HTTP), Optimizer for QUBO, Quantum Compiler | beginner | getting-started | [docs](https://docs.4colors-research.com/start/tutorials/http-without-python/?utm_source=github&utm_medium=examples&utm_campaign=http-without-python&utm_content=gallery) |
+| [Quickstart: compile a circuit](quickstart/compiler/) | quickstart | Quantum Compiler | beginner | getting-started, quantum-circuits | [docs](https://docs.4colors-research.com/quickstart-compiler/?utm_source=github&utm_medium=examples&utm_campaign=quickstart-compiler&utm_content=gallery) |
+| [Compile for your own device](tutorials/compiler/custom-target/) | tutorial | Quantum Compiler | intermediate | quantum-circuits, qaoa | [docs](https://docs.4colors-research.com/tutorials/compiler-custom-target/?utm_source=github&utm_medium=examples&utm_campaign=compiler-custom-target&utm_content=gallery) |
+| [Time budgets for the compiler](tutorials/compiler/time-budgets/) | tutorial | Quantum Compiler | beginner | quantum-circuits | [docs](https://docs.4colors-research.com/tutorials/compiler-time-budgets/?utm_source=github&utm_medium=examples&utm_campaign=compiler-time-budgets&utm_content=gallery) |
+| [The API without Python](tutorials/platform/http-without-python/) | tutorial | API (HTTP), Optimizer for QUBO, Quantum Compiler | beginner | getting-started | [docs](https://docs.4colors-research.com/tutorials/http-without-python/?utm_source=github&utm_medium=examples&utm_campaign=http-without-python&utm_content=gallery) |
 | [A 2D magnet on a heavy-hex chip: fewer two-qubit gates per Trotter step](posts/2026-11-compiler-2d-magnet/) | post | Quantum Compiler | intermediate |  |  |
 | [The biggest circuits: where the service says no, and why](posts/2026-11-compiler-biggest-circuits/) | post | Quantum Compiler | intermediate |  |  |
 | [The coupler that wasn't there: what happens when your compiler isn't told](posts/2026-11-compiler-broken-couplers/) | post | Quantum Compiler | intermediate |  |  |
@@ -122,8 +122,8 @@ products is listed under each. Browse by area in [domains/](domains/).
 
 | Example | Kind | Products | Level | Domains | Links |
 |---|---|---|---|---|---|
-| [Quickstart: the API with curl](quickstart/platform/) | quickstart | API (HTTP) | beginner | getting-started | [docs](https://docs.4colors-research.com/start/tutorials/http-without-python/?utm_source=github&utm_medium=examples&utm_campaign=quickstart-platform&utm_content=gallery) |
-| [The API without Python](tutorials/platform/http-without-python/) | tutorial | API (HTTP), Optimizer for QUBO, Quantum Compiler | beginner | getting-started | [docs](https://docs.4colors-research.com/start/tutorials/http-without-python/?utm_source=github&utm_medium=examples&utm_campaign=http-without-python&utm_content=gallery) |
+| [Quickstart: the API with curl](quickstart/platform/) | quickstart | API (HTTP) | beginner | getting-started | [docs](https://docs.4colors-research.com/tutorials/http-without-python/?utm_source=github&utm_medium=examples&utm_campaign=quickstart-platform&utm_content=gallery) |
+| [The API without Python](tutorials/platform/http-without-python/) | tutorial | API (HTTP), Optimizer for QUBO, Quantum Compiler | beginner | getting-started | [docs](https://docs.4colors-research.com/tutorials/http-without-python/?utm_source=github&utm_medium=examples&utm_campaign=http-without-python&utm_content=gallery) |
 <!-- gallery:products:end -->
 
 ## What is where

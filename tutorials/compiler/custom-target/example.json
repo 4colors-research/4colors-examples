@@ -11,7 +11,7 @@
     "qaoa"
   ],
   "level": "intermediate",
-  "docs_url": "https://docs.4colors-research.com/start/tutorials/compiler-custom-target/",
+  "docs_url": "https://docs.4colors-research.com/tutorials/compiler-custom-target/",
   "requires": "fourcolors>=1.0.2",
   "post_url": null,
   "run": "python custom_target.py",

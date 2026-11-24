@@ -1,6 +1,6 @@
 # Quickstart: the API with curl
 
-**Docs:** [the related docs tutorial](https://docs.4colors-research.com/start/tutorials/http-without-python/?utm_source=github&utm_medium=examples&utm_campaign=quickstart-platform&utm_content=readme-top) · Product: 4colors API · Level: beginner
+**Docs:** [the related docs tutorial](https://docs.4colors-research.com/tutorials/http-without-python/?utm_source=github&utm_medium=examples&utm_campaign=quickstart-platform&utm_content=readme-top) · Product: 4colors API · Level: beginner
 
 A tiny QUBO job over plain HTTP, with no Python: submit it, follow the live event stream until `done`, then read the job's record.
 

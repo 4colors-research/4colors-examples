@@ -11,7 +11,7 @@
     "quantum-circuits"
   ],
   "level": "beginner",
-  "docs_url": "https://docs.4colors-research.com/start/quickstart-compiler/",
+  "docs_url": "https://docs.4colors-research.com/quickstart-compiler/",
   "requires": "fourcolors>=1.0.2",
   "post_url": null,
   "run": "python quickstart.py",

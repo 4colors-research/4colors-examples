@@ -1,6 +1,6 @@
 # Max-Cut on a large graph
 
-**Docs:** [this tutorial in the 4colors docs](https://docs.4colors-research.com/start/tutorials/qubo-maxcut/?utm_source=github&utm_medium=examples&utm_campaign=qubo-maxcut&utm_content=readme-top) · Product: 4colors Optimizer for QUBO · Level: beginner
+**Docs:** [this tutorial in the 4colors docs](https://docs.4colors-research.com/tutorials/qubo-maxcut/?utm_source=github&utm_medium=examples&utm_campaign=qubo-maxcut&utm_content=readme-top) · Product: 4colors Optimizer for QUBO · Level: beginner
 
 Max-Cut splits the nodes of a graph into two groups so that as many edges as possible cross between the groups. It
 is a natural QUBO: one binary variable per node says which group the node is in. The whole script is
@@ -106,7 +106,7 @@ about answer quality.
 
 ## Next
 
-- [Large QUBO models: upload once, reuse](https://docs.4colors-research.com/start/tutorials/qubo-large-models/?utm_source=github&utm_medium=examples&utm_campaign=qubo-maxcut&utm_content=readme-next).
+- [Large QUBO models: upload once, reuse](https://docs.4colors-research.com/tutorials/qubo-large-models/?utm_source=github&utm_medium=examples&utm_campaign=qubo-maxcut&utm_content=readme-next).
 - [Results](https://docs.4colors-research.com/qubo/results/?utm_source=github&utm_medium=examples&utm_campaign=qubo-maxcut&utm_content=readme-next) for every field of a result.
 - The same tutorial as a notebook: [`maxcut.ipynb`](maxcut.ipynb) (opens in Colab).
 

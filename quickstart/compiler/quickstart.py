@@ -8,7 +8,7 @@ No key yet? Start a free trial at
 and copy your key.
 
 The code between the `region docs:` lines is the docs quickstart, word for word
-(https://docs.4colors-research.com/start/quickstart-compiler/). The target is a device design that ships with the
+(https://docs.4colors-research.com/quickstart-compiler/). The target is a device design that ships with the
 package; for your own device, see tutorials/compiler/custom-target/.
 """
 import sys

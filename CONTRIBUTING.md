@@ -43,7 +43,7 @@ Each example folder has an `example.json`:
 
 ```json
 {"kind": "tutorial", "slug": "qubo-maxcut", "title": "...", "summary": "...", "products": ["qubo"],
- "domains": ["graphs"], "level": "beginner", "docs_url": "https://docs.4colors-research.com/start/tutorials/qubo-maxcut/",
+ "domains": ["graphs"], "level": "beginner", "docs_url": "https://docs.4colors-research.com/tutorials/qubo-maxcut/",
  "post_url": null, "requires": "fourcolors[optimizer]>=1.0.0", "notebook": "maxcut.ipynb"}
 ```
 

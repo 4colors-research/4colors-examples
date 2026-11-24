@@ -783,9 +783,9 @@
    "path": "quickstart/compiler",
    "github_url": "https://github.com/4colors-research/4colors-examples/tree/main/quickstart/compiler",
    "clone": "git clone https://github.com/4colors-research/4colors-examples\ncd 4colors-examples/quickstart/compiler",
-   "docs_url": "https://docs.4colors-research.com/start/quickstart-compiler/",
+   "docs_url": "https://docs.4colors-research.com/quickstart-compiler/",
    "post_url": null,
-   "docs_path": "/start/quickstart-compiler/",
+   "docs_path": "/quickstart-compiler/",
    "post_path": null
   },
   {
@@ -798,7 +798,7 @@
    "path": "quickstart/platform",
    "github_url": "https://github.com/4colors-research/4colors-examples/tree/main/quickstart/platform",
    "clone": "git clone https://github.com/4colors-research/4colors-examples\ncd 4colors-examples/quickstart/platform",
-   "docs_url": "https://docs.4colors-research.com/start/tutorials/http-without-python/",
+   "docs_url": "https://docs.4colors-research.com/tutorials/http-without-python/",
    "post_url": null,
    "docs_path": null,
    "post_path": null
@@ -813,9 +813,9 @@
    "path": "quickstart/qubo",
    "github_url": "https://github.com/4colors-research/4colors-examples/tree/main/quickstart/qubo",
    "clone": "git clone https://github.com/4colors-research/4colors-examples\ncd 4colors-examples/quickstart/qubo",
-   "docs_url": "https://docs.4colors-research.com/start/quickstart-qubo/",
+   "docs_url": "https://docs.4colors-research.com/quickstart-qubo/",
    "post_url": null,
-   "docs_path": "/start/quickstart-qubo/",
+   "docs_path": "/quickstart-qubo/",
    "post_path": null
   },
   {
@@ -828,9 +828,9 @@
    "path": "tutorials/compiler/custom-target",
    "github_url": "https://github.com/4colors-research/4colors-examples/tree/main/tutorials/compiler/custom-target",
    "clone": "git clone https://github.com/4colors-research/4colors-examples\ncd 4colors-examples/tutorials/compiler/custom-target",
-   "docs_url": "https://docs.4colors-research.com/start/tutorials/compiler-custom-target/",
+   "docs_url": "https://docs.4colors-research.com/tutorials/compiler-custom-target/",
    "post_url": null,
-   "docs_path": "/start/tutorials/compiler-custom-target/",
+   "docs_path": "/tutorials/compiler-custom-target/",
    "post_path": null
   },
   {
@@ -843,9 +843,9 @@
    "path": "tutorials/compiler/time-budgets",
    "github_url": "https://github.com/4colors-research/4colors-examples/tree/main/tutorials/compiler/time-budgets",
    "clone": "git clone https://github.com/4colors-research/4colors-examples\ncd 4colors-examples/tutorials/compiler/time-budgets",
-   "docs_url": "https://docs.4colors-research.com/start/tutorials/compiler-time-budgets/",
+   "docs_url": "https://docs.4colors-research.com/tutorials/compiler-time-budgets/",
    "post_url": null,
-   "docs_path": "/start/tutorials/compiler-time-budgets/",
+   "docs_path": "/tutorials/compiler-time-budgets/",
    "post_path": null
   },
   {
@@ -860,9 +860,9 @@
    "path": "tutorials/platform/http-without-python",
    "github_url": "https://github.com/4colors-research/4colors-examples/tree/main/tutorials/platform/http-without-python",
    "clone": "git clone https://github.com/4colors-research/4colors-examples\ncd 4colors-examples/tutorials/platform/http-without-python",
-   "docs_url": "https://docs.4colors-research.com/start/tutorials/http-without-python/",
+   "docs_url": "https://docs.4colors-research.com/tutorials/http-without-python/",
    "post_url": null,
-   "docs_path": "/start/tutorials/http-without-python/",
+   "docs_path": "/tutorials/http-without-python/",
    "post_path": null
   },
   {
@@ -875,9 +875,9 @@
    "path": "tutorials/qubo/large-models",
    "github_url": "https://github.com/4colors-research/4colors-examples/tree/main/tutorials/qubo/large-models",
    "clone": "git clone https://github.com/4colors-research/4colors-examples\ncd 4colors-examples/tutorials/qubo/large-models",
-   "docs_url": "https://docs.4colors-research.com/start/tutorials/qubo-large-models/",
+   "docs_url": "https://docs.4colors-research.com/tutorials/qubo-large-models/",
    "post_url": null,
-   "docs_path": "/start/tutorials/qubo-large-models/",
+   "docs_path": "/tutorials/qubo-large-models/",
    "post_path": null
   },
   {
@@ -890,9 +890,9 @@
    "path": "tutorials/qubo/maxcut",
    "github_url": "https://github.com/4colors-research/4colors-examples/tree/main/tutorials/qubo/maxcut",
    "clone": "git clone https://github.com/4colors-research/4colors-examples\ncd 4colors-examples/tutorials/qubo/maxcut",
-   "docs_url": "https://docs.4colors-research.com/start/tutorials/qubo-maxcut/",
+   "docs_url": "https://docs.4colors-research.com/tutorials/qubo-maxcut/",
    "post_url": null,
-   "docs_path": "/start/tutorials/qubo-maxcut/",
+   "docs_path": "/tutorials/qubo-maxcut/",
    "post_path": null,
    "colab_url": "https://colab.research.google.com/github/4colors-research/4colors-examples/blob/main/tutorials/qubo/maxcut/maxcut.ipynb"
   }

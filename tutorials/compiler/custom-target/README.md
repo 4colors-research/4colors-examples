@@ -1,6 +1,6 @@
 # Compile for your own device
 
-**Docs:** [this tutorial in the 4colors docs](https://docs.4colors-research.com/start/tutorials/compiler-custom-target/?utm_source=github&utm_medium=examples&utm_campaign=compiler-custom-target&utm_content=readme-top) · Product: 4colors Quantum Compiler · Level: intermediate
+**Docs:** [this tutorial in the 4colors docs](https://docs.4colors-research.com/tutorials/compiler-custom-target/?utm_source=github&utm_medium=examples&utm_campaign=compiler-custom-target&utm_content=readme-top) · Product: 4colors Quantum Compiler · Level: intermediate
 
 Describe a 12 x 12 grid device yourself and compile a 100-qubit QAOA circuit for it and for a heavy-hex design, then compare the two-qubit gate counts.
 

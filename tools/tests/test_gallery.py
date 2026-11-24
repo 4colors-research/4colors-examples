@@ -21,7 +21,7 @@ def make_repo(tmp_path):
                                             "post_url": "https://4colors-research.com/blog/a/"},
                        "quickstart/qubo": {"kind": "quickstart", "slug": "quickstart-qubo", "title": "Q",
                                            "products": ["qubo"], "domains": [], "level": "beginner",
-                                           "docs_url": "https://docs.4colors-research.com/start/quickstart-qubo/"},
+                                           "docs_url": "https://docs.4colors-research.com/quickstart-qubo/"},
                        }.items():
         (tmp_path / path).mkdir(parents=True)
         (tmp_path / path / "example.json").write_text(json.dumps(meta))

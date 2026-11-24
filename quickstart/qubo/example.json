@@ -10,7 +10,7 @@
     "getting-started"
   ],
   "level": "beginner",
-  "docs_url": "https://docs.4colors-research.com/start/quickstart-qubo/",
+  "docs_url": "https://docs.4colors-research.com/quickstart-qubo/",
   "requires": "fourcolors[optimizer]>=1.0.0",
   "post_url": null,
   "run": "python quickstart.py",

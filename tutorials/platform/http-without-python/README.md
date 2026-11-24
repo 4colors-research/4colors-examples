@@ -1,6 +1,6 @@
 # The API without Python
 
-**Docs:** [this tutorial in the 4colors docs](https://docs.4colors-research.com/start/tutorials/http-without-python/?utm_source=github&utm_medium=examples&utm_campaign=http-without-python&utm_content=readme-top) · Products: 4colors API, 4colors Optimizer for QUBO, 4colors Quantum Compiler · Level: beginner
+**Docs:** [this tutorial in the 4colors docs](https://docs.4colors-research.com/tutorials/http-without-python/?utm_source=github&utm_medium=examples&utm_campaign=http-without-python&utm_content=readme-top) · Products: 4colors API, 4colors Optimizer for QUBO, 4colors Quantum Compiler · Level: beginner
 
 Run a QUBO job and a compile with `curl` and `jq`: the raw requests, the live event stream and the final record. Everything the Python package does is plain HTTP.
 

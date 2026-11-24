@@ -1,6 +1,6 @@
 # Large QUBO models: upload once, reuse
 
-**Docs:** [this tutorial in the 4colors docs](https://docs.4colors-research.com/start/tutorials/qubo-large-models/?utm_source=github&utm_medium=examples&utm_campaign=qubo-large-models&utm_content=readme-top) · Product: 4colors Optimizer for QUBO · Level: intermediate
+**Docs:** [this tutorial in the 4colors docs](https://docs.4colors-research.com/tutorials/qubo-large-models/?utm_source=github&utm_medium=examples&utm_campaign=qubo-large-models&utm_content=readme-top) · Product: 4colors Optimizer for QUBO · Level: intermediate
 
 Build a Max-Cut model with 50,000 nodes and 150,000 edges, upload it once, solve it by its id, and stop the job yourself when the answer has not improved for 20 seconds.
 

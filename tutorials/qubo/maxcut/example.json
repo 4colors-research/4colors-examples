@@ -10,7 +10,7 @@
     "graphs"
   ],
   "level": "beginner",
-  "docs_url": "https://docs.4colors-research.com/start/tutorials/qubo-maxcut/",
+  "docs_url": "https://docs.4colors-research.com/tutorials/qubo-maxcut/",
   "requires": "fourcolors[optimizer]>=1.0.0",
   "notebook": "maxcut.ipynb",
   "post_url": null,

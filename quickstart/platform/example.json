@@ -10,7 +10,7 @@
     "getting-started"
   ],
   "level": "beginner",
-  "docs_url": "https://docs.4colors-research.com/start/tutorials/http-without-python/",
+  "docs_url": "https://docs.4colors-research.com/tutorials/http-without-python/",
   "requires": "curl and jq",
   "post_url": null,
   "run": "bash hello.sh",

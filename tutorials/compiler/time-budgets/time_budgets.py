@@ -8,7 +8,7 @@ Needs a key (FOURCOLORS_API_KEY or FOURCOLORS_KEY_FILE): start a free trial at
 and copy it.
 
 The code between the `region docs:` lines is the docs tutorial, word for word
-(https://docs.4colors-research.com/start/tutorials/compiler-time-budgets/).
+(https://docs.4colors-research.com/tutorials/compiler-time-budgets/).
 """
 import sys
 from pathlib import Path

@@ -5,7 +5,7 @@
 #   bash tutorials/platform/http-without-python/http_tutorial.sh
 #
 # The code between the "region docs:" lines is the docs tutorial, word for word
-# (https://docs.4colors-research.com/start/tutorials/http-without-python/). The compile's event stream can stay
+# (https://docs.4colors-research.com/tutorials/http-without-python/). The compile's event stream can stay
 # open for a few minutes after "done", until the check of the compiled circuit ends.
 set -euo pipefail
 : "${FOURCOLORS_API_KEY:?set FOURCOLORS_API_KEY (no key yet? start a free trial at https://account.4colors-research.com/account/?utm_source=github&utm_medium=examples&utm_campaign=http-without-python&utm_content=script)}"

@@ -1,6 +1,6 @@
 # Time budgets for the compiler
 
-**Docs:** [this tutorial in the 4colors docs](https://docs.4colors-research.com/start/tutorials/compiler-time-budgets/?utm_source=github&utm_medium=examples&utm_campaign=compiler-time-budgets&utm_content=readme-top) · Product: 4colors Quantum Compiler · Level: beginner
+**Docs:** [this tutorial in the 4colors docs](https://docs.4colors-research.com/tutorials/compiler-time-budgets/?utm_source=github&utm_medium=examples&utm_campaign=compiler-time-budgets&utm_content=readme-top) · Product: 4colors Quantum Compiler · Level: beginner
 
 Compile a random 25-qubit circuit with 250 two-qubit gates twice: first with the budget the compiler picks, then with a 20-second budget, watching each better circuit arrive.
 

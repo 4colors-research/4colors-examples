@@ -1,6 +1,6 @@
 # Quickstart: solve a QUBO
 
-**Docs:** [this quickstart in the 4colors docs](https://docs.4colors-research.com/start/quickstart-qubo/?utm_source=github&utm_medium=examples&utm_campaign=quickstart-qubo&utm_content=readme-top) · Product: 4colors Optimizer for QUBO · Level: beginner
+**Docs:** [this quickstart in the 4colors docs](https://docs.4colors-research.com/quickstart-qubo/?utm_source=github&utm_medium=examples&utm_campaign=quickstart-qubo&utm_content=readme-top) · Product: 4colors Optimizer for QUBO · Level: beginner
 
 Solve a 4-variable QUBO in one call, then submit a longer search and watch each better solution arrive.
 

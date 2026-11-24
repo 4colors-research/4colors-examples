@@ -8,7 +8,7 @@ Needs a key (FOURCOLORS_API_KEY or FOURCOLORS_KEY_FILE): start a free trial at
 and copy it.
 
 The code between the `region docs:` lines is the docs tutorial, word for word
-(https://docs.4colors-research.com/start/tutorials/qubo-large-models/). The job stops itself after 20 seconds
+(https://docs.4colors-research.com/tutorials/qubo-large-models/). The job stops itself after 20 seconds
 without a better answer, and you are billed only for the time it ran.
 """
 import sys

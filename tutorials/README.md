@@ -1,6 +1,6 @@
 # Tutorials
 
-The [docs tutorials](https://docs.4colors-research.com/start/tutorials/?utm_source=github&utm_medium=examples&utm_campaign=tutorials&utm_content=readme)
+The [docs tutorials](https://docs.4colors-research.com/tutorials/?utm_source=github&utm_medium=examples&utm_campaign=tutorials&utm_content=readme)
 as runnable scripts, one folder per tutorial: `tutorials/<product>/<name>/`. The code between a script's
 `# region docs:` lines is the docs page's code, word for word, so the page explains exactly what the script runs.
 

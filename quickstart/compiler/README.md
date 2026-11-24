@@ -1,6 +1,6 @@
 # Quickstart: compile a circuit
 
-**Docs:** [this quickstart in the 4colors docs](https://docs.4colors-research.com/start/quickstart-compiler/?utm_source=github&utm_medium=examples&utm_campaign=quickstart-compiler&utm_content=readme-top) · Product: 4colors Quantum Compiler · Level: beginner
+**Docs:** [this quickstart in the 4colors docs](https://docs.4colors-research.com/quickstart-compiler/?utm_source=github&utm_medium=examples&utm_campaign=quickstart-compiler&utm_content=readme-top) · Product: 4colors Quantum Compiler · Level: beginner
 
 Compile a 5-qubit GHZ circuit for a 156-qubit device design that ships with the package, read its verification label, then watch better circuits arrive during a 60-second budget.
 
