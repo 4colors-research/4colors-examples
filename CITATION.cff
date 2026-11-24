@@ -4,7 +4,7 @@ type: software
 license: Apache-2.0
 title: "4colors examples: QUBO optimization and quantum circuit compilation in Python"
 authors:
-  - name: "4colors Research Ltd"
+  - name: "4colors Ltd T/A 4colors Research"
 repository-code: "https://github.com/4colors-research/4colors-examples"
 url: "https://docs.4colors-research.com/"
 keywords:

@@ -114,6 +114,6 @@ If an example helps your research, see [CITATION.cff](CITATION.cff) (GitHub show
 ## License
 
 Code: [Apache License 2.0](LICENSE). Prose, figures and notebook text: [CC BY 4.0](LICENSE-docs), attributed as
-"4colors examples, 4colors Research Ltd., CC BY 4.0". See [NOTICE](NOTICE).
+"4colors examples, 4colors Ltd T/A 4colors Research, CC BY 4.0". See [NOTICE](NOTICE).
 Using the 4colors service and the `fourcolors` package is governed by the
 [4colors Terms of Service](https://4colors-research.com/terms?utm_source=github&utm_medium=examples&utm_campaign=readme&utm_content=license).
