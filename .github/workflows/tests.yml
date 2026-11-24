@@ -1,13 +1,10 @@
-# OWNER DECISION: CI is off until approved. This workflow only runs when started by hand (workflow_dispatch).
-# To turn it on for pull requests, add:
-#   pull_request:
-#   push:
-#     branches: [main]
-# The tests use no key and no network. A separate, scheduled live-API check would need a repository
-# secret holding a low-limit key; it is not included.
+# Unit tests on every pull request and push to main: no key, no network, no API time.
 name: tests
 
 on:
+  pull_request:
+  push:
+    branches: [main]
   workflow_dispatch:
 
 permissions:

@@ -4,7 +4,7 @@
 
 Compile a 5-qubit GHZ circuit for a 156-qubit device design that ships with the package, read its verification label, then watch better circuits arrive during a 60-second budget.
 
-1. Start a free trial at [TRIAL SIGNUP URL] and copy your key.
+1. Start a free trial at [account.4colors-research.com](https://account.4colors-research.com/account/?utm_source=github&utm_medium=examples&utm_campaign=quickstart-compiler&utm_content=readme-trial) and copy your key.
 2. Run it:
 
 ```bash

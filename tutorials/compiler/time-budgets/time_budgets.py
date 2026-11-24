@@ -3,7 +3,9 @@
     pip install fourcolors
     python tutorials/compiler/time-budgets/time_budgets.py
 
-Needs a key (FOURCOLORS_API_KEY or FOURCOLORS_KEY_FILE): start a free trial at [TRIAL SIGNUP URL] and copy it.
+Needs a key (FOURCOLORS_API_KEY or FOURCOLORS_KEY_FILE): start a free trial at
+    https://account.4colors-research.com/account/?utm_source=github&utm_medium=examples&utm_campaign=compiler-time-budgets&utm_content=script
+and copy it.
 
 The code between the `region docs:` lines is the docs tutorial, word for word
 (https://docs.4colors-research.com/start/tutorials/compiler-time-budgets/).

@@ -1,6 +1,6 @@
 # dimod sampler template
 
-1. Start a free trial at [TRIAL SIGNUP URL] and copy your key.
+1. Start a free trial at [account.4colors-research.com](https://account.4colors-research.com/account/?utm_source=github&utm_medium=examples&utm_campaign=templates&utm_content=readme-trial) and copy your key.
 2. Run the template:
 
 ```bash

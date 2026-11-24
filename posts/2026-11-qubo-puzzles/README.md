@@ -28,7 +28,7 @@ when its time limit ends with no answer meeting every row (it does not prove inf
 
 ## Setup
 
-Start a free trial at [TRIAL SIGNUP URL] and copy your key, then:
+Start a free trial at [account.4colors-research.com](https://account.4colors-research.com/account/?utm_source=github&utm_medium=examples&utm_campaign=qubo-puzzles&utm_content=readme-setup) and copy your key, then:
 
 ```bash
 pip install "fourcolors[optimizer]" matplotlib

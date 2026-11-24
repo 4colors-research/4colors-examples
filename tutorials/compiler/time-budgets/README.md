@@ -4,7 +4,7 @@
 
 Compile a random 25-qubit circuit with 250 two-qubit gates twice: first with the budget the compiler picks, then with a 20-second budget, watching each better circuit arrive.
 
-1. Start a free trial at [TRIAL SIGNUP URL] and copy your key.
+1. Start a free trial at [account.4colors-research.com](https://account.4colors-research.com/account/?utm_source=github&utm_medium=examples&utm_campaign=compiler-time-budgets&utm_content=readme-trial) and copy your key.
 2. Run it:
 
 ```bash

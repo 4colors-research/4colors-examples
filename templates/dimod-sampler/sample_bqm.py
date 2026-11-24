@@ -1,6 +1,8 @@
 """Template: solve a dimod BinaryQuadraticModel with the 4colors Optimizer for QUBO.
 
-Needs a key (FOURCOLORS_API_KEY): start a free trial at [TRIAL SIGNUP URL] and copy your key.
+Needs a key (FOURCOLORS_API_KEY): start a free trial at
+    https://account.4colors-research.com/account/?utm_source=github&utm_medium=examples&utm_campaign=templates&utm_content=script
+and copy your key.
 """
 import dimod
 

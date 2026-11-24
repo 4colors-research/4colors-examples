@@ -3,7 +3,9 @@
     pip install "fourcolors[optimizer]"
     python tutorials/qubo/large-models/large_models.py    # 50,000 nodes, 150,000 edges, up to 120 s
 
-Needs a key (FOURCOLORS_API_KEY or FOURCOLORS_KEY_FILE): start a free trial at [TRIAL SIGNUP URL] and copy it.
+Needs a key (FOURCOLORS_API_KEY or FOURCOLORS_KEY_FILE): start a free trial at
+    https://account.4colors-research.com/account/?utm_source=github&utm_medium=examples&utm_campaign=qubo-large-models&utm_content=script
+and copy it.
 
 The code between the `region docs:` lines is the docs tutorial, word for word
 (https://docs.4colors-research.com/start/tutorials/qubo-large-models/). The job stops itself after 20 seconds

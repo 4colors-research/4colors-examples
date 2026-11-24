@@ -15,7 +15,7 @@ model to the 4colors service, so it needs an API key.
 
 ## Quickstart
 
-1. Start a free trial at [TRIAL SIGNUP URL] and copy your key.
+1. Start a free trial at [account.4colors-research.com](https://account.4colors-research.com/account/?utm_source=github&utm_medium=examples&utm_campaign=readme&utm_content=readme-trial) and copy your key.
 2. Run the examples:
 
 ```bash
@@ -113,5 +113,7 @@ If an example helps your research, see [CITATION.cff](CITATION.cff) (GitHub show
 
 ## License
 
-Code: see [LICENSE](LICENSE). Text, figures and notebooks' prose: see [LICENSE-docs](LICENSE-docs).
-Using the 4colors service is governed by the [4colors Terms of Service](https://4colors-research.com/terms?utm_source=github&utm_medium=examples&utm_campaign=readme&utm_content=license).
+Code: [Apache License 2.0](LICENSE). Prose, figures and notebook text: [CC BY 4.0](LICENSE-docs), attributed as
+"4colors examples, 4colors Research Ltd., CC BY 4.0". See [NOTICE](NOTICE).
+Using the 4colors service and the `fourcolors` package is governed by the
+[4colors Terms of Service](https://4colors-research.com/terms?utm_source=github&utm_medium=examples&utm_campaign=readme&utm_content=license).

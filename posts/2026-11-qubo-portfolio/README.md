@@ -46,7 +46,7 @@ A symmetric matrix is read as `x'Qx`, so each pair counts twice, as written.
 
 ## Setup
 
-Start a free trial at [TRIAL SIGNUP URL] and copy your key, then:
+Start a free trial at [account.4colors-research.com](https://account.4colors-research.com/account/?utm_source=github&utm_medium=examples&utm_campaign=qubo-portfolio&utm_content=readme-setup) and copy your key, then:
 
 ```bash
 pip install "fourcolors[optimizer]" numpy matplotlib

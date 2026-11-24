@@ -1,14 +1,14 @@
 #!/usr/bin/env bash
 # The API without Python: a QUBO job and a compile with curl and jq.
 #
-#   export FOURCOLORS_API_KEY=...        # no key yet? start a free trial at [TRIAL SIGNUP URL]
+#   export FOURCOLORS_API_KEY=...        # no key yet? start a free trial at https://account.4colors-research.com/account/?utm_source=github&utm_medium=examples&utm_campaign=http-without-python&utm_content=script
 #   bash tutorials/platform/http-without-python/http_tutorial.sh
 #
 # The code between the "region docs:" lines is the docs tutorial, word for word
 # (https://docs.4colors-research.com/start/tutorials/http-without-python/). The compile's event stream can stay
 # open for a few minutes after "done", until the check of the compiled circuit ends.
 set -euo pipefail
-: "${FOURCOLORS_API_KEY:?set FOURCOLORS_API_KEY (no key yet? start a free trial at [TRIAL SIGNUP URL])}"
+: "${FOURCOLORS_API_KEY:?set FOURCOLORS_API_KEY (no key yet? start a free trial at https://account.4colors-research.com/account/?utm_source=github&utm_medium=examples&utm_campaign=http-without-python&utm_content=script)}"
 B=${FOURCOLORS_BASE_URL:-https://api.4colors-research.com}
 A="Authorization: Bearer $FOURCOLORS_API_KEY"
 

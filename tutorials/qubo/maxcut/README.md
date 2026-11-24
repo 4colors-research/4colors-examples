@@ -6,7 +6,7 @@ Max-Cut splits the nodes of a graph into two groups so that as many edges as pos
 is a natural QUBO: one binary variable per node says which group the node is in. The whole script is
 [`maxcut.py`](maxcut.py).
 
-1. Start a free trial at [TRIAL SIGNUP URL] and copy your key.
+1. Start a free trial at [account.4colors-research.com](https://account.4colors-research.com/account/?utm_source=github&utm_medium=examples&utm_campaign=qubo-maxcut&utm_content=readme-trial) and copy your key.
 2. Run the tutorial:
 
 ```bash

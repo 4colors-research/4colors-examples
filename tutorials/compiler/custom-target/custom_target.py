@@ -4,7 +4,9 @@ describe yourself.
     pip install fourcolors
     python tutorials/compiler/custom-target/custom_target.py    # two compiles of 120 s each
 
-Needs a key (FOURCOLORS_API_KEY or FOURCOLORS_KEY_FILE): start a free trial at [TRIAL SIGNUP URL] and copy it.
+Needs a key (FOURCOLORS_API_KEY or FOURCOLORS_KEY_FILE): start a free trial at
+    https://account.4colors-research.com/account/?utm_source=github&utm_medium=examples&utm_campaign=compiler-custom-target&utm_content=script
+and copy it.
 
 The code between the `region docs:` lines is the docs tutorial, word for word
 (https://docs.4colors-research.com/start/tutorials/compiler-custom-target/). The docs' last two snippets (your

@@ -18,7 +18,10 @@ from typing import List, Optional
 __all__ = ["client", "load_key", "Results", "base_parser", "result_fields", "reason_code", "client_version",
            "plot_style", "load_rows", "median", "SERIES", "INK", "INK_2", "SURFACE", "GRID"]
 
-NO_KEY = ("This example needs a 4colors API key. Start a free trial at [TRIAL SIGNUP URL], copy your key, then "
+TRIAL_URL = (
+    "https://account.4colors-research.com/account/?utm_source=github&utm_medium=examples&utm_campaign=examplekit&utm_content=script"
+)
+NO_KEY = (f"This example needs a 4colors API key. Start a free trial at {TRIAL_URL}, copy your key, then "
           "export FOURCOLORS_API_KEY=... (or FOURCOLORS_KEY_FILE=/path/to/file).")
 
 

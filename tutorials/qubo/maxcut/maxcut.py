@@ -3,7 +3,9 @@
     pip install "fourcolors[optimizer]"
     python tutorials/qubo/maxcut/maxcut.py    # 2,000 nodes, 6,000 edges, 30 s
 
-Needs a key (FOURCOLORS_API_KEY or FOURCOLORS_KEY_FILE): start a free trial at [TRIAL SIGNUP URL] and copy it.
+Needs a key (FOURCOLORS_API_KEY or FOURCOLORS_KEY_FILE): start a free trial at
+    https://account.4colors-research.com/account/?utm_source=github&utm_medium=examples&utm_campaign=qubo-maxcut&utm_content=script
+and copy it.
 
 The code between the `region docs:` lines is the docs tutorial, word for word
 (https://docs.4colors-research.com/start/tutorials/qubo-maxcut/), and the notebook next to this file runs the same

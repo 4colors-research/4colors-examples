@@ -9,8 +9,8 @@ The goal of this repository is that readers start a free trial. Everything below
 installs) is a leading signal; the number we judge the repository by is **trial sign-ups that came from it**.
 
 - Every trial link in the repository carries UTM tags (`utm_source=github&utm_medium=examples&utm_campaign=<example>
-  &utm_content=<spot>`), built with `tools/links.py`. Until the sign-up URL is confirmed the link is the literal
-  placeholder `[TRIAL SIGNUP URL]`, which carries no tags; when it is filled in, tag every occurrence.
+  &utm_content=<spot>`), built with `tools/links.py`. The trial link is https://account.4colors-research.com/account/;
+  a new trial link must be tagged the same way.
 - Attribution happens on the site, not here: a sign-up counts for the repository only if the site's analytics and
   back office keep the campaign from the first visit through to the trial sign-up. Whether that works, and for how
   long the first-visit campaign is kept, depends on the site's analytics setup; this collector cannot see it.

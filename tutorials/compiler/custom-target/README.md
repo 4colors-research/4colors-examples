@@ -4,7 +4,7 @@
 
 Describe a 12 x 12 grid device yourself and compile a 100-qubit QAOA circuit for it and for a heavy-hex design, then compare the two-qubit gate counts.
 
-1. Start a free trial at [TRIAL SIGNUP URL] and copy your key.
+1. Start a free trial at [account.4colors-research.com](https://account.4colors-research.com/account/?utm_source=github&utm_medium=examples&utm_campaign=compiler-custom-target&utm_content=readme-trial) and copy your key.
 2. Run it:
 
 ```bash

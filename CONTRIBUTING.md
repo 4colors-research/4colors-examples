@@ -81,8 +81,9 @@ Change the code here, never in the docs; `write` updates the docs pages from the
 
 ## Licensing of contributions
 
-Owner decision pending (see LICENSE). Proposed: contributions are accepted under the repository's licenses, with a
-Developer Certificate of Origin sign-off (`git commit -s`) rather than a CLA.
+Contributions are accepted under this repository's licenses: code under the Apache License 2.0 (section 5 of the
+license covers contributions), prose and figures under CC BY 4.0. There is no separate contributor agreement.
+Your commits show your GitHub identity, as on any public repository.
 
 ## Maintainers: exporting a post
 

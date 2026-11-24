@@ -4,7 +4,7 @@
 
 A tiny QUBO job over plain HTTP, with no Python: submit it, follow the live event stream until `done`, then read the job's record.
 
-1. Start a free trial at [TRIAL SIGNUP URL] and copy your key.
+1. Start a free trial at [account.4colors-research.com](https://account.4colors-research.com/account/?utm_source=github&utm_medium=examples&utm_campaign=quickstart-platform&utm_content=readme-trial) and copy your key.
 2. Run it:
 
 ```bash

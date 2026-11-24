@@ -4,7 +4,7 @@
 
 Build a Max-Cut model with 50,000 nodes and 150,000 edges, upload it once, solve it by its id, and stop the job yourself when the answer has not improved for 20 seconds.
 
-1. Start a free trial at [TRIAL SIGNUP URL] and copy your key.
+1. Start a free trial at [account.4colors-research.com](https://account.4colors-research.com/account/?utm_source=github&utm_medium=examples&utm_campaign=qubo-large-models&utm_content=readme-trial) and copy your key.
 2. Run it:
 
 ```bash

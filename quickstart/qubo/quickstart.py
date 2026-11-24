@@ -3,7 +3,9 @@
     pip install "fourcolors[optimizer]"
     python quickstart/qubo/quickstart.py      # needs FOURCOLORS_API_KEY or FOURCOLORS_KEY_FILE
 
-No key yet? Start a free trial at [TRIAL SIGNUP URL] and copy your key.
+No key yet? Start a free trial at
+    https://account.4colors-research.com/account/?utm_source=github&utm_medium=examples&utm_campaign=quickstart-qubo&utm_content=script
+and copy your key.
 
 The code between the `region docs:` lines is the docs quickstart, word for word
 (https://docs.4colors-research.com/start/quickstart-qubo/). The second part searches for up to 60 seconds; press

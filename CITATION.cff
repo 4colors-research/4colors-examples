@@ -1,10 +1,10 @@
-# Owner decision: confirm the title, the author entity and (after publishing) add a Zenodo DOI and the license id.
 cff-version: 1.2.0
 message: "If you use these examples in your research, please cite them as below."
 type: software
+license: Apache-2.0
 title: "4colors examples: QUBO optimization and quantum circuit compilation in Python"
 authors:
-  - name: "4colors"
+  - name: "4colors Research Ltd"
 repository-code: "https://github.com/4colors-research/4colors-examples"
 url: "https://docs.4colors-research.com/"
 keywords:

@@ -60,13 +60,13 @@ CONFTEST_INSERT = re.compile(r"sys\.path\.insert\(0, str\(HERE\.parent\)\)")
 CONFTEST_INSERT_NEW = 'sys.path.insert(0, str(HERE.parents[1] / "shared"))  # examplekit'
 PRODUCT_VERSION = re.compile(r"((?:4colors Optimizer for QUBO|4colors Quantum Compiler|fourcolors client)) \[VERSION\]")
 
-# The trial sign-up link is not confirmed yet: the placeholder stays until the owner gives the URL. Once it is a
-# real URL, exported READMEs carry it with UTM tags (tools/links.py), so trial sign-ups can be traced to the repo.
-TRIAL_URL = "[TRIAL SIGNUP URL]"
+# The trial sign-up page. Exported READMEs carry it with UTM tags (tools/links.py), so trial sign-ups can be traced
+# to this repository.
+TRIAL_URL = "https://account.4colors-research.com/account/"
 
 
 def trial_link(campaign: str, content: str) -> str:
-    return TRIAL_URL if TRIAL_URL.startswith("[") else utm(TRIAL_URL, campaign, content)
+    return f"[account.4colors-research.com]({utm(TRIAL_URL, campaign, content)})"
 
 
 class ExportError(RuntimeError):

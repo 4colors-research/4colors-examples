@@ -4,7 +4,7 @@
 
 Run a QUBO job and a compile with `curl` and `jq`: the raw requests, the live event stream and the final record. Everything the Python package does is plain HTTP.
 
-1. Start a free trial at [TRIAL SIGNUP URL] and copy your key.
+1. Start a free trial at [account.4colors-research.com](https://account.4colors-research.com/account/?utm_source=github&utm_medium=examples&utm_campaign=http-without-python&utm_content=readme-trial) and copy your key.
 2. Run it:
 
 ```bash
