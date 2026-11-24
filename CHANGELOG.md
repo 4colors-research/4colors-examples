@@ -18,4 +18,7 @@ Changes to the examples, grouped by the product release they were checked agains
   `tools/docs_sync.py` checks the docs pages, the notebooks and the READMEs against them.
 - The Max-Cut notebook moved into its tutorial's folder; its code cells are the script's regions.
 - Compiler examples need `fourcolors` 1.0.2 or later (targets are descriptions, never names).
-- Checked against: `fourcolors` 1.0.0 (QUBO) and 1.0.2 (compiler), unit tests only; no live run yet.
+- Checked against: all eight quickstarts and tutorials ran live on 24 Nov 2026 with `fourcolors` 1.0.2 against
+  the 4colors Optimizer for QUBO 1.0.7 and the 4colors Quantum Compiler 1.1.0 (all passed). `requirements.txt` asks
+  for 1.0.3, which differs from 1.0.2 only in retrying gateway errors (502/504) while waiting for a job; every
+  test passes on 1.0.3 from PyPI.
