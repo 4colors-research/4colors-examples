@@ -9,7 +9,7 @@ import export_post as ep
 NOTES = "EXPERIMENTS" + ".md"
 VER = "[" + "VERSION]"
 
-META = {"slug": "toy", "month": "2026-11", "title": "A toy post", "summary": "s", "product": "qubo",
+META = {"slug": "toy", "month": "2026-11", "title": "A toy post", "summary": "s", "products": ["qubo"],
         "domains": ["puzzles"], "level": "beginner", "post_url": "https://4colors-research.com/blog/toy/"}
 
 README = f"""# A toy post
@@ -141,3 +141,20 @@ def test_existing_export_needs_force(src, tmp_path):
     with pytest.raises(ep.ExportError, match="exists"):
         run(src, tmp_path)
     assert Path(run(src, tmp_path, force=True)["dest"]).exists()
+
+
+def test_requires_merges_the_products_needs():
+    import products
+    known = products.by_slug()
+    assert ep.requires(["qubo"], known) == "fourcolors[optimizer]>=1.0.0"
+    assert ep.requires(["qubo", "compiler"], known) == "fourcolors[optimizer]>=1.0.2"
+    assert ep.requires(["platform"], known) == "curl and jq"
+
+
+def test_unknown_product_is_refused(tmp_path):
+    src = tmp_path / "src"
+    src.mkdir()
+    (src / "README.md").write_text("# x\n")
+    with pytest.raises(ep.ExportError, match="products.json"):
+        ep.export(src, tmp_path / "posts", dict(META, products=["nope"]), denylists=[],
+                  require_denylist=False)

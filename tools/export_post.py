@@ -2,7 +2,7 @@
 """Export one blog post's companion code from the internal blog branch into posts/<yyyy-mm>-<slug>/.
 
     python tools/export_post.py <internal checkout>/.../blog/qubo-puzzles \\
-        --slug qubo-puzzles --month 2026-11 --product qubo --domains puzzles \\
+        --slug qubo-puzzles --month 2026-11 --products qubo --domains puzzles \\
         --title "Sudoku, N-queens and map coloring as constrained QUBOs" \\
         --summary "One-hot models with exact rows." --level beginner \\
         --denylist /path/outside/the/repo/terms.txt
@@ -46,6 +46,7 @@ HERE = Path(__file__).resolve().parent
 REPO = HERE.parent
 sys.path.insert(0, str(HERE))
 import leak_check  # noqa: E402
+import products as P  # noqa: E402
 from links import utm  # noqa: E402
 
 COPY_SUFFIXES = {".py", ".md", ".ipynb", ".json", ".csv", ".txt", ".toml"}
@@ -59,9 +60,6 @@ CONFTEST_INSERT = re.compile(r"sys\.path\.insert\(0, str\(HERE\.parent\)\)")
 CONFTEST_INSERT_NEW = 'sys.path.insert(0, str(HERE.parents[1] / "shared"))  # examplekit'
 PRODUCT_VERSION = re.compile(r"((?:4colors Optimizer for QUBO|4colors Quantum Compiler|fourcolors client)) \[VERSION\]")
 
-PRODUCTS = {"qubo": ("4colors Optimizer for QUBO", "https://docs.4colors-research.com/qubo/"),
-            "compiler": ("4colors Quantum Compiler", "https://docs.4colors-research.com/compiler/"),
-            "both": ("4colors Optimizer for QUBO and 4colors Quantum Compiler", "https://docs.4colors-research.com/")}
 # The trial sign-up link is not confirmed yet: the placeholder stays until the owner gives the URL. Once it is a
 # real URL, exported READMEs carry it with UTM tags (tools/links.py), so trial sign-ups can be traced to the repo.
 TRIAL_URL = "[TRIAL SIGNUP URL]"
@@ -73,6 +71,25 @@ def trial_link(campaign: str, content: str) -> str:
 
 class ExportError(RuntimeError):
     pass
+
+
+REQ = re.compile(r"^fourcolors(?:\[([\w,]+)\])?>=([\d.]+)$")
+
+
+def requires(slugs: List[str], known: Dict[str, dict]) -> str:
+    """What a post needs: the products' `fourcolors` requirements merged (all extras, the highest minimum
+    version); a post with no Python product gets its first product's requirement as written."""
+    reqs = [known[s]["requires"] for s in slugs]
+    extras, versions = set(), []
+    for r in reqs:
+        m = REQ.match(r)
+        if m:
+            extras.update(x for x in (m.group(1) or "").split(",") if x)
+            versions.append(tuple(int(v) for v in m.group(2).split(".")))
+    if not versions:
+        return reqs[0]
+    ex = f"[{','.join(sorted(extras))}]" if extras else ""
+    return f"fourcolors{ex}>={'.'.join(map(str, max(versions)))}"
 
 
 def transform_python(text: str, name: str, kit_map: Dict[str, str], refuse: List[str]) -> str:
@@ -109,12 +126,14 @@ def transform_readme(text: str, meta: dict) -> str:
     trial = f"Start a free trial at {trial_link(campaign, 'readme-setup')} and copy your key, then:\n\n"
     has_setup = re.search(r"^## Setup\n", text, re.M) is not None
     text = re.sub(r"^## Setup\n\n(?!Start a free trial)", lambda m: m.group(0) + trial, text, count=1, flags=re.M)
-    product_name, docs = PRODUCTS[meta["product"]]
+    known = P.by_slug()
     post = meta.get("post_url")
     links = []
     if post:
         links.append(f"**Read the post:** [{meta['title']}]({utm(post, campaign, 'readme-top')})")
-    links.append(f"**Docs:** [{product_name}]({utm(docs, campaign, 'readme-top')})")
+    docs = ", ".join(f"[{known[s]['name']}]({utm(known[s]['docs_url'], campaign, 'readme-top')})"
+                     for s in meta["products"])
+    links.append(f"**Docs:** {docs}")
     banner = " · ".join(links) + "\n"
     lines = text.splitlines(keepends=True)
     if lines and lines[0].startswith("# "):
@@ -165,8 +184,9 @@ def export(src: Path, dest_root: Path, meta: dict, *, denylists: List[str], draf
                           "kept outside the repository)")
     if not re.fullmatch(r"20\d\d-[01]\d", meta["month"]) or not re.fullmatch(r"[a-z0-9][a-z0-9-]*", meta["slug"]):
         raise ExportError("month must be yyyy-mm and slug lowercase letters, digits and dashes")
-    if meta["product"] not in PRODUCTS:
-        raise ExportError(f"product must be one of {sorted(PRODUCTS)}")
+    known = P.by_slug()
+    if not meta.get("products") or any(s not in known for s in meta["products"]):
+        raise ExportError(f"products must be one or more of {sorted(known)} (products.json)")
     name = f"{meta['month']}-{meta['slug']}"
     dest = dest_root / name
     if dest.exists() and not force:
@@ -185,10 +205,9 @@ def export(src: Path, dest_root: Path, meta: dict, *, denylists: List[str], draf
             out.parent.mkdir(parents=True, exist_ok=True)
             out.write_text(text, encoding="utf-8")
         example = {"kind": "post", "slug": meta["slug"], "month": meta["month"], "title": meta["title"],
-                   "summary": meta.get("summary", ""), "product": meta["product"],
+                   "summary": meta.get("summary", ""), "products": list(meta["products"]),
                    "domains": meta.get("domains", []), "level": meta.get("level", "intermediate"),
-                   "post_url": meta.get("post_url") or None, "requires": "fourcolors[optimizer]>=1.0.0"
-                   if meta["product"] == "qubo" else "fourcolors>=1.0.0",
+                   "post_url": meta.get("post_url") or None, "requires": requires(meta["products"], known),
                    "tests": (stage / "tests").is_dir(),
                    "exported_utc": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())}
         (stage / "example.json").write_text(json.dumps(example, indent=2) + "\n", encoding="utf-8")
@@ -214,7 +233,8 @@ def main(argv=None) -> int:
     p.add_argument("--month", required=True, help="publication month, yyyy-mm")
     p.add_argument("--title", required=True)
     p.add_argument("--summary", default="")
-    p.add_argument("--product", required=True, choices=sorted(PRODUCTS))
+    p.add_argument("--products", required=True, help="comma-separated product slugs from products.json, "
+                                                      "e.g. qubo or qubo,compiler")
     p.add_argument("--domains", default="", help="comma-separated, e.g. finance,puzzles")
     p.add_argument("--level", default="intermediate", choices=["beginner", "intermediate", "advanced"])
     p.add_argument("--post-url", default="")
@@ -226,7 +246,8 @@ def main(argv=None) -> int:
     p.add_argument("--force", action="store_true", help="replace an existing export")
     p.add_argument("--no-denylist", action="store_true", help="tests only: run without organization terms")
     a = p.parse_args(argv)
-    meta = {"slug": a.slug, "month": a.month, "title": a.title, "summary": a.summary, "product": a.product,
+    meta = {"slug": a.slug, "month": a.month, "title": a.title, "summary": a.summary,
+            "products": [s.strip() for s in a.products.split(",") if s.strip()],
             "domains": [d.strip() for d in a.domains.split(",") if d.strip()], "level": a.level,
             "post_url": a.post_url}
     cfg = json.loads(Path(a.config).expanduser().read_text(encoding="utf-8")) if a.config else {}

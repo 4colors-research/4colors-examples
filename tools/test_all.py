@@ -23,6 +23,8 @@ def example_dirs(roots):
             rel = tests.relative_to(REPO) if tests.is_absolute() else tests
             if any(part.startswith(".") for part in rel.parts) or not tests.is_dir():
                 continue
+            if not any(tests.glob("test_*.py")):          # a leftover folder (caches only) is not an example
+                continue
             yield tests.parent
 
 

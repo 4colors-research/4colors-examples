@@ -27,6 +27,7 @@ maximizes the cut, and the cut size is −E.
 
 A random graph with 2,000 nodes and 6,000 edges:
 
+<!-- example: tutorials/qubo/maxcut/maxcut.py#build -->
 ```python
 import random
 
@@ -46,6 +47,7 @@ for i, j in edges:
 
 ## Solve it and watch the cut grow
 
+<!-- example: tutorials/qubo/maxcut/maxcut.py#solve -->
 ```python
 import fourcolors
 
@@ -67,6 +69,7 @@ Press **Ctrl-C** at any time: the job stops on the service and you get the best 
 
 The result's solution is yours to check. Count the cut edges directly:
 
+<!-- example: tutorials/qubo/maxcut/maxcut.py#check -->
 ```python
 x = result.solution  # one 0/1 value per variable
 cut = sum(1 for i, j in edges if x[i] != x[j])
@@ -81,6 +84,7 @@ time, so all of your time limit goes to the search; answers to models with const
 
 `result.trajectory` lists every improvement the search made, with the search time it was found at:
 
+<!-- example: tutorials/qubo/maxcut/maxcut.py#trajectory -->
 ```python
 for step in result.trajectory[-5:]:
     print(f"t={step['t_search_s']:.2f} s  objective {step['objective']}")
@@ -95,15 +99,16 @@ improvements kept coming until the end, try a longer one.
 python -m pytest -q tests
 ```
 
-They check that the QUBO energy is minus the cut on every assignment of a small graph, and that the script
-prints, checks and returns an answer correctly. For that they feed it fixed, hand-written answers
-(`tests/canned.py`); nothing in the tests solves the model, so the tests say nothing about answer quality.
+They check that the QUBO energy is minus the cut on the tutorial's graph, that a missing key stops the script
+with a note on how to get one, and that the script prints and checks an answer correctly. For that they feed it
+fixed, hand-written answers (`tests/canned.py`); nothing in the tests solves the model, so the tests say nothing
+about answer quality.
 
 ## Next
 
 - [Large QUBO models: upload once, reuse](https://docs.4colors-research.com/start/tutorials/qubo-large-models/?utm_source=github&utm_medium=examples&utm_campaign=qubo-maxcut&utm_content=readme-next).
 - [Results](https://docs.4colors-research.com/qubo/results/?utm_source=github&utm_medium=examples&utm_campaign=qubo-maxcut&utm_content=readme-next) for every field of a result.
-- The same tutorial as a notebook: [`notebooks/qubo-maxcut.ipynb`](../../../notebooks/qubo-maxcut.ipynb).
+- The same tutorial as a notebook: [`maxcut.ipynb`](maxcut.ipynb) (opens in Colab).
 
 ---
 Adapted from the 4colors documentation tutorial "Max-Cut on a large graph".

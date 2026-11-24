@@ -1,55 +1,67 @@
-import itertools
-import sys
+import random
 from pathlib import Path
 
 import pytest
 
-HERE = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(HERE.parents[2] / "shared"))
-sys.path.insert(0, str(HERE))
+from canned import CannedJob, CannedQubo, canned_result, run_script
 
-import examplekit  # noqa: E402
-import maxcut  # noqa: E402
-from canned import CannedJob, CannedQubo, canned_result  # noqa: E402
-
-
-def test_qubo_energy_is_minus_the_cut():
-    n, edges = 6, maxcut.random_graph(6, 9, seed=1)
-    Q, linear = maxcut.maxcut_qubo(n, edges)
-    for x in itertools.product((0, 1), repeat=n):
-        e = sum(v * x[i] * x[j] for (i, j), v in Q.items()) + sum(l * xi for l, xi in zip(linear, x))
-        assert e == -maxcut.cut_size(edges, x)
-
-
-def test_random_graph_is_simple_and_seeded():
-    g = maxcut.random_graph(50, 120, seed=3)
-    assert len(g) == len(set(g)) == 120 and all(i < j for i, j in g)
-    assert g == maxcut.random_graph(50, 120, seed=3)
+SCRIPT = Path(__file__).resolve().parents[1] / "maxcut.py"
+N = 2000
 
 
 @pytest.fixture
 def canned(monkeypatch):
     """canned(job): fourcolors.qubo.submit returns this fixed job (tests/canned.py); no key, no network."""
-    monkeypatch.setattr(examplekit, "client", lambda: None)
     return lambda *responses: CannedQubo(responses).install(monkeypatch)
 
 
-# Two fixed answers for the 12-node, 24-edge graph (seed 7), written by hand: cuts of 9 and then 10 edges.
-FIRST, FINAL = [0, 1] * 6, [0, 0, 1] * 4
+# Hand-written answers: everything in one group (0 edges cut), and nodes split by parity.
+ALL_ZERO = [0] * N
+PARITY = [i % 2 for i in range(N)]
 
 
-def test_script_streams_checks_and_prints_the_answer(canned, capsys):
-    final = canned_result(FINAL, -10, trajectory=[{"t_search_s": 0.2, "objective": -9},
-                                                  {"t_search_s": 0.6, "objective": -10}])
-    canned(CannedJob(final, incumbents=[canned_result(FIRST, -9, status="running")]))
-    result, edges = maxcut.main(["--n", "12", "--m", "24", "--time-limit", "1"])
-    assert maxcut.cut_size(edges, FIRST) == 9 and maxcut.cut_size(edges, result.solution) == 10
+def test_script_streams_checks_and_prints_the_answer(canned, monkeypatch, capsys):
+    final = canned_result(ALL_ZERO, 0, trajectory=[{"t_search_s": 0.4, "objective": 0}])
+    canned(CannedJob(final, incumbents=[canned_result(ALL_ZERO, 0, status="running")]))
+    g = run_script(SCRIPT, monkeypatch)
     out = capsys.readouterr().out
-    assert "cut 9 of 24 edges" in out and "cut 10 of 24 edges" in out
-    assert "finished: 10 edges cross between groups of 8 and 4 nodes" in out
+    assert len(g["edges"]) == 6000 and all(i < j for i, j in g["edges"])
+    assert "cut 0 of 6000 edges" in out and "finished 0" in out
+    assert "0 edges cross between groups of 2000 and 0 nodes" in out
+    assert "t=0.40 s  objective 0" in out
 
 
-def test_script_rejects_an_objective_that_disagrees_with_its_own_count(canned):
-    canned(canned_result(FINAL, -11))
+def test_qubo_energy_is_minus_the_cut(canned, monkeypatch):
+    canned(canned_result(ALL_ZERO, 0))
+    g = run_script(SCRIPT, monkeypatch)
+    Q, linear, edges = g["Q"], g["linear"], g["edges"]
+    rnd = random.Random(0)
+    for x in [PARITY] + [[rnd.randrange(2) for _ in range(N)] for _ in range(5)]:
+        energy = sum(v * x[i] * x[j] for (i, j), v in Q.items()) + sum(l * xi for l, xi in zip(linear, x))
+        assert energy == -sum(1 for i, j in edges if x[i] != x[j])
+
+
+def test_script_rejects_an_objective_that_disagrees_with_its_own_count(canned, monkeypatch):
+    canned(canned_result(ALL_ZERO, -1))
     with pytest.raises(AssertionError, match="agree"):
-        maxcut.main(["--n", "12", "--m", "24", "--time-limit", "1"])
+        run_script(SCRIPT, monkeypatch)
+
+
+def test_no_key_exits_with_the_trial_hint(monkeypatch):
+    monkeypatch.delenv("FOURCOLORS_API_KEY", raising=False)
+    monkeypatch.delenv("FOURCOLORS_KEY_FILE", raising=False)
+    import runpy
+    with pytest.raises(SystemExit, match="free trial"):
+        runpy.run_path(str(SCRIPT), run_name="__main__")
+
+
+def test_key_file_is_read(monkeypatch, tmp_path, canned):
+    key = tmp_path / "k"
+    key.write_text("from-file\n")
+    monkeypatch.setenv("FOURCOLORS_KEY_FILE", str(key))
+    monkeypatch.delenv("FOURCOLORS_API_KEY", raising=False)
+    canned(canned_result(ALL_ZERO, 0))
+    import os
+    import runpy
+    runpy.run_path(str(SCRIPT), run_name="__main__")
+    assert os.environ["FOURCOLORS_API_KEY"] == "from-file"

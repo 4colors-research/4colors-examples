@@ -4,7 +4,9 @@
   "month": "2026-11",
   "title": "Portfolio selection with a cardinality constraint",
   "summary": "Markowitz mean-variance over pick-k-of-n as a QUBO with one exact row; trace the efficient frontier.",
-  "product": "qubo",
+  "products": [
+    "qubo"
+  ],
   "domains": [
     "finance"
   ],

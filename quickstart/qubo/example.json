@@ -1,0 +1,16 @@
+{
+  "kind": "quickstart",
+  "slug": "quickstart-qubo",
+  "title": "Quickstart: solve a QUBO",
+  "summary": "Solve a 4-variable QUBO in one call, then watch a longer search stream better solutions.",
+  "products": [
+    "qubo"
+  ],
+  "domains": [
+    "getting-started"
+  ],
+  "level": "beginner",
+  "docs_url": "https://docs.4colors-research.com/start/quickstart-qubo/",
+  "requires": "fourcolors[optimizer]>=1.0.0",
+  "post_url": null
+}

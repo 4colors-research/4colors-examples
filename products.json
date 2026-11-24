@@ -1,0 +1,29 @@
+{
+  "_about": "Public products this repository has examples for. One row per product; the slug is used in folder names, example.json, release tags (<slug>/v<version>) and link tags. status: live | preview. A product that is not public yet never appears here or anywhere else in the repository.",
+  "products": [
+    {
+      "slug": "qubo",
+      "name": "4colors Optimizer for QUBO",
+      "short": "Optimizer for QUBO",
+      "status": "live",
+      "docs_url": "https://docs.4colors-research.com/qubo/",
+      "requires": "fourcolors[optimizer]>=1.0.0"
+    },
+    {
+      "slug": "compiler",
+      "name": "4colors Quantum Compiler",
+      "short": "Quantum Compiler",
+      "status": "live",
+      "docs_url": "https://docs.4colors-research.com/compiler/",
+      "requires": "fourcolors>=1.0.2"
+    },
+    {
+      "slug": "platform",
+      "name": "4colors API",
+      "short": "API (HTTP)",
+      "status": "live",
+      "docs_url": "https://docs.4colors-research.com/platform/",
+      "requires": "curl and jq"
+    }
+  ]
+}

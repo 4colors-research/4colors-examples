@@ -24,48 +24,77 @@ cd 4colors-examples
 pip install -r requirements.txt
 
 export FOURCOLORS_API_KEY=...            # the key from step 1, or FOURCOLORS_KEY_FILE=/path/to/file
-python quickstart/qubo_hello.py
-python quickstart/compiler_hello.py
-bash quickstart/http_hello.sh            # the same API with curl, no Python
+python quickstart/qubo/quickstart.py        # 4colors Optimizer for QUBO
+python quickstart/compiler/quickstart.py    # 4colors Quantum Compiler
+bash quickstart/platform/hello.sh           # the same API with curl, no Python
 ```
 
 Docs: [docs.4colors-research.com](https://docs.4colors-research.com/?utm_source=github&utm_medium=examples&utm_campaign=readme&utm_content=quickstart).
 
 ## Gallery
 
-All examples, quickstarts first. Browse by area in [domains/](domains/).
+Every example, by product: quickstarts first, then tutorials, then blog-post code. An example that uses several
+products is listed under each. Browse by area in [domains/](domains/).
 
-<!-- gallery:all:start -->
-| Example | Kind | Product | Level | Domains | Post |
+<!-- gallery:products:start -->
+### 4colors Optimizer for QUBO
+
+[Docs](https://docs.4colors-research.com/qubo/?utm_source=github&utm_medium=examples&utm_campaign=qubo&utm_content=gallery-section) · Needs: `fourcolors[optimizer]>=1.0.0`
+
+| Example | Kind | Products | Level | Domains | Links |
 |---|---|---|---|---|---|
-| [Quickstart: hello QUBO, hello compiler, hello HTTP](quickstart/) | quickstart | both | beginner | getting-started |  |
-| [Notebook: Max-Cut on a large graph](notebooks/) | tutorial | Optimizer for QUBO | beginner | graphs, notebooks |  |
-| [Max-Cut on a large graph](tutorials/qubo/maxcut/) | tutorial | Optimizer for QUBO | beginner | graphs |  |
+| [Quickstart: solve a QUBO](quickstart/qubo/) | quickstart | Optimizer for QUBO | beginner | getting-started | [docs](https://docs.4colors-research.com/start/quickstart-qubo/?utm_source=github&utm_medium=examples&utm_campaign=quickstart-qubo&utm_content=gallery) |
+| [The API without Python](tutorials/platform/http-without-python/) | tutorial | API (HTTP), Optimizer for QUBO, Quantum Compiler | beginner | getting-started | [docs](https://docs.4colors-research.com/start/tutorials/http-without-python/?utm_source=github&utm_medium=examples&utm_campaign=http-without-python&utm_content=gallery) |
+| [Large QUBO models: upload once, reuse](tutorials/qubo/large-models/) | tutorial | Optimizer for QUBO | intermediate | graphs | [docs](https://docs.4colors-research.com/start/tutorials/qubo-large-models/?utm_source=github&utm_medium=examples&utm_campaign=qubo-large-models&utm_content=gallery) |
+| [Max-Cut on a large graph](tutorials/qubo/maxcut/) | tutorial | Optimizer for QUBO | beginner | graphs | [docs](https://docs.4colors-research.com/start/tutorials/qubo-maxcut/?utm_source=github&utm_medium=examples&utm_campaign=qubo-maxcut&utm_content=gallery) · [notebook](tutorials/qubo/maxcut/maxcut.ipynb) |
 | [Portfolio selection with a cardinality constraint](posts/2026-11-qubo-portfolio/) | post | Optimizer for QUBO | intermediate | finance |  |
 | [Sudoku, N-queens and map coloring as constrained QUBOs](posts/2026-11-qubo-puzzles/) | post | Optimizer for QUBO | beginner | puzzles, graph-coloring |  |
-<!-- gallery:all:end -->
+
+### 4colors Quantum Compiler
+
+[Docs](https://docs.4colors-research.com/compiler/?utm_source=github&utm_medium=examples&utm_campaign=compiler&utm_content=gallery-section) · Needs: `fourcolors>=1.0.2`
+
+| Example | Kind | Products | Level | Domains | Links |
+|---|---|---|---|---|---|
+| [Quickstart: compile a circuit](quickstart/compiler/) | quickstart | Quantum Compiler | beginner | getting-started, quantum-circuits | [docs](https://docs.4colors-research.com/start/quickstart-compiler/?utm_source=github&utm_medium=examples&utm_campaign=quickstart-compiler&utm_content=gallery) |
+| [Compile for your own device](tutorials/compiler/custom-target/) | tutorial | Quantum Compiler | intermediate | quantum-circuits, qaoa | [docs](https://docs.4colors-research.com/start/tutorials/compiler-custom-target/?utm_source=github&utm_medium=examples&utm_campaign=compiler-custom-target&utm_content=gallery) |
+| [Time budgets for the compiler](tutorials/compiler/time-budgets/) | tutorial | Quantum Compiler | beginner | quantum-circuits | [docs](https://docs.4colors-research.com/start/tutorials/compiler-time-budgets/?utm_source=github&utm_medium=examples&utm_campaign=compiler-time-budgets&utm_content=gallery) |
+| [The API without Python](tutorials/platform/http-without-python/) | tutorial | API (HTTP), Optimizer for QUBO, Quantum Compiler | beginner | getting-started | [docs](https://docs.4colors-research.com/start/tutorials/http-without-python/?utm_source=github&utm_medium=examples&utm_campaign=http-without-python&utm_content=gallery) |
+
+### 4colors API
+
+[Docs](https://docs.4colors-research.com/platform/?utm_source=github&utm_medium=examples&utm_campaign=platform&utm_content=gallery-section) · Needs: `curl and jq`
+
+| Example | Kind | Products | Level | Domains | Links |
+|---|---|---|---|---|---|
+| [Quickstart: the API with curl](quickstart/platform/) | quickstart | API (HTTP) | beginner | getting-started | [docs](https://docs.4colors-research.com/start/tutorials/http-without-python/?utm_source=github&utm_medium=examples&utm_campaign=quickstart-platform&utm_content=gallery) |
+| [The API without Python](tutorials/platform/http-without-python/) | tutorial | API (HTTP), Optimizer for QUBO, Quantum Compiler | beginner | getting-started | [docs](https://docs.4colors-research.com/start/tutorials/http-without-python/?utm_source=github&utm_medium=examples&utm_campaign=http-without-python&utm_content=gallery) |
+<!-- gallery:products:end -->
 
 ## What is where
 
 | Folder | What it holds |
 |---|---|
-| [`quickstart/`](quickstart/) | Hello-world for each product and for raw HTTP: under 30 lines each. |
-| [`tutorials/`](tutorials/) | Step-by-step walk-throughs (`qubo/`, `compiler/`, `http/`), the runnable versions of the docs tutorials. |
+| [`quickstart/`](quickstart/) | The docs quickstarts, one folder per product: `quickstart/<product>/`. |
+| [`tutorials/`](tutorials/) | The docs tutorials as runnable scripts: `tutorials/<product>/<name>/` (`joint/` for tutorials that need several products). A notebook sits in its tutorial's folder. |
 | [`posts/`](posts/) | Companion code for blog posts, one folder per post: `posts/<yyyy-mm>-<slug>/`. |
-| [`notebooks/`](notebooks/) | Jupyter notebooks (open in Colab or Codespaces). |
 | [`domains/`](domains/) | The same examples indexed by area: finance, puzzles, graphs, quantum circuits, ... |
 | [`templates/`](templates/) | Starting points: a dimod sampler, the Qiskit plugin, plain HTTP. |
 | [`migrate/`](migrate/) | Moving existing code over: from Qiskit's `transpile`, from dimod samplers. |
 | [`benchmarks/`](benchmarks/) | How to compare solvers fairly, and harnesses you can rerun yourself. |
 | [`datasets/`](datasets/) | Loaders for public instance sets, with each set's license. No data is stored here. |
 | [`shared/`](shared/) | `examplekit.py`: key handling, results files, chart style. |
-| [`tools/`](tools/) | Repository tooling: tests runner, gallery builder, leak check, post export, metrics. |
+| [`tools/`](tools/) | Repository tooling: tests runner, layout check, docs sync, gallery builder, leak check, post export, metrics. |
+| [`products.json`](products.json) | The products this repository covers. Each has a short name (its slug: `qubo`, `compiler`, `platform`) used in folder names and release tags. |
+
+The code in the docs pages is the code here: each docs snippet is a named region of a script in this repository
+(`# region docs:<name>`), and `tools/docs_sync.py` checks that the docs, the notebooks and these scripts match.
 
 ## Run the tests
 
 ```bash
 pip install -r requirements-dev.txt
-python tools/test_all.py        # every example's tests
+python tools/test_all.py        # every example's tests, plus the layout, gallery and notebook checks
 ```
 
 The tests check the code that runs on your side: model builders, decoders, validators and the repository tools.

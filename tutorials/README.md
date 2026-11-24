@@ -1,14 +1,16 @@
 # Tutorials
 
-Step-by-step walk-throughs, each a complete script with tests. They follow the
-[docs tutorials](https://docs.4colors-research.com/start/tutorials/?utm_source=github&utm_medium=examples&utm_campaign=tutorials&utm_content=readme)
-and go from small to large.
+The [docs tutorials](https://docs.4colors-research.com/start/tutorials/?utm_source=github&utm_medium=examples&utm_campaign=tutorials&utm_content=readme)
+as runnable scripts, one folder per tutorial: `tutorials/<product>/<name>/`. The code between a script's
+`# region docs:` lines is the docs page's code, word for word, so the page explains exactly what the script runs.
 
 | Folder | Tutorials |
 |---|---|
-| [`qubo/`](qubo/) | [Max-Cut on a large graph](qubo/maxcut/). Planned: large models (upload once, reuse). |
-| [`compiler/`](compiler/) | Planned: time budgets; compile for your own device. |
-| [`http/`](http/) | Planned: the API without Python (curl + jq). Until then: [`quickstart/http_hello.sh`](../quickstart/http_hello.sh). |
+| [`qubo/`](qubo/) | [Max-Cut on a large graph](qubo/maxcut/) (also a notebook) · [Large QUBO models: upload once, reuse](qubo/large-models/) |
+| [`compiler/`](compiler/) | [Time budgets for the compiler](compiler/time-budgets/) · [Compile for your own device](compiler/custom-target/) |
+| [`platform/`](platform/) | [The API without Python](platform/http-without-python/) (curl and jq) |
 
-A tutorial folder holds `README.md` (the walk-through), one script, `tests/` and `example.json`
-(gallery metadata).
+A tutorial that needs several products equally goes in `joint/<name>/`.
+
+A tutorial folder holds `README.md`, one script, `tests/` (no key, no network) and `example.json` (gallery
+metadata), and may hold a notebook whose code cells are the script's regions.

@@ -1,0 +1,16 @@
+{
+  "kind": "tutorial",
+  "slug": "qubo-large-models",
+  "title": "Large QUBO models: upload once, reuse",
+  "summary": "Upload a 50,000-variable model once, solve it by id, and stop the job when the answer stops improving.",
+  "products": [
+    "qubo"
+  ],
+  "domains": [
+    "graphs"
+  ],
+  "level": "intermediate",
+  "docs_url": "https://docs.4colors-research.com/start/tutorials/qubo-large-models/",
+  "requires": "fourcolors[optimizer]>=1.0.0",
+  "post_url": null
+}

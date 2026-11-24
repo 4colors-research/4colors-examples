@@ -1,4 +1,4 @@
 # What the examples need. Pin the client to the release the examples were last checked against.
-fourcolors[optimizer]>=1.0.0
+fourcolors[optimizer]>=1.0.2      # 1.0.2: compiler targets are descriptions (the compiler examples need it)
 numpy>=1.22
 matplotlib>=3.7

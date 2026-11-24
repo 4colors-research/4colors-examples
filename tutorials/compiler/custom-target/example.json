@@ -1,0 +1,17 @@
+{
+  "kind": "tutorial",
+  "slug": "compiler-custom-target",
+  "title": "Compile for your own device",
+  "summary": "Describe a 12 x 12 grid device and compile a 100-qubit QAOA circuit for it and for a heavy-hex design.",
+  "products": [
+    "compiler"
+  ],
+  "domains": [
+    "quantum-circuits",
+    "qaoa"
+  ],
+  "level": "intermediate",
+  "docs_url": "https://docs.4colors-research.com/start/tutorials/compiler-custom-target/",
+  "requires": "fourcolors>=1.0.2",
+  "post_url": null
+}

@@ -1,0 +1,17 @@
+{
+  "kind": "quickstart",
+  "slug": "quickstart-compiler",
+  "title": "Quickstart: compile a circuit",
+  "summary": "Compile a 5-qubit GHZ circuit for a 156-qubit device design and read its verification label.",
+  "products": [
+    "compiler"
+  ],
+  "domains": [
+    "getting-started",
+    "quantum-circuits"
+  ],
+  "level": "beginner",
+  "docs_url": "https://docs.4colors-research.com/start/quickstart-compiler/",
+  "requires": "fourcolors>=1.0.2",
+  "post_url": null
+}

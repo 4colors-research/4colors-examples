@@ -1,0 +1,18 @@
+{
+  "kind": "tutorial",
+  "slug": "http-without-python",
+  "title": "The API without Python",
+  "summary": "A QUBO job and a compile with curl and jq: the raw requests, the live event stream and the final record.",
+  "products": [
+    "platform",
+    "qubo",
+    "compiler"
+  ],
+  "domains": [
+    "getting-started"
+  ],
+  "level": "beginner",
+  "docs_url": "https://docs.4colors-research.com/start/tutorials/http-without-python/",
+  "requires": "curl and jq",
+  "post_url": null
+}

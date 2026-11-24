@@ -7,7 +7,7 @@
       "extensions": ["ms-python.python", "ms-toolsai.jupyter"]
     },
     "codespaces": {
-      "openFiles": ["README.md", "quickstart/qubo_hello.py"]
+      "openFiles": ["README.md", "quickstart/qubo/quickstart.py"]
     }
   },
   "secrets": {

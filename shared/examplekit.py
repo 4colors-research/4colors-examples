@@ -15,8 +15,23 @@ import time
 from pathlib import Path
 from typing import List, Optional
 
-__all__ = ["client", "Results", "base_parser", "result_fields", "reason_code", "client_version",
+__all__ = ["client", "load_key", "Results", "base_parser", "result_fields", "reason_code", "client_version",
            "plot_style", "load_rows", "median", "SERIES", "INK", "INK_2", "SURFACE", "GRID"]
+
+NO_KEY = ("This example needs a 4colors API key. Start a free trial at [TRIAL SIGNUP URL], copy your key, then "
+          "export FOURCOLORS_API_KEY=... (or FOURCOLORS_KEY_FILE=/path/to/file).")
+
+
+def load_key() -> None:
+    """For scripts written exactly as the docs show them, which use the client's default key.
+
+    If FOURCOLORS_KEY_FILE names a file, its key is put in FOURCOLORS_API_KEY for this process only (the client
+    reads that variable). With no key at all, exit with a short note on how to get one."""
+    path = os.environ.get("FOURCOLORS_KEY_FILE")
+    if path:
+        os.environ["FOURCOLORS_API_KEY"] = Path(path).expanduser().read_text().strip()
+    if not os.environ.get("FOURCOLORS_API_KEY"):
+        raise SystemExit(NO_KEY)
 
 
 def client():
@@ -28,8 +43,7 @@ def client():
     try:
         return fourcolors.Client(api_key=key)
     except fourcolors.errors.AuthenticationError as exc:
-        raise SystemExit(f"{exc}\nThis example needs a 4colors API key. Start a free trial at [TRIAL SIGNUP URL], "
-                         "copy your key, then export FOURCOLORS_API_KEY=... (or FOURCOLORS_KEY_FILE=/path/to/file).")
+        raise SystemExit(f"{exc}\n{NO_KEY}")
 
 
 class Results:

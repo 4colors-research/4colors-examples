@@ -1,0 +1,16 @@
+{
+  "kind": "tutorial",
+  "slug": "compiler-time-budgets",
+  "title": "Time budgets for the compiler",
+  "summary": "Compile a routing-heavy circuit with the budget the compiler picks, then with 20 seconds, streamed.",
+  "products": [
+    "compiler"
+  ],
+  "domains": [
+    "quantum-circuits"
+  ],
+  "level": "beginner",
+  "docs_url": "https://docs.4colors-research.com/start/tutorials/compiler-time-budgets/",
+  "requires": "fourcolors>=1.0.2",
+  "post_url": null
+}

@@ -11,4 +11,4 @@ Every client call is plain HTTPS with a bearer key. The full API is described by
 | Stop it, keep the best so far | `POST /v1/jobs/{id}/stop` |
 | Read the record | `GET /v1/jobs/{id}` |
 
-A runnable version: [`quickstart/http_hello.sh`](../../quickstart/http_hello.sh).
+Runnable versions: [`quickstart/platform/hello.sh`](../../quickstart/platform/hello.sh) and [`tutorials/platform/http-without-python/`](../../tutorials/platform/http-without-python/).
