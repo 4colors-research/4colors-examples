@@ -1,0 +1,17 @@
+{
+  "kind": "post",
+  "slug": "compiler-2d-magnet",
+  "month": "2026-11",
+  "title": "A 2D magnet on a heavy-hex chip: fewer two-qubit gates per Trotter step",
+  "summary": "",
+  "products": [
+    "compiler"
+  ],
+  "domains": [],
+  "level": "intermediate",
+  "post_url": null,
+  "requires": "fourcolors>=1.0.2",
+  "tests": true,
+  "code_only": true,
+  "exported_utc": "2026-11-24T16:36:09Z"
+}

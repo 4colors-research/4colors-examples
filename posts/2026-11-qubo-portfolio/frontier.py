@@ -3,6 +3,7 @@
     python frontier.py --out runs/n30 --n 30 --k 6 --time-limit 5 --seeds 1 2 3
     python frontier.py --out runs/n200 --n 200 --k 20 --time-limit 5 --seeds 1 2 3
     python frontier.py --out runs/csv --prices prices.csv --k 10        # your own daily closing prices
+    python frontier.py --out runs/n30cap --n 30 --k 6 --sectors 5 --sector-cap 2   # optional sector cap (OD-5)
 
 For each q the answer is judged here: the picks, their count, the portfolio's return and risk, and the objective,
 all recomputed from the 0/1 solution. The reference is the exact optimum by enumeration when C(n, k) is at most
@@ -14,7 +15,7 @@ import math
 import sys
 from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "shared"))  # examplekit
+sys.path.insert(0, str(__import__("pathlib").Path(__file__).resolve().parents[2] / "shared"))       # examplekit
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 import fourcolors.qubo
@@ -32,6 +33,9 @@ def main(argv=None):
     p.add_argument("--data-seed", type=int, default=1)
     p.add_argument("--prices", help="CSV of daily closing prices instead of synthetic data")
     p.add_argument("--q", type=float, nargs="+", default=QS, help="risk-aversion values")
+    p.add_argument("--sectors", type=int, default=5, help="seeded sector labels (used only with --sector-cap)")
+    p.add_argument("--sector-cap", type=int, default=None,
+                   help="optional: at most this many assets per sector, one exact row per sector (off by default)")
     p.add_argument("--brute-force-max", type=int, default=1_000_000, help="largest C(n, k) to enumerate")
     a = p.parse_args(argv)
     out = examplekit.Results(Path(a.out) / "results.jsonl")
@@ -44,16 +48,21 @@ def main(argv=None):
         mu, sigma, names = pf.synthetic(a.n, a.data_seed)
         source = f"synthetic(seed={a.data_seed})"
     n, k = len(mu), a.k
+    cap = a.sector_cap
+    sector_of = pf.sectors(n, a.sectors, a.data_seed) if cap is not None else None
+    sec = {"sector_of": sector_of, "sector_cap": cap}
     exact = math.comb(n, k) <= a.brute_force_max
-    refs = pf.brute_force(mu, sigma, k, a.q) if exact else {q: pf.swap_search(mu, sigma, k, q) for q in a.q}
+    refs = (pf.brute_force(mu, sigma, k, a.q, **sec) if exact
+            else {q: pf.swap_search(mu, sigma, k, q, **sec) for q in a.q})
     method = "enumeration (exact)" if exact else "swap local search (heuristic)"
-    common = {"n": n, "k": k, "data": source, "time_limit_s": a.time_limit}
+    common = {"n": n, "k": k, "data": source, "time_limit_s": a.time_limit, "sector_cap": cap,
+              "n_sectors": a.sectors if cap is not None else None}
     for q in a.q:
         ref_obj, ref_picks = refs[q]
         out.add(kind="reference", q=q, objective=ref_obj, picks=ref_picks, method=method,
                 ret=pf.portfolio_return(mu, [int(i in ref_picks) for i in range(n)], k),
                 risk=math.sqrt(pf.portfolio_variance(sigma, [int(i in ref_picks) for i in range(n)], k)), **common)
-        m = pf.model(mu, sigma, k, q)
+        m = pf.model(mu, sigma, k, q, **sec)
         for seed in a.seeds:
             r = fourcolors.qubo.solve(m, time_limit_s=a.time_limit, seed=seed, client=client)
             x = r.solution
@@ -66,6 +75,10 @@ def main(argv=None):
                            risk=math.sqrt(pf.portfolio_variance(sigma, x, k)), objective=obj,
                            reference=ref_obj, reference_method=method, gap_abs=obj - ref_obj,
                            model_feasible=m.feasible(x), energy_python=m.energy(x))
+                if cap is not None:
+                    row.update(sector_counts={str(s): c for s, c in sorted(pf.sector_counts(x, sector_of).items())},
+                               sector_ok=pf.sector_ok(x, sector_of, cap))
+                    row["feasible"] = row["feasible"] and row["sector_ok"]
             else:
                 row.update(feasible=False)
             out.add(**row, **examplekit.result_fields(r))

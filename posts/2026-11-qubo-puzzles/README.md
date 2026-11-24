@@ -2,9 +2,6 @@
 
 **Docs:** [4colors Optimizer for QUBO](https://docs.4colors-research.com/qubo/?utm_source=github&utm_medium=examples&utm_campaign=qubo-puzzles&utm_content=readme-top)
 
-Hands-on companion code for the post. Everything runs through the public `fourcolors` Python client against the
-4colors Optimizer for QUBO.
-
 ## What you will learn
 
 - The one-hot pattern: a 0/1 variable for each (thing, choice), and "pick exactly one" as an exact row.
@@ -13,44 +10,21 @@ Hands-on companion code for the post. Everything runs through the public `fourco
 - How to decode the 0/1 answer back into a grid, a board or a map, and verify it in plain Python.
 - What the service says when a puzzle has no answer at all (`reason["code"] == "no_feasible_found"`).
 
-## The three puzzles
-
-| Puzzle | Variables | Rows | Objective |
-|---|---|---|---|
-| Sudoku (the Wikipedia puzzle) | one per (cell, digit): 729, or only the digits a blank cell can still take | exactly one per cell, per (row, digit), per (column, digit), per (box, digit) | none |
-| N-queens, n = 8, 16, 32 | n^2, one per square | exactly one per row and per column; at most one per diagonal | none |
-| US map (48 states + DC), 3 and 4 colors | 49 x k, one per (state, color) | exactly one color per state | the number of borders whose two states share a color |
-
-The map also runs in an "all exact" variant: every border and color is a row `x[u,c] + x[v,c] <= 1` and there is
-no objective. With 4 colors that is a coloring; with 3 colors no coloring exists (Nevada and its five neighbors form an
-odd wheel, and so do Kentucky and its seven): the odd wheels prove it, and the service reports `no_feasible_found`
-when its time limit ends with no answer meeting every row (it does not prove infeasibility).
-
 ## Setup
 
 Start a free trial at [account.4colors-research.com](https://account.4colors-research.com/account/?utm_source=github&utm_medium=examples&utm_campaign=qubo-puzzles&utm_content=readme-setup) and copy your key, then:
 
+1. Get an API key (a free trial key works: https://account.4colors-research.com/account/?utm_source=github&utm_medium=examples&utm_campaign=qubo-puzzles&utm_content=readme-text).
+2. Install the client and point it at the key:
+
 ```bash
 pip install "fourcolors[optimizer]" matplotlib
-export FOURCOLORS_API_KEY=...        # the trial key, or FOURCOLORS_KEY_FILE=/path/to/key
+export FOURCOLORS_KEY_FILE=/path/to/key-file   # or FOURCOLORS_API_KEY=<your trial key>
 ```
 
 ## Step 1: N-queens in a dozen lines
 
-```python
-import fourcolors.qubo
-
-n = 8
-m = fourcolors.qubo.to_model({}, [0] * (n * n), n=n * n)       # no objective
-for r in range(n):
-    m.add_constraint({r * n + c: 1 for c in range(n)}, lo=1, hi=1)      # one queen per row
-for c in range(n):
-    m.add_constraint({r * n + c: 1 for r in range(n)}, lo=1, hi=1)      # one per column
-# ... and at most one per diagonal: m.add_constraint({...: 1}, hi=1)   (see puzzles.nqueens_model)
-
-r = fourcolors.qubo.solve(m, time_limit_s=1, seed=1)
-queens = [(i, j) for i in range(n) for j in range(n) if r.solution[i * n + j]]
-```
+An objective of all zeros is allowed: the model is pure rows, and any answer that meets them all is a solution.
 
 ## Step 2: solve all three
 
@@ -60,18 +34,11 @@ python solve_puzzles.py --out runs/puzzles --time-limit 5 --seeds 1 2 3
 
 Each answer is decoded and checked in plain Python (`puzzles.sudoku_valid`, `puzzles.nqueens_valid`,
 `puzzles.coloring_conflicts`), and beside that the script stores the client's check (`m.feasible`) and the service's
-(`r.constraints`). Lines read like:
-
-```
-sudoku eliminated seed=1 valid=...
-32-queens seed=1 valid=...
-US map k=3 conflicts_in_objective seed=1 conflicts=... reason=None
-US map k=3 all_exact              seed=1 conflicts=None reason=no_feasible_found
-```
+(`r.constraints`). Every constrained answer is checked by the service against its rows; the script checks it a second
+and third time. Lines read like:
 
 The script also writes reference rows: the Sudoku solved by plain backtracking, and the fewest conflicts possible on
-the US map with k colors, found by an exact branch and bound in plain Python (0 with 4 colors; with 3, at least one per odd wheel).
-The numbers we got are in the post.
+the US map with k colors, found by an exact branch and bound in plain Python (2 with 3 colors, 0 with 4).
 
 ## Step 3: pictures
 
@@ -79,24 +46,18 @@ The numbers we got are in the post.
 python plot.py runs/puzzles --out figures
 ```
 
-`usmap_k3.png` and `usmap_k4.png` (conflicting borders drawn thick), `nqueens_8.png`, `nqueens_16.png`,
-`nqueens_32.png`, `sudoku.png`.
+This writes `usmap_k3.png` and `usmap_k4.png` (conflicting borders drawn thick), `nqueens_8.png`, `nqueens_16.png`,
+`nqueens_32.png` and `sudoku.png`.
 
-## A modeling note: fewer variables first
-
-`puzzles.sudoku_model(grid, eliminate=True)` drops every digit a clue already rules out, the first step of any
-Sudoku solver: 153 variables instead of 729, and the clues need no rows. The script solves both versions.
-
-## Run the tests
+## Run the unit tests
 
 ```bash
-python -m pytest -q tests
+python -m pytest -q tests      # unit tests of the model code; they do not call the service
 ```
 
 The tests check that the rows admit exactly the known solutions on small cases (4-queens has 2, 5-queens has 10; a
-small 4x4 Sudoku has one), that the coloring objective counts conflicts on every assignment of a small graph, and
-that the script decodes, verifies and records answers correctly. For that they feed it fixed, hand-written answers
-(`tests/canned.py`), right and wrong; nothing in the tests solves a puzzle in place of the service.
+small 4x4 Sudoku has one), that the coloring objective counts conflicts on every assignment of a small graph, and run
+the script's plumbing (rows, checks, plots) on fixed hand-made answers, and the smoke-check command.
 
 ## Results
 
@@ -104,5 +65,4 @@ The numbers and charts are in the post (link added on publication). Every number
 
 ## Run it yourself
 
-Set `FOURCOLORS_API_KEY` (or `FOURCOLORS_KEY_FILE=/path/to/file`, which keeps the key out of your shell history) and
-run the commands above. Every answer comes from the 4colors service.
+Set `FOURCOLORS_API_KEY` (or `FOURCOLORS_KEY_FILE=/path/to/file`, which keeps the key out of your shell history) and run the commands above. Every answer comes from the 4colors service.

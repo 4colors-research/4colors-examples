@@ -2,17 +2,16 @@
   "kind": "post",
   "slug": "qubo-portfolio",
   "month": "2026-11",
-  "title": "Portfolio selection with a cardinality constraint",
-  "summary": "Markowitz mean-variance over pick-k-of-n as a QUBO with one exact row; trace the efficient frontier.",
+  "title": "Pick exactly k stocks: portfolio selection with a cardinality row",
+  "summary": "",
   "products": [
     "qubo"
   ],
-  "domains": [
-    "finance"
-  ],
+  "domains": [],
   "level": "intermediate",
   "post_url": null,
   "requires": "fourcolors[optimizer]>=1.0.0",
   "tests": true,
-  "exported_utc": "2026-11-23T03:46:58Z"
+  "code_only": true,
+  "exported_utc": "2026-11-24T16:36:10Z"
 }

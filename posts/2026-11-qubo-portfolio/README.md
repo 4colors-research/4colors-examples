@@ -1,9 +1,6 @@
-# Portfolio selection with a cardinality constraint
+# Pick exactly k stocks: portfolio selection with a cardinality row
 
 **Docs:** [4colors Optimizer for QUBO](https://docs.4colors-research.com/qubo/?utm_source=github&utm_medium=examples&utm_campaign=qubo-portfolio&utm_content=readme-top)
-
-Hands-on companion code for the post. Everything runs through the public `fourcolors` Python client against the
-4colors Optimizer for QUBO.
 
 ## What you will learn
 
@@ -12,6 +9,7 @@ Hands-on companion code for the post. Everything runs through the public `fourco
 - How to pass that QUBO as one numpy matrix, and add "exactly k assets" as one exact row instead of a penalty.
 - How to trace the efficient frontier by sweeping the risk aversion q, and check each answer against the exact
   optimum (by enumeration) where that is possible.
+- Optionally, how a second kind of row ("at most C per sector") goes in the same way.
 
 ## The model
 
@@ -22,35 +20,30 @@ return(x) = mu . x / k        risk(x)^2 = x' Sigma x / k^2
 minimize  q * risk(x)^2 - return(x)      subject to   sum x = k
 ```
 
-`q = 0` picks the k highest expected returns; a large `q` picks the least risky mix. In code:
+`q = 0` picks the k highest expected returns; a large `q` picks the least risky mix. Equal weighting is a modeling
+simplification: it turns "how much of each" into "which ones", which is what a binary model can express. In code:
 
-```python
-import numpy as np
-import fourcolors.qubo
-
-Q = (q / k**2) * Sigma - np.diag(mu / k)       # E(x) = x'Qx, the objective above
-m = fourcolors.qubo.to_model(Q)
-m.add_constraint({i: 1 for i in range(n)}, lo=k, hi=k)     # exactly k assets
-r = fourcolors.qubo.solve(m, time_limit_s=1, seed=1)
-```
-
-A symmetric matrix is read as `x'Qx`, so each pair counts twice, as written.
+Two details make the matrix right. On binaries x_i^2 = x_i, so the diagonal `-mu/k` is the linear return term. And a
+symmetric matrix is read as `x'Qx`, so each off-diagonal pair counts twice, exactly as the variance needs.
 
 ## Data
 
 - Default: `portfolio.synthetic(n, seed)`, a seeded three-factor model with annual returns around 8% and
   volatilities of roughly 15% to 40%. Everyone gets the same numbers.
 - Your own: `--prices prices.csv`, a CSV of daily closing prices (a date column, then one column per asset) from any
-  public source. Expected returns and covariance are estimated from daily log returns, annualized with 252 days.
-  Estimated means are noisy; treat the frontier as an illustration, not advice.
+  public source whose terms you have checked. Expected returns and covariance are estimated from daily log returns,
+  annualized with 252 days. Estimated means are noisy; treat the frontier as an illustration, not advice.
 
 ## Setup
 
 Start a free trial at [account.4colors-research.com](https://account.4colors-research.com/account/?utm_source=github&utm_medium=examples&utm_campaign=qubo-portfolio&utm_content=readme-setup) and copy your key, then:
 
+1. Get an API key (a free trial key works: https://account.4colors-research.com/account/?utm_source=github&utm_medium=examples&utm_campaign=qubo-portfolio&utm_content=readme-text).
+2. Install the client and point it at the key:
+
 ```bash
 pip install "fourcolors[optimizer]" numpy matplotlib
-export FOURCOLORS_API_KEY=...        # the trial key, or FOURCOLORS_KEY_FILE=/path/to/key
+export FOURCOLORS_KEY_FILE=/path/to/key-file   # or FOURCOLORS_API_KEY=<your trial key>
 ```
 
 ## Step 1: a frontier you can check exactly (30 assets, pick 6)
@@ -59,8 +52,13 @@ export FOURCOLORS_API_KEY=...        # the trial key, or FOURCOLORS_KEY_FILE=/pa
 python frontier.py --out runs/n30 --n 30 --k 6 --time-limit 5 --seeds 1 2 3
 ```
 
-C(30, 6) = 593,775 portfolios is small enough to enumerate, so every answer has an exact reference. Lines read like
-`q=4     seed=1 picked=6 return=... risk=... objective=... (reference ..., enumeration (exact))`.
+C(30, 6) = 593,775 portfolios is small enough to enumerate in a few seconds of numpy, so each answer has an exact
+reference. The script sweeps q over 0, 0.5, 1, 2, 4, 8, 16 and 32, solves each with three seeds, and recomputes the
+picks, return, risk and objective from the 0/1 answer. Lines read like:
+
+```
+q=4     seed=1 picked=6 return=0.09798368460782597 risk=0.13095416938056845 objective=-0.029387706695207516 (reference -0.029387706695207516, enumeration (exact))
+```
 
 ## Step 2: a size the demos skip (200 assets, pick 20)
 
@@ -68,8 +66,8 @@ C(30, 6) = 593,775 portfolios is small enough to enumerate, so every answer has 
 python frontier.py --out runs/n200 --n 200 --k 20 --time-limit 5 --seeds 1 2 3
 ```
 
-C(200, 20) is far too many to enumerate; the reference is a swap local search (a heuristic), so a negative gap means
-"better than the heuristic", not "better than optimal".
+C(200, 20) is far too many to enumerate. The reference here is a swap local search (one asset out, one in, until no
+swap helps), which is a heuristic: it shows the answers are sensible and meet the row, not that they are optimal.
 
 ## Step 3: plot
 
@@ -77,22 +75,15 @@ C(200, 20) is far too many to enumerate; the reference is a swap local search (a
 python plot.py runs/n30 runs/n200 --out figures
 ```
 
-`figures/frontier_n30_k6.png` and `figures/frontier_n200_k20.png`: risk against return, the reference line and the
-solver's answers.
-
-What to check: at n = 30, compare each answer with the exact optimum (`gap_abs` in results.jsonl, 0 means it
-found the optimum); at n = 200, a negative gap means better than the heuristic. Every answer should pick exactly
-k assets. The numbers we got are in the post.
-
-## Run the tests
+## Run the unit tests
 
 ```bash
-python -m pytest -q tests
+python -m pytest -q tests      # unit tests of the model code; they do not call the service
 ```
 
 The tests check the matrix against the plain-Python objective on every assignment of a small case, the brute force
-and the swap search against plain enumeration, the CSV reader, and both script paths on fixed, hand-written answers
-(`tests/canned.py`). The enumeration is the post's labeled reference optimum, not a stand-in for the service.
+and the swap search against plain enumeration (with and without a sector cap), that the sector rows admit exactly the
+capped portfolios, the CSV reader, and every script path on fixed hand-made answers.
 
 ## Results
 
@@ -100,5 +91,4 @@ The numbers and charts are in the post (link added on publication). Every number
 
 ## Run it yourself
 
-Set `FOURCOLORS_API_KEY` (or `FOURCOLORS_KEY_FILE=/path/to/file`, which keeps the key out of your shell history) and
-run the commands above. Every answer comes from the 4colors service.
+Set `FOURCOLORS_API_KEY` (or `FOURCOLORS_KEY_FILE=/path/to/file`, which keeps the key out of your shell history) and run the commands above. Every answer comes from the 4colors service.

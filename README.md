@@ -63,14 +63,18 @@ products is listed under each. Browse by area in [domains/](domains/).
 | [Solve it, then compile it: an honest reference for QAOA](posts/2026-11-qaoa-solve-then-compile/) | post | Optimizer for QUBO, Quantum Compiler | intermediate |  |  |
 | [A qLDPC code end to end: bound its distance, compile its syndrome round onto its own chip](posts/2026-11-qldpc-end-to-end/) | post | Optimizer for QUBO, Quantum Compiler | intermediate |  |  |
 | [Denoise a 1440p image with one QUBO](posts/2026-11-qubo-4k-denoise/) | post | Optimizer for QUBO | intermediate |  |  |
+| [Dense QUBOs at 100,000 variables: degree 4 to 256](posts/2026-11-qubo-dense-100k/) | post | Optimizer for QUBO | intermediate |  |  |
 | [EV smart charging as a maximum independent set, from 100 to 100,000 tasks](posts/2026-11-qubo-ev-charging/) | post | Optimizer for QUBO | intermediate |  |  |
 | [Stop tuning penalty weights: exact constraints for QUBO and CQM](posts/2026-11-qubo-exact-constraints/) | post | Optimizer for QUBO | intermediate |  |  |
 | [Six million spins, one upload: a 3D spin glass on the standard plan](posts/2026-11-qubo-huge-spin-glass/) | post | Optimizer for QUBO | intermediate |  |  |
+| [A good answer to a million-variable QUBO while you wait: first answer, then twice as close](posts/2026-11-qubo-million-anytime/) | post | Optimizer for QUBO | intermediate |  |  |
 | [MIMO detection as a QUBO: from QuAMax to a classical solver, measured in milliseconds](posts/2026-11-qubo-mimo-detection/) | post | Optimizer for QUBO | intermediate |  |  |
-| [Portfolio selection with a cardinality constraint](posts/2026-11-qubo-portfolio/) | post | Optimizer for QUBO | intermediate | finance |  |
-| [Sudoku, N-queens and map coloring as constrained QUBOs](posts/2026-11-qubo-puzzles/) | post | Optimizer for QUBO | beginner | puzzles, graph-coloring |  |
+| [Pick exactly k stocks: portfolio selection with a cardinality row](posts/2026-11-qubo-portfolio/) | post | Optimizer for QUBO | intermediate |  |  |
+| [Sudoku, N-queens and map coloring: puzzles as constrained QUBOs](posts/2026-11-qubo-puzzles/) | post | Optimizer for QUBO | intermediate |  |  |
 | [RNA folding QUBOs, refereed: the model the papers posed, solved and checked exactly](posts/2026-11-qubo-rna-folding/) | post | Optimizer for QUBO | intermediate |  |  |
+| [Run the QUBO solver comparison yourself](posts/2026-11-qubo-solver-showdown/) | post | Optimizer for QUBO | intermediate |  |  |
 | [Stop paying for idle seconds: stop, stream and incumbents](posts/2026-11-qubo-stop-and-stream/) | post | Optimizer for QUBO | intermediate |  |  |
+| [Structure wins: knapsack, number partitioning and constraint detection](posts/2026-11-qubo-structure-wins/) | post | Optimizer for QUBO | intermediate |  |  |
 | [Ten graph problems as QUBOs, ten lines each](posts/2026-11-qubo-ten-graph-problems/) | post | Optimizer for QUBO | intermediate |  |  |
 | [QUBO is the wrong encoding for TSP; here is the right tool](posts/2026-11-qubo-tsp-honestly/) | post | Optimizer for QUBO, Quantum Compiler | intermediate |  |  |
 | [Warm starts: re-solving tomorrow's problem from today's answer](posts/2026-11-qubo-warm-start/) | post | Optimizer for QUBO | intermediate |  |  |
@@ -87,6 +91,7 @@ products is listed under each. Browse by area in [domains/](domains/).
 | [Compile for your own device](tutorials/compiler/custom-target/) | tutorial | Quantum Compiler | intermediate | quantum-circuits, qaoa | [docs](https://docs.4colors-research.com/start/tutorials/compiler-custom-target/?utm_source=github&utm_medium=examples&utm_campaign=compiler-custom-target&utm_content=gallery) |
 | [Time budgets for the compiler](tutorials/compiler/time-budgets/) | tutorial | Quantum Compiler | beginner | quantum-circuits | [docs](https://docs.4colors-research.com/start/tutorials/compiler-time-budgets/?utm_source=github&utm_medium=examples&utm_campaign=compiler-time-budgets&utm_content=gallery) |
 | [The API without Python](tutorials/platform/http-without-python/) | tutorial | API (HTTP), Optimizer for QUBO, Quantum Compiler | beginner | getting-started | [docs](https://docs.4colors-research.com/start/tutorials/http-without-python/?utm_source=github&utm_medium=examples&utm_campaign=http-without-python&utm_content=gallery) |
+| [A 2D magnet on a heavy-hex chip: fewer two-qubit gates per Trotter step](posts/2026-11-compiler-2d-magnet/) | post | Quantum Compiler | intermediate |  |  |
 | [The biggest circuits: where the service says no, and why](posts/2026-11-compiler-biggest-circuits/) | post | Quantum Compiler | intermediate |  |  |
 | [The coupler that wasn't there: what happens when your compiler isn't told](posts/2026-11-compiler-broken-couplers/) | post | Quantum Compiler | intermediate |  |  |
 | [Trivial on paper, a routing nightmare on heavy-hex: Bernstein-Vazirani at 150 qubits](posts/2026-11-compiler-bv-routing/) | post | Quantum Compiler | intermediate |  |  |
