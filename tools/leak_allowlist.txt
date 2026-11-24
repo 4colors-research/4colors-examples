@@ -1,2 +1,3 @@
 # Exact tokens the commit-hash and e-mail rules of tools/leak_check.py may accept, one per line, with a reason.
 # Keep this list short and reviewed: every entry is a public string by decision.
+info@4colors-research.com   # public contact (CODE_OF_CONDUCT, SECURITY), owner 24 Nov 2026

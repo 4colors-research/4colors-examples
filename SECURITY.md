@@ -3,7 +3,7 @@
 ## Reporting a vulnerability
 
 Please do not open a public issue. Report it privately through GitHub's "Report a vulnerability" button
-(Security tab) or to the security contact: **to be confirmed by the owner**. We acknowledge reports within a few
+(Security tab) or by email to [info@4colors-research.com](mailto:info@4colors-research.com) (subject: "Security"). We acknowledge reports within a few
 working days.
 
 ## If you exposed an API key
